@@ -1,9 +1,12 @@
+
+'use client';
 import { ArrowRight, Briefcase, CheckCircle, Clock, Cloud, GitCommit, Heart, Linkedin, Mail, MapPin, Network, Phone, Server, Shield, Twitter, Users, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ParticleBackground } from '@/components/ui/particle-background';
 
 export default function Home() {
   return (
@@ -24,8 +27,9 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-background text-center">
-          <div className="container px-4 md:px-6">
+        <section className="relative py-20 md:py-32 bg-background text-center overflow-hidden">
+          <ParticleBackground />
+          <div className="container relative z-10 px-4 md:px-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-primary">We Add Value To Your Business</h1>
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">We meet your brand’s IT infrastructure needs.</p>
           </div>
