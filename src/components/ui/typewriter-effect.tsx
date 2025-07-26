@@ -10,38 +10,23 @@ interface TypewriterEffectProps extends HTMLAttributes<HTMLHeadingElement> {
 
 export function TypewriterEffect({ text, className, ...props }: TypewriterEffectProps) {
   const [displayedText, setDisplayedText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [loopNum, setLoopNum] = useState(0);
-  const typingSpeed = 150;
-  const deletingSpeed = 100;
-  const delay = 2000;
-
+  
+  // This effect will only type out the text once.
   useEffect(() => {
-    const handleTyping = () => {
-      const i = loopNum % 1;
-      const fullText = text;
+    setDisplayedText(''); // Reset on text change
+    if (text) {
+      let i = 0;
+      const intervalId = setInterval(() => {
+        setDisplayedText(text.substring(0, i + 1));
+        i++;
+        if (i >= text.length) {
+          clearInterval(intervalId);
+        }
+      }, 100); // Adjust typing speed here
 
-      setDisplayedText(
-        isDeleting
-          ? fullText.substring(0, displayedText.length - 1)
-          : fullText.substring(0, displayedText.length + 1)
-      );
-
-      if (!isDeleting && displayedText === fullText) {
-        setTimeout(() => setIsDeleting(true), delay);
-      } else if (isDeleting && displayedText === '') {
-        setIsDeleting(false);
-        setLoopNum(loopNum + 1);
-      }
-    };
-
-    const typingTimeout = setTimeout(
-      handleTyping,
-      isDeleting ? deletingSpeed : typingSpeed
-    );
-
-    return () => clearTimeout(typingTimeout);
-  }, [displayedText, isDeleting, loopNum, text]);
+      return () => clearInterval(intervalId);
+    }
+  }, [text]);
 
   return (
     <h1 className={cn(className, 'typewriter')} {...props}>
@@ -50,3 +35,5 @@ export function TypewriterEffect({ text, className, ...props }: TypewriterEffect
     </h1>
   );
 }
+
+    

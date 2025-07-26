@@ -1,6 +1,6 @@
 
 'use client';
-import { ArrowRight, Briefcase, CheckCircle, Clock, Cloud, GitCommit, Heart, Linkedin, Mail, MapPin, Network, Phone, Server, Shield, Twitter, Users, Zap } from 'lucide-react';
+import { ArrowRight, Briefcase, CheckCircle, ChevronRight, Clock, Cloud, Code, GitCommit, Heart, Linkedin, Mail, MapPin, Network, Phone, Rocket, Server, Shield, Twitter, Users, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -13,6 +13,7 @@ import { TypewriterEffect } from '@/components/ui/typewriter-effect';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -28,146 +29,113 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 flex items-center justify-between h-16 px-4 md:px-6 bg-background/80 backdrop-blur-sm border-b border-border/50 shadow-lg">
-        <Link href="#" className="flex items-center gap-2" prefetch={false}>
-          <Briefcase className="w-6 h-6 text-primary" />
-          <h1 className="text-xl font-bold">Reflective</h1>
+      <header className="sticky top-0 z-50 flex items-center justify-between h-20 px-4 md:px-8 bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-2xl shadow-primary/10">
+        <Link href="#" className="flex items-center gap-3" prefetch={false}>
+          <Briefcase className="w-8 h-8 text-primary animate-pulse" />
+          <h1 className="text-2xl font-bold tracking-wider">Reflective</h1>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-          <Link href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300" prefetch={false}>Home</Link>
-          <Link href="#services" className="text-muted-foreground hover:text-primary transition-colors duration-300" prefetch={false}>Services</Link>
-          <Link href="#about" className="text-muted-foreground hover:text-primary transition-colors duration-300" prefetch={false}>About</Link>
-          <Link href="#contact" className="text-muted-foreground hover:text-primary transition-colors duration-300" prefetch={false}>Contact</Link>
+        <nav className="hidden md:flex items-center gap-8 text-base font-medium">
+          <Link href="#services" className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>Services</Link>
+          <Link href="#about" className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>About</Link>
+          <Link href="#process" className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>Process</Link>
+          <Link href="#contact" className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>Contact</Link>
         </nav>
         <Dialog>
           <DialogTrigger asChild>
-             <Button variant="default" className="transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/50 hover:shadow-lg">Get Started</Button>
+             <Button variant="default" size="lg" className="transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/50 hover:shadow-lg rounded-full">Get Started</Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
+          <DialogContent className="sm:max-w-md bg-secondary border-primary/20">
             <DialogHeader>
-              <DialogTitle>Let's Get Started</DialogTitle>
+              <DialogTitle className="text-2xl text-primary">Let's Build Something Amazing</DialogTitle>
               <DialogDescription>
-                Tell us a bit about your project, and we'll get in touch.
+                Share your project idea, and our experts will be in touch.
               </DialogDescription>
             </DialogHeader>
-            <div className="grid gap-4 py-4">
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="name" className="text-right">
-                  Name
-                </Label>
-                <Input id="name" placeholder="John Doe" className="col-span-3" />
+            <form className="grid gap-6 py-4">
+              <div className="grid gap-2">
+                <Label htmlFor="name">Full Name</Label>
+                <Input id="name" placeholder="John Doe" className="bg-background/50 border-border" />
               </div>
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="email" className="text-right">
-                  Email
-                </Label>
-                <Input id="email" type="email" placeholder="john.doe@example.com" className="col-span-3" />
+              <div className="grid gap-2">
+                <Label htmlFor="email">Email Address</Label>
+                <Input id="email" type="email" placeholder="john.doe@example.com" className="bg-background/50 border-border" />
               </div>
-            </div>
-             <Button type="submit" className="w-full">Request a Quote</Button>
+               <Button type="submit" size="lg" className="w-full mt-4 rounded-full">Request a Quote</Button>
+            </form>
           </DialogContent>
         </Dialog>
       </header>
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-24 md:py-40 text-center overflow-hidden">
-          <div className="absolute inset-0 z-0 bg-gradient-to-b from-background to-background/80"></div>
+        <section className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
+          <div className="absolute inset-0 z-0 bg-gradient-to-b from-background via-background/90 to-background"></div>
           <ParticleBackground />
-          <div className="container relative z-10 px-4 md:px-6">
-            <TypewriterEffect text="We Add Value To Your Business" className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400" />
-            <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">We meet your brand’s IT infrastructure needs.</p>
-          </div>
-        </section>
-
-        {/* Value Propositions Section */}
-        <section className="py-20 bg-secondary/50">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 text-center">
-              <div className="flex flex-col items-center gap-4 transition-transform duration-300 hover:scale-105">
-                <div className="p-4 rounded-full bg-primary/10 text-primary ring-4 ring-primary/20"><Clock className="w-8 h-8" /></div>
-                <h3 className="text-xl font-bold">Availability</h3>
-                <p className="text-muted-foreground">Reliable, in-house solutions for critical services.</p>
-              </div>
-              <div className="flex flex-col items-center gap-4 transition-transform duration-300 hover:scale-105">
-                <div className="p-4 rounded-full bg-primary/10 text-primary ring-4 ring-primary/20"><Heart className="w-8 h-8" /></div>
-                <h3 className="text-xl font-bold">Loyalty</h3>
-                <p className="text-muted-foreground">Long-term partnerships focused on your success.</p>
-              </div>
-              <div className="flex flex-col items-center gap-4 transition-transform duration-300 hover:scale-105">
-                <div className="p-4 rounded-full bg-primary/10 text-primary ring-4 ring-primary/20"><Zap className="w-8 h-8" /></div>
-                <h3 className="text-xl font-bold">Experience</h3>
-                <p className="text-muted-foreground">Cutting-edge solutions backed by expertise.</p>
-              </div>
-              <div className="flex flex-col items-center gap-4 transition-transform duration-300 hover:scale-105">
-                <div className="p-4 rounded-full bg-primary/10 text-primary ring-4 ring-primary/20"><Shield className="w-8 h-8" /></div>
-                <h3 className="text-xl font-bold">Support</h3>
-                <p className="text-muted-foreground">Transparent, guideline-driven support.</p>
-              </div>
+          <div className="container relative z-10 px-4 md:px-6 animate-fade-in-up">
+            <TypewriterEffect text="We Engineer Digital Excellence" className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-blue-600" />
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">From concept to deployment, we build robust IT solutions that drive business growth and innovation.</p>
+             <div className="mt-10 flex justify-center gap-4">
+                <Button size="lg" className="group rounded-full text-lg px-8 py-6">
+                    Explore Services <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button size="lg" variant="outline" className="rounded-full text-lg px-8 py-6">
+                    Contact Us
+                </Button>
             </div>
           </div>
         </section>
 
-        {/* Software Engineering Section */}
-        <section id="about" className="py-20 md:py-28">
-          <div className="container px-4 md:px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-blue-500 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                <Image src="https://placehold.co/500x500.png" alt="Software Engineering" width={500} height={500} className="rounded-lg relative" data-ai-hint="software development" />
+        {/* Why Choose Us Section */}
+        <section id="about" className="py-24 md:py-32 bg-secondary/30">
+            <div className="container px-4 md:px-6">
+                <div className="text-center space-y-4 mb-16 animate-fade-in-up">
+                    <h2 className="text-4xl font-bold tracking-tight">Why Partner With Reflective?</h2>
+                    <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We're not just a service provider; we're your dedicated technology partner.</p>
+                </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     {[
+                        { icon: <Clock className="w-10 h-10" />, title: 'Availability', description: 'Reliable, in-house solutions for critical services with 99.9% uptime.' },
+                        { icon: <Heart className="w-10 h-10" />, title: 'Loyalty', description: 'Long-term partnerships focused on mutual success and growth.' },
+                        { icon: <Zap className="w-10 h-10" />, title: 'Experience', description: 'Decades of combined expertise in cutting-edge enterprise solutions.' },
+                        { icon: <Shield className="w-10 h-10" />, title: 'Support', description: 'Transparent, 24/7 guideline-driven support from our expert team.' }
+                     ].map((item, index) => (
+                        <div key={index} className="flex flex-col items-center text-center p-6 rounded-2xl bg-background/50 transition-all duration-300 hover:bg-background hover:shadow-2xl hover:shadow-primary/20 transform hover:-translate-y-2">
+                            <div className="p-5 rounded-full bg-primary/10 text-primary ring-4 ring-primary/20 mb-6">{item.icon}</div>
+                            <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+                            <p className="text-muted-foreground">{item.description}</p>
+                        </div>
+                     ))}
+                </div>
             </div>
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold tracking-tight">Software Engineering</h2>
-              <p className="text-muted-foreground text-lg">Custom solutions to power your business forward.</p>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold">Corporate Consulting</h4>
-                    <p className="text-muted-foreground">Custom tech infrastructure.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold">IT Service System</h4>
-                    <p className="text-muted-foreground">Comprehensive support & maintenance.</p>
-                  </div>
-                </li>
-              </ul>
-              <Button size="lg" className="group">
-                Get to Know us <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
-          </div>
         </section>
 
         {/* Services & Solutions Section */}
-        <section id="services" className="py-20 bg-secondary/50">
+        <section id="services" className="py-24 md:py-32">
           <div className="container px-4 md:px-6">
             <div className="text-center space-y-4 mb-16">
-              <h2 className="text-3xl font-bold">Our Services and Solutions</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">Your IT infrastructure is Enhanced to Us.</p>
+              <h2 className="text-4xl font-bold tracking-tight">Our Services and Solutions</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We deliver a comprehensive suite of IT services designed to enhance your infrastructure.</p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {[
-                  { icon: <Server className="w-8 h-8" />, title: 'Server & Storage Systems', description: 'Boost efficiency with technology.', link: '#' },
-                  { icon: <Network className="w-8 h-8" />, title: 'Network Security', description: 'Professional data protection.', link: '#' },
-                  { icon: <Users className="w-8 h-8" />, title: 'IT Support', description: 'Reliable task support.', link: '#' },
-                  { icon: <Cloud className="w-8 h-8" />, title: 'Cloud Services', description: 'Cutting-edge cloud tech.', link: '#' },
-                  { icon: <GitCommit className="w-8 h-8" />, title: 'Virtualization', description: 'Access data from any device.', link: '#' },
-                  { icon: <Briefcase className="w-8 h-8" />, title: 'Tracing Solutions', description: 'Cloud monitoring for clients.', link: '#' }
+                  { icon: <Server className="w-10 h-10" />, title: 'Server & Storage Systems', description: 'Scalable and secure server solutions to boost efficiency with the latest technology.' },
+                  { icon: <Network className="w-10 h-10" />, title: 'Network Security', description: 'End-to-end network security to protect your data with professional-grade firewalls.' },
+                  { icon: <Users className="w-10 h-10" />, title: 'Managed IT Support', description: '24/7 proactive monitoring and reliable on-demand task support for your entire team.' },
+                  { icon: <Cloud className="w-10 h-10" />, title: 'Cloud Services', description: 'Leverage the power of the cloud with our cutting-edge migration and management services.' },
+                  { icon: <GitCommit className="w-10 h-10" />, title: 'Virtualization', description: 'Optimize your resources and access critical data from any device, anywhere.' },
+                  { icon: <Briefcase className="w-10 h-10" />, title: 'Tracing & Observability', description: 'Deep insights into your systems with advanced cloud monitoring and client-side tracing.' }
                 ].map((service, index) => (
-                  <Card key={index} className="group transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 border-border/50 hover:border-primary/50">
-                    <CardHeader className="items-center">
-                      <div className="p-3 rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">{service.icon}</div>
+                  <Card key={index} className="group flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 border-border/50 hover:border-primary/50 bg-secondary/30 overflow-hidden">
+                    <CardHeader className="items-start p-6">
+                      <div className="p-4 rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground mb-4">{service.icon}</div>
+                      <CardTitle className="text-2xl">{service.title}</CardTitle>
                     </CardHeader>
-                    <CardContent className="text-center">
-                      <CardTitle className="mb-2 text-xl">{service.title}</CardTitle>
-                      <CardDescription>{service.description}</CardDescription>
+                    <CardContent className="flex-1 p-6 pt-0">
+                      <CardDescription className="text-base">{service.description}</CardDescription>
                     </CardContent>
-                    <CardFooter className="justify-center">
-                      <Button variant="link" asChild className="group/link">
-                        <Link href={service.link}>Review <ArrowRight className="ml-2 transition-transform group-hover/link:translate-x-1" /></Link>
+                    <CardFooter className="p-6 pt-0 mt-auto">
+                      <Button variant="ghost" asChild className="group/link text-primary text-base">
+                        <Link href={'#'}>Learn More <ArrowRight className="ml-2 transition-transform group-hover/link:translate-x-1" /></Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -176,32 +144,88 @@ export default function Home() {
             </div>
           </div>
         </section>
+        
+        {/* Our Process Section */}
+        <section id="process" className="py-24 md:py-32 bg-secondary/30">
+            <div className="container px-4 md:px-6">
+                <div className="text-center space-y-4 mb-20">
+                    <h2 className="text-4xl font-bold tracking-tight">Our Proven Process</h2>
+                    <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We follow a structured, agile methodology to ensure project success and client satisfaction.</p>
+                </div>
+                <div className="relative">
+                    <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-primary/20 -translate-y-1/2"></div>
+                    <div className="grid gap-16 lg:gap-8 md:grid-cols-2 lg:grid-cols-4">
+                        {[
+                            { icon: <Rocket className="w-10 h-10" />, title: "1. Discovery & Strategy", description: "We start by understanding your goals, challenges, and requirements to create a tailored project roadmap." },
+                            { icon: <Code className="w-10 h-10" />, title: "2. Design & Development", description: "Our team designs and develops robust solutions using best practices and cutting-edge technology." },
+                            { icon: <CheckCircle className="w-10 h-10" />, title: "3. Testing & QA", description: "Rigorous testing at every stage ensures a bug-free, high-performance, and secure final product." },
+                            { icon: <Zap className="w-10 h-10" />, title: "4. Deployment & Support", description: "We handle a seamless deployment and provide ongoing support to ensure your system runs smoothly." }
+                        ].map((step, index) => (
+                            <div key={index} className="relative flex flex-col items-center text-center">
+                                <div className="absolute -top-12 flex items-center justify-center w-24 h-24 rounded-full bg-primary text-primary-foreground border-8 border-secondary">
+                                    {step.icon}
+                                </div>
+                                <div className="pt-20 p-6 rounded-2xl bg-background/50 h-full">
+                                    <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+                                    <p className="text-muted-foreground">{step.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Tech Stack Section */}
+        <section className="py-24 md:py-32">
+            <div className="container px-4 md:px-6">
+                <div className="text-center space-y-4 mb-16">
+                    <h2 className="text-4xl font-bold tracking-tight">Our Technology Stack</h2>
+                    <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We use a modern, robust stack to build scalable and maintainable solutions.</p>
+                </div>
+                <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
+                    {[
+                        { name: "Next.js", image: "https://placehold.co/120x40.png", hint: "nextjs logo" },
+                        { name: "React", image: "https://placehold.co/120x40.png", hint: "react logo" },
+                        { name: "TypeScript", image: "https://placehold.co/120x40.png", hint: "typescript logo" },
+                        { name: "Node.js", image: "https://placehold.co/120x40.png", hint: "nodejs logo" },
+                        { name: "Docker", image: "https://placehold.co/120x40.png", hint: "docker logo" },
+                        { name: "Kubernetes", image: "https://placehold.co/120x40.png", hint: "kubernetes logo" },
+                        { name: "Google Cloud", image: "https://placehold.co/120x40.png", hint: "google cloud" },
+                    ].map((tech) => (
+                        <div key={tech.name} className="flex items-center gap-4 transition-transform duration-300 hover:scale-110" title={tech.name}>
+                            <Image src={tech.image} alt={tech.name} width={120} height={40} className="grayscale hover:grayscale-0 transition-all duration-300" data-ai-hint={tech.hint}/>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
 
         {/* Customer Testimonials Section */}
-        <section className="py-20">
+        <section className="py-24 md:py-32 bg-secondary/30">
           <div className="container px-4 md:px-6">
             <div className="text-center space-y-4 mb-16">
-              <h2 className="text-3xl font-bold">Our Customers Who Make Us</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto text-lg">We work day and night to ensure our customers thrive.</p>
+              <h2 className="text-4xl font-bold tracking-tight">What Our Clients Say</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We're proud to have partnered with innovative companies worldwide.</p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {[
-                  { name: 'John Doe', role: 'CEO, TechCorp', text: 'Reflective has transformed our IT landscape. Their expertise and support are unmatched.', image: 'https://placehold.co/100x100.png' },
-                  { name: 'Jane Smith', role: 'CTO, Innovate LLC', text: 'The availability and security of their solutions have given us peace of mind. A true partner.', image: 'https://placehold.co/100x100.png' },
-                  { name: 'Samuel Green', role: 'IT Manager, Solutions Inc.', text: 'Working with Reflective feels like an extension of our own team. Highly recommended!', image: 'https://placehold.co/100x100.png' }
+                  { name: 'John Doe', role: 'CEO, TechCorp', text: 'Reflective has transformed our IT landscape. Their expertise and dedication are simply unmatched. A true partner in every sense of the word.', image: 'https://placehold.co/100x100.png' },
+                  { name: 'Jane Smith', role: 'CTO, Innovate LLC', text: 'The availability and security of their solutions have given us complete peace of mind. Their proactive support is second to none.', image: 'https://placehold.co/100x100.png' },
+                  { name: 'Samuel Green', role: 'IT Manager, Solutions Inc.', text: 'Working with Reflective feels like an extension of our own team. Their technical skill and strategic insight are highly recommended!', image: 'https://placehold.co/100x100.png' }
                 ].map((testimonial, index) => (
-                  <Card key={index} className="flex flex-col bg-secondary/50 border-border/50">
-                    <CardContent className="flex-1 pt-6">
-                      <p className="text-muted-foreground italic">"{testimonial.text}"</p>
+                  <Card key={index} className="flex flex-col bg-background/50 border-border/50 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <CardContent className="flex-1 pt-8">
+                      <p className="text-muted-foreground italic text-lg leading-relaxed">"{testimonial.text}"</p>
                     </CardContent>
-                    <CardFooter className="flex items-center gap-4 mt-4">
-                      <Avatar>
-                        <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint="person" />
+                    <CardFooter className="flex items-center gap-4 mt-6 p-6 bg-background/20">
+                      <Avatar className="w-14 h-14 border-2 border-primary">
+                        <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint="person portrait" />
                         <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                       </Avatar>
                       <div>
-                        <p className="font-semibold">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                        <p className="font-bold text-lg">{testimonial.name}</p>
+                        <p className="text-sm text-primary">{testimonial.role}</p>
                       </div>
                     </CardFooter>
                   </Card>
@@ -213,44 +237,53 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer id="contact" className="bg-secondary/50 border-t border-border/50">
-        <div className="container grid gap-8 px-4 py-16 md:px-6 md:grid-cols-3">
-          <div>
-            <h3 className="text-lg font-bold">Reflective</h3>
-            <p className="text-muted-foreground mt-2">Value-driven IT solutions for modern businesses.</p>
-            <div className="flex items-center gap-4 mt-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}><Twitter className="w-5 h-5" /></Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}><Linkedin className="w-5 h-5" /></Link>
+      <footer id="contact" className="bg-secondary/30 border-t border-border/50">
+        <div className="container grid gap-12 px-4 py-20 md:px-6 md:grid-cols-4">
+          <div className="col-span-4 md:col-span-1">
+            <h3 className="text-2xl font-bold">Reflective</h3>
+            <p className="text-muted-foreground mt-4">Engineering the future of your business with value-driven IT solutions.</p>
+            <div className="flex items-center gap-4 mt-6">
+              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}><Twitter className="w-6 h-6" /></Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}><Linkedin className="w-6 h-6" /></Link>
             </div>
           </div>
-          <div className="space-y-2">
-            <h4 className="font-semibold">Quick Links</h4>
-            <ul className="space-y-1">
-              <li><Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>Home</Link></li>
-              <li><Link href="#services" className="text-muted-foreground hover:text-primary" prefetch={false}>Services</Link></li>
-              <li><Link href="#about" className="text-muted-foreground hover:text-primary" prefetch={false}>About Us</Link></li>
-              <li><Link href="#contact" className="text-muted-foreground hover:text-primary" prefetch={false}>Contact</Link></li>
+          <div className="space-y-3">
+            <h4 className="font-semibold text-lg">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Home</Link></li>
+              <li><Link href="#services" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Services</Link></li>
+              <li><Link href="#about" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>About Us</Link></li>
+              <li><Link href="#process" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Our Process</Link></li>
             </ul>
           </div>
-          <div className="space-y-2">
-            <h4 className="font-semibold">Contact Us</h4>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Mail className="w-4 h-4" />
+          <div className="space-y-3">
+            <h4 className="font-semibold text-lg">Services</h4>
+             <ul className="space-y-2">
+              <li><a className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">Server & Storage</a></li>
+              <li><a className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">Network Security</a></li>
+              <li><a className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">Cloud Services</a></li>
+              <li><a className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">Managed IT</a></li>
+            </ul>
+          </div>
+          <div className="space-y-4">
+            <h4 className="font-semibold text-lg">Contact Us</h4>
+            <div className="flex items-start gap-3 text-muted-foreground">
+              <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
               <span>contact@reflective.dev</span>
             </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Phone className="w-4 h-4" />
+            <div className="flex items-start gap-3 text-muted-foreground">
+              <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
               <span>(123) 456-7890</span>
             </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <MapPin className="w-4 h-4" />
+            <div className="flex items-start gap-3 text-muted-foreground">
+              <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
               <span>123 Tech Avenue, Silicon Valley, CA</span>
             </div>
           </div>
         </div>
-        <div className="border-t border-border/50 py-4">
+        <div className="border-t border-border/50 py-6">
           <div className="container px-4 text-sm text-center text-muted-foreground md:px-6">
-            <p>&copy; 2024 Reflective. All rights reserved.</p>
+            <p>&copy; 2024 Reflective. All rights reserved. Built with passion and code.</p>
           </div>
         </div>
       </footer>
