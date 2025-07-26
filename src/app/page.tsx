@@ -10,6 +10,9 @@ import { ParticleBackground } from '@/components/ui/particle-background';
 import { useEffect, useState } from 'react';
 import { PageLoader } from '@/components/ui/page-loader';
 import { TypewriterEffect } from '@/components/ui/typewriter-effect';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -36,7 +39,34 @@ export default function Home() {
           <Link href="#about" className="text-muted-foreground hover:text-primary transition-colors duration-300" prefetch={false}>About</Link>
           <Link href="#contact" className="text-muted-foreground hover:text-primary transition-colors duration-300" prefetch={false}>Contact</Link>
         </nav>
-        <Button variant="default" className="transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/50 hover:shadow-lg">Get Started</Button>
+        <Dialog>
+          <DialogTrigger asChild>
+             <Button variant="default" className="transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/50 hover:shadow-lg">Get Started</Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Let's Get Started</DialogTitle>
+              <DialogDescription>
+                Tell us a bit about your project, and we'll get in touch.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4 py-4">
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="name" className="text-right">
+                  Name
+                </Label>
+                <Input id="name" placeholder="John Doe" className="col-span-3" />
+              </div>
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="email" className="text-right">
+                  Email
+                </Label>
+                <Input id="email" type="email" placeholder="john.doe@example.com" className="col-span-3" />
+              </div>
+            </div>
+             <Button type="submit" className="w-full">Request a Quote</Button>
+          </DialogContent>
+        </Dialog>
       </header>
 
       <main className="flex-1">
