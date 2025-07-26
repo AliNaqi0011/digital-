@@ -1,6 +1,6 @@
 
 'use client';
-import { ArrowRight, Briefcase, CheckCircle, ChevronRight, Clock, Cloud, Code, GitCommit, Heart, Linkedin, Mail, MapPin, Moon, Network, Phone, Rocket, Server, Shield, Sun, Twitter, Users, Zap } from 'lucide-react';
+import { ArrowRight, Briefcase, CheckCircle, ChevronRight, Clock, Cloud, Code, GitCommit, Heart, Linkedin, Mail, MapPin, Menu, Moon, Network, Phone, Rocket, Server, Shield, Sun, Twitter, Users, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -15,6 +15,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useTheme } from 'next-themes';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 function ThemeToggle() {
   const { setTheme } = useTheme()
@@ -58,11 +59,11 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
-       <div className="bg-secondary/30 text-secondary-foreground py-2 px-4 md:px-8 text-xs">
+       <div className="text-secondary-foreground py-2 px-4 md:px-8 text-sm bg-gradient-to-r from-background via-accent/50 to-primary/50 bg-[length:200%_auto] animate-gradient-shift">
           <div className="container mx-auto flex justify-between items-center">
               <div className="flex gap-4 items-center">
                   <span className="flex items-center gap-1.5"><Mail className="w-4 h-4" /> contact@reflective.dev</span>
-                  <span className="flex items-center gap-1.5"><Phone className="w-4 h-4" /> (123) 456-7890</span>
+                  <span className="hidden md:flex items-center gap-1.5"><Phone className="w-4 h-4" /> (123) 456-7890</span>
               </div>
               <div className="flex gap-4 items-center">
                   <Link href="#" className="hover:text-primary transition-colors"><Twitter className="w-4 h-4" /></Link>
@@ -75,7 +76,7 @@ export default function Home() {
           <Briefcase className="w-8 h-8 text-primary animate-pulse" />
           <h1 className="text-2xl font-bold tracking-wider">Reflective</h1>
         </Link>
-        <nav className="hidden md:flex items-center gap-8 text-base font-medium">
+        <nav className="hidden md:flex items-center gap-8 text-lg font-semibold">
           <Link href="#services" className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>Services</Link>
           <Link href="#about" className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>About</Link>
           <Link href="#process" className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>Process</Link>
@@ -107,6 +108,21 @@ export default function Home() {
             </DialogContent>
             </Dialog>
             <ThemeToggle />
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu />
+                </Button>
+              </SheetTrigger>
+              <SheetContent>
+                <nav className="flex flex-col gap-6 mt-8 text-lg">
+                    <Link href="#services" className="text-muted-foreground hover:text-primary" prefetch={false}>Services</Link>
+                    <Link href="#about" className="text-muted-foreground hover:text-primary" prefetch={false}>About</Link>
+                    <Link href="#process" className="text-muted-foreground hover:text-primary" prefetch={false}>Process</Link>
+                    <Link href="#contact" className="text-muted-foreground hover:text-primary" prefetch={false}>Contact</Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
         </div>
       </header>
 
@@ -118,11 +134,11 @@ export default function Home() {
           <div className="container relative z-10 px-4 md:px-6 animate-fade-in-up">
             <TypewriterEffect text="We Add Value To Your Business" className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-sky-400" />
             <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">We meet your brand’s IT infrastructure needs.</p>
-             <div className="mt-10 flex justify-center gap-4">
-                <Button size="lg" className="group rounded-full text-lg px-8 py-6">
+             <div className="mt-10 flex flex-wrap justify-center gap-4">
+                <Button size="lg" className="group rounded-full text-lg px-8 py-6 transition-all duration-300 ease-in-out hover:bg-primary/90 hover:shadow-lg">
                     Explore Services <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full text-lg px-8 py-6">
+                <Button size="lg" variant="outline" className="rounded-full text-lg px-8 py-6 transition-all duration-300 ease-in-out hover:bg-accent hover:text-accent-foreground">
                     Contact Us
                 </Button>
             </div>
@@ -176,7 +192,7 @@ export default function Home() {
                     </div>
                   </li>
                 </ul>
-                <Button asChild size="lg" className="mt-10 group">
+                <Button asChild size="lg" className="mt-10 group rounded-full">
                   <Link href="#services">
                     Get to Know Us <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
                   </Link>
@@ -214,8 +230,8 @@ export default function Home() {
                       <CardDescription className="text-base">{service.description}</CardDescription>
                     </CardContent>
                     <CardFooter className="p-6 pt-0 mt-auto">
-                      <Button variant="ghost" asChild className="group/link text-primary text-base">
-                        <Link href={'#'}>Review →<ArrowRight className="ml-2 transition-transform group-hover/link:translate-x-1" /></Link>
+                      <Button variant="ghost" asChild className="group/link text-primary text-base px-0">
+                        <Link href={'#'}>Review <ArrowRight className="ml-2 transition-transform group-hover/link:translate-x-1" /></Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -317,7 +333,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer id="contact" className="bg-secondary/30 border-t border-border/50">
+      <footer id="contact" className="border-t border-border/50 bg-gradient-to-r from-primary/50 via-accent/50 to-background bg-[length:200%_auto] animate-gradient-shift">
         <div className="container mx-auto px-6 py-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <div className="lg:col-span-2">
@@ -377,5 +393,4 @@ export default function Home() {
       </footer>
     </div>
   );
-}
 
