@@ -298,9 +298,16 @@ export default function Home() {
         </section>
 
         {/* Customer Testimonials Section */}
-        <section className="py-24 md:py-32">
+        <section className="py-24 md:py-32 relative">
+           <div className="absolute top-8 left-1/2 -translate-x-1/2">
+                <div 
+                    className="w-40 h-40 border-4 border-primary/20 rounded-full animate-rotate-3d"
+                    style={{ transformStyle: 'preserve-3d' }}
+                >
+                </div>
+            </div>
           <div className="container px-4 md:px-6">
-            <div className="text-center space-y-4 mb-16">
+            <div className="text-center space-y-4 mb-16 pt-16">
               <h2 className="text-4xl font-bold tracking-tight">Our Customers Who Make Us</h2>
               <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We work day and night to ensure our customers thrive.</p>
             </div>
