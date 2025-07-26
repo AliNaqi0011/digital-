@@ -47,7 +47,8 @@ export function ParticleBackground() {
       }
 
       draw() {
-        ctx!.fillStyle = 'rgba(255, 107, 107, 0.7)';
+        // Use the primary color from the theme
+        ctx!.fillStyle = 'hsla(217.2, 91.2%, 59.8%, 0.7)';
         ctx!.beginPath();
         ctx!.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx!.fill();
@@ -72,7 +73,8 @@ export function ParticleBackground() {
 
           if (distance < 150) {
             opacityValue = 1 - distance / 150;
-            ctx!.strokeStyle = `rgba(255, 129, 129, ${opacityValue})`;
+            // Use the primary color for connections
+            ctx!.strokeStyle = `hsla(217.2, 91.2%, 59.8%, ${opacityValue})`;
             ctx!.lineWidth = 1;
             ctx!.beginPath();
             ctx!.moveTo(particles[a].x, particles[a].y);
