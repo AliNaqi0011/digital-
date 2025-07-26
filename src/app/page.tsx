@@ -116,7 +116,7 @@ export default function Home() {
           <div className="absolute inset-0 z-0 bg-gradient-to-b from-background via-background/90 to-background"></div>
           <ParticleBackground />
           <div className="container relative z-10 px-4 md:px-6 animate-fade-in-up">
-            <TypewriterEffect text="We Add Value To Your Business" className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-red-400" />
+            <TypewriterEffect text="We Add Value To Your Business" className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-sky-400" />
             <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">We meet your brand’s IT infrastructure needs.</p>
              <div className="mt-10 flex justify-center gap-4">
                 <Button size="lg" className="group rounded-full text-lg px-8 py-6">
@@ -378,3 +378,4 @@ export default function Home() {
     </div>
   );
 }
+
