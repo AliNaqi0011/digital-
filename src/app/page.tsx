@@ -8,18 +8,18 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 flex items-center justify-between h-16 px-4 md:px-6 bg-background/80 backdrop-blur-sm border-b border-border">
+      <header className="sticky top-0 z-50 flex items-center justify-between h-16 px-4 md:px-6 bg-background/80 backdrop-blur-sm border-b border-border shadow-lg">
         <div className="flex items-center gap-2">
           <Briefcase className="w-6 h-6 text-primary" />
           <h1 className="text-xl font-bold">Reflective</h1>
         </div>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-          <Link href="#" className="hover:text-primary transition-colors" prefetch={false}>Home</Link>
-          <Link href="#services" className="hover:text-primary transition-colors" prefetch={false}>Services</Link>
-          <Link href="#" className="hover:text-primary transition-colors" prefetch={false}>About</Link>
-          <Link href="#contact" className="hover:text-primary transition-colors" prefetch={false}>Contact</Link>
+          <Link href="#" className="hover:text-primary transition-transform duration-300 ease-in-out hover:scale-110" prefetch={false}>Home</Link>
+          <Link href="#services" className="hover:text-primary transition-transform duration-300 ease-in-out hover:scale-110" prefetch={false}>Services</Link>
+          <Link href="#" className="hover:text-primary transition-transform duration-300 ease-in-out hover:scale-110" prefetch={false}>About</Link>
+          <Link href="#contact" className="hover:text-primary transition-transform duration-300 ease-in-out hover:scale-110" prefetch={false}>Contact</Link>
         </nav>
-        <Button variant="default">Get Started</Button>
+        <Button variant="default" className="transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/50 hover:shadow-lg">Get Started</Button>
       </header>
 
       <main className="flex-1">
