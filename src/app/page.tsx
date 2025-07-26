@@ -10,6 +10,7 @@ import { ParticleBackground } from '@/components/ui/particle-background';
 import { useEffect, useState } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { TypewriterEffect } from '@/components/ui/typewriter-effect';
+import { PageLoader } from '@/components/ui/page-loader';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -18,6 +19,10 @@ export default function Home() {
     const timer = setTimeout(() => setLoading(false), 2000); // Simulate loading
     return () => clearTimeout(timer);
   }, []);
+
+  if (loading) {
+    return <PageLoader />;
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -112,23 +117,7 @@ export default function Home() {
               <p className="text-muted-foreground max-w-2xl mx-auto">Your IT infrastructure is Enhanced to Us.</p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 [perspective:1000px]">
-              {loading ? (
-                Array.from({ length: 6 }).map((_, index) => (
-                  <Card key={index}>
-                    <CardHeader className="items-center">
-                      <Skeleton className="w-16 h-16 rounded-full" />
-                    </CardHeader>
-                    <CardContent className="text-center">
-                      <Skeleton className="h-6 w-3/4 mx-auto mb-2" />
-                      <Skeleton className="h-4 w-full" />
-                    </CardContent>
-                    <CardFooter className="justify-center">
-                      <Skeleton className="h-8 w-24" />
-                    </CardFooter>
-                  </Card>
-                ))
-              ) : (
-                [
+                {[
                   { icon: <Server className="w-8 h-8" />, title: 'Server & Storage Systems', description: 'Boost efficiency with technology.', link: '#' },
                   { icon: <Network className="w-8 h-8" />, title: 'Network Security', description: 'Professional data protection.', link: '#' },
                   { icon: <Users className="w-8 h-8" />, title: 'IT Support', description: 'Reliable task support.', link: '#' },
@@ -151,7 +140,7 @@ export default function Home() {
                     </CardFooter>
                   </Card>
                 ))
-              )}
+              }
             </div>
           </div>
         </section>
@@ -164,24 +153,7 @@ export default function Home() {
               <p className="text-muted-foreground max-w-2xl mx-auto">We work day and night to ensure our customers thrive.</p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {loading ? (
-                 Array.from({ length: 3 }).map((_, index) => (
-                  <Card key={index} className="flex flex-col">
-                    <CardContent className="flex-1 pt-6">
-                      <Skeleton className="h-4 w-full mb-2" />
-                      <Skeleton className="h-4 w-5/6" />
-                    </CardContent>
-                    <CardFooter className="flex items-center gap-4">
-                      <Skeleton className="w-12 h-12 rounded-full" />
-                      <div className="w-full">
-                        <Skeleton className="h-4 w-3/4 mb-1" />
-                        <Skeleton className="h-3 w-1/2" />
-                      </div>
-                    </CardFooter>
-                  </Card>
-                 ))
-              ) : (
-                [
+                {[
                   { name: 'John Doe', role: 'CEO, TechCorp', text: 'Reflective has transformed our IT landscape. Their expertise and support are unmatched.', image: 'https://placehold.co/100x100.png' },
                   { name: 'Jane Smith', role: 'CTO, Innovate LLC', text: 'The availability and security of their solutions have given us peace of mind. A true partner.', image: 'https://placehold.co/100x100.png' },
                   { name: 'Samuel Green', role: 'IT Manager, Solutions Inc.', text: 'Working with Reflective feels like an extension of our own team. Highly recommended!', image: 'https://placehold.co/100x100.png' }
@@ -202,7 +174,7 @@ export default function Home() {
                     </CardFooter>
                   </Card>
                 ))
-              )}
+              }
             </div>
           </div>
         </section>

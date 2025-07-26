@@ -83,6 +83,14 @@ body {
   .animate-blink {
     animation: blink 0.75s step-end infinite;
   }
+  
+  .animate-fade-out {
+    animation: fade-out 1s ease-out 2s forwards;
+  }
+
+  .animate-loader-progress {
+    animation: loader-progress 2s ease-in-out forwards;
+  }
 
   @keyframes blink {
     from,
@@ -91,6 +99,25 @@ body {
     }
     50% {
       color: hsl(var(--primary));
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  @keyframes loader-progress {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
     }
   }
 }
