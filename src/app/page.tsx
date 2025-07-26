@@ -1,4 +1,4 @@
-import { ArrowRight, Briefcase, CheckCircle, ChevronRight, Clock, Cloud, GitCommit, Heart, Linkedin, Mail, MapPin, Network, Phone, Server, Shield, Twitter, Users, Zap } from 'lucide-react';
+import { ArrowRight, Briefcase, CheckCircle, Clock, Cloud, GitCommit, Heart, Linkedin, Mail, MapPin, Network, Phone, Server, Shield, Twitter, Users, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
