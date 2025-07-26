@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { ParticleBackground } from '@/components/ui/particle-background';
 import { useEffect, useState } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
+import { TypewriterEffect } from '@/components/ui/typewriter-effect';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -37,9 +38,10 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-20 md:py-32 bg-background text-center overflow-hidden">
+          <div className="absolute inset-0 z-0 bg-gradient-to-r from-blue-900/30 via-slate-900/30 to-background animate-gradient-shift"></div>
           <ParticleBackground />
           <div className="container relative z-10 px-4 md:px-6">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-primary">We Add Value To Your Business</h1>
+            <TypewriterEffect text="We Add Value To Your Business" className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-primary" />
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">We meet your brand’s IT infrastructure needs.</p>
           </div>
         </section>
@@ -109,7 +111,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold">Our Services and Solutions</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">Your IT infrastructure is Enhanced to Us.</p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 [perspective:1000px]">
               {loading ? (
                 Array.from({ length: 6 }).map((_, index) => (
                   <Card key={index}>
@@ -134,7 +136,7 @@ export default function Home() {
                   { icon: <GitCommit className="w-8 h-8" />, title: 'Virtualization', description: 'Access data from any device.', link: '#' },
                   { icon: <Briefcase className="w-8 h-8" />, title: 'Tracing Solutions', description: 'Cloud monitoring for clients.', link: '#' }
                 ].map((service, index) => (
-                  <Card key={index}>
+                  <Card key={index} className="transition-transform duration-500 ease-in-out hover:[transform:rotateY(10deg)]">
                     <CardHeader className="items-center">
                       <div className="p-3 rounded-full bg-primary/10 text-primary">{service.icon}</div>
                     </CardHeader>

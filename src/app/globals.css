@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -69,5 +70,27 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .animate-blink {
+    animation: blink 0.75s step-end infinite;
+  }
+
+  @keyframes blink {
+    from,
+    to {
+      color: transparent;
+    }
+    50% {
+      color: hsl(var(--primary));
+    }
   }
 }
