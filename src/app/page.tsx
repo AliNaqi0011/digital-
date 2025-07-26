@@ -16,6 +16,7 @@ import { Label } from '@/components/ui/label';
 import { useTheme } from 'next-themes';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { CursorFollower } from '@/components/ui/cursor-follower';
 
 function ThemeToggle() {
   const { setTheme } = useTheme()
@@ -59,6 +60,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
+      <CursorFollower />
        <div className="text-secondary-foreground py-2 px-4 md:px-8 text-sm bg-gradient-to-r from-background via-accent/50 to-primary/50 bg-[length:200%_auto] animate-gradient-shift">
           <div className="container mx-auto flex justify-between items-center">
               <div className="flex gap-4 items-center">
@@ -299,13 +301,6 @@ export default function Home() {
 
         {/* Customer Testimonials Section */}
         <section className="py-24 md:py-32 relative">
-           <div className="absolute top-8 left-1/2 -translate-x-1/2">
-                <div 
-                    className="w-40 h-40 border-4 border-primary/20 rounded-full animate-rotate-3d"
-                    style={{ transformStyle: 'preserve-3d' }}
-                >
-                </div>
-            </div>
           <div className="container px-4 md:px-6">
             <div className="text-center space-y-4 mb-16 pt-16">
               <h2 className="text-4xl font-bold tracking-tight">Our Customers Who Make Us</h2>
@@ -401,3 +396,4 @@ export default function Home() {
     </div>
   );
 
+    
