@@ -3,7 +3,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'Reflective - IT Solutions',
+  title: 'Creative Experts Solution - IT Solutions',
   description: 'We Add Value To Your Business',
 };
 

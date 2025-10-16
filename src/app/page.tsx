@@ -17,6 +17,8 @@ import { useTheme } from 'next-themes';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { CursorFollower } from '@/components/ui/cursor-follower';
+import placeholderImages from '@/lib/placeholder-images.json';
+
 
 function ThemeToggle() {
   const { setTheme } = useTheme()
@@ -64,7 +66,7 @@ export default function Home() {
        <div className="text-secondary-foreground py-2 px-4 md:px-8 text-sm bg-gradient-to-r from-background via-accent/50 to-primary/50 bg-[length:200%_auto] animate-gradient-shift">
           <div className="container mx-auto flex justify-between items-center">
               <div className="flex gap-4 items-center">
-                  <span className="flex items-center gap-1.5"><Mail className="w-4 h-4" /> contact@reflective.dev</span>
+                  <span className="flex items-center gap-1.5"><Mail className="w-4 h-4" /> contact@creativeexperts.dev</span>
                   <span className="hidden md:flex items-center gap-1.5"><Phone className="w-4 h-4" /> (123) 456-7890</span>
               </div>
               <div className="flex gap-4 items-center">
@@ -76,7 +78,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 flex items-center justify-between h-20 px-4 md:px-8 bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-2xl shadow-primary/10">
         <Link href="#" className="flex items-center gap-3" prefetch={false}>
           <Briefcase className="w-8 h-8 text-primary animate-pulse" />
-          <h1 className="text-2xl font-bold tracking-wider">Reflective</h1>
+          <h1 className="text-xl font-bold tracking-wider">Creative Experts Solution</h1>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-lg font-semibold">
           <Link href="#services" className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>Services</Link>
@@ -151,7 +153,7 @@ export default function Home() {
         <section id="about" className="py-24 md:py-32 bg-secondary/30">
             <div className="container px-4 md:px-6">
                 <div className="text-center space-y-4 mb-16 animate-fade-in-up">
-                    <h2 className="text-4xl font-bold tracking-tight">Why Partner With Reflective?</h2>
+                    <h2 className="text-4xl font-bold tracking-tight">Why Partner With Creative Experts Solution?</h2>
                     <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We're not just a service provider; we're your dedicated technology partner.</p>
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -201,7 +203,7 @@ export default function Home() {
                 </Button>
               </div>
               <div className="relative h-96">
-                <Image src="https://placehold.co/600x400.png" alt="Software Engineering" layout="fill" objectFit="cover" className="rounded-2xl shadow-2xl" data-ai-hint="abstract code" />
+                <Image src={placeholderImages.softwareEngineering.src} alt={placeholderImages.softwareEngineering.alt} layout="fill" objectFit="cover" className="rounded-2xl shadow-2xl" data-ai-hint={placeholderImages.softwareEngineering.hint} />
               </div>
             </div>
           </div>
@@ -282,17 +284,9 @@ export default function Home() {
                     <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We use a modern, robust stack to build scalable and maintainable solutions.</p>
                 </div>
                 <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
-                    {[
-                        { name: "Next.js", image: "https://placehold.co/120x40.png", hint: "nextjs logo" },
-                        { name: "React", image: "https://placehold.co/120x40.png", hint: "react logo" },
-                        { name: "TypeScript", image: "https://placehold.co/120x40.png", hint: "typescript logo" },
-                        { name: "Node.js", image: "https://placehold.co/120x40.png", hint: "nodejs logo" },
-                        { name: "Docker", image: "https://placehold.co/120x40.png", hint: "docker logo" },
-                        { name: "Kubernetes", image: "https://placehold.co/120x40.png", hint: "kubernetes logo" },
-                        { name: "Google Cloud", image: "https://placehold.co/120x40.png", hint: "google cloud" },
-                    ].map((tech) => (
+                    {placeholderImages.techStack.map((tech) => (
                         <div key={tech.name} className="flex items-center gap-4 transition-transform duration-300 hover:scale-110" title={tech.name}>
-                            <Image src={tech.image} alt={tech.name} width={120} height={40} className="grayscale hover:grayscale-0 transition-all duration-300" data-ai-hint={tech.hint}/>
+                            <Image src={tech.src} alt={tech.name} width={120} height={40} className="grayscale hover:grayscale-0 transition-all duration-300" data-ai-hint={tech.hint}/>
                         </div>
                     ))}
                 </div>
@@ -307,18 +301,14 @@ export default function Home() {
               <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We work day and night to ensure our customers thrive.</p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {[
-                  { name: 'John Doe', role: 'CEO, TechCorp', text: 'Reflective has transformed our IT landscape. Their expertise and dedication are simply unmatched. A true partner in every sense of the word.', image: 'https://placehold.co/100x100.png' },
-                  { name: 'Jane Smith', role: 'CTO, Innovate LLC', text: 'The availability and security of their solutions have given us complete peace of mind. Their proactive support is second to none.', image: 'https://placehold.co/100x100.png' },
-                  { name: 'Samuel Green', role: 'IT Manager, Solutions Inc.', text: 'Working with Reflective feels like an extension of our own team. Their technical skill and strategic insight are highly recommended!', image: 'https://placehold.co/100x100.png' }
-                ].map((testimonial, index) => (
+                {placeholderImages.testimonials.map((testimonial, index) => (
                   <Card key={index} className="flex flex-col bg-secondary/50 border-border/50 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
                     <CardContent className="flex-1 pt-8">
                       <p className="text-muted-foreground italic text-lg leading-relaxed">"{testimonial.text}"</p>
                     </CardContent>
                     <CardFooter className="flex items-center gap-4 mt-6 p-6 bg-secondary/20">
                       <Avatar className="w-14 h-14 border-2 border-primary">
-                        <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint="person portrait" />
+                        <AvatarImage src={testimonial.src} alt={testimonial.name} data-ai-hint={testimonial.hint} />
                         <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                       </Avatar>
                       <div>
@@ -339,7 +329,7 @@ export default function Home() {
         <div className="container mx-auto px-6 py-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <div className="lg:col-span-2">
-                    <h3 className="text-2xl font-bold">Reflective</h3>
+                    <h3 className="text-2xl font-bold">Creative Experts Solution</h3>
                     <p className="text-muted-foreground mt-4 max-w-md">Engineering the future of your business with value-driven IT solutions.</p>
                     <div className="mt-6">
                         <h4 className="font-semibold text-lg">Stay Connected</h4>
@@ -372,7 +362,7 @@ export default function Home() {
                     <h4 className="font-semibold text-lg">Contact Us</h4>
                     <div className="flex items-start gap-3 text-muted-foreground mt-4">
                         <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
-                        <span>contact@reflective.dev</span>
+                        <span>contact@creativeexperts.dev</span>
                     </div>
                     <div className="flex items-start gap-3 text-muted-foreground mt-2">
                         <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
@@ -385,7 +375,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="mt-12 border-t border-border/50 pt-6 flex flex-col sm:flex-row justify-between items-center">
-                <p className="text-sm text-muted-foreground">&copy; 2024 Reflective. All rights reserved. Built with passion and code.</p>
+                <p className="text-sm text-muted-foreground">&copy; 2024 Creative Experts Solution. All rights reserved. Built with passion and code.</p>
                 <div className="flex items-center gap-4 mt-4 sm:mt-0">
                     <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}><Twitter className="w-6 h-6" /></Link>
                     <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}><Linkedin className="w-6 h-6" /></Link>

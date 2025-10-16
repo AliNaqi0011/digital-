@@ -1,0 +1,67 @@
+{
+  "softwareEngineering": {
+    "src": "https://picsum.photos/seed/tech/600/400",
+    "alt": "Abstract visualization of software code and development.",
+    "hint": "abstract code"
+  },
+  "techStack": [
+    {
+      "name": "Next.js",
+      "src": "https://picsum.photos/seed/nextjs/120/40",
+      "hint": "nextjs logo"
+    },
+    {
+      "name": "React",
+      "src": "https://picsum.photos/seed/react/120/40",
+      "hint": "react logo"
+    },
+    {
+      "name": "TypeScript",
+      "src": "https://picsum.photos/seed/typescript/120/40",
+      "hint": "typescript logo"
+    },
+    {
+      "name": "Node.js",
+      "src": "https://picsum.photos/seed/nodejs/120/40",
+      "hint": "nodejs logo"
+    },
+    {
+      "name": "Docker",
+      "src": "https://picsum.photos/seed/docker/120/40",
+      "hint": "docker logo"
+    },
+    {
+      "name": "Kubernetes",
+      "src": "https://picsum.photos/seed/kubernetes/120/40",
+      "hint": "kubernetes logo"
+    },
+    {
+      "name": "Google Cloud",
+      "src": "https://picsum.photos/seed/gcp/120/40",
+      "hint": "google cloud"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "John Doe",
+      "role": "CEO, TechCorp",
+      "text": "Creative Experts Solution has transformed our IT landscape. Their expertise and dedication are simply unmatched. A true partner in every sense of the word.",
+      "src": "https://picsum.photos/seed/person1/100/100",
+      "hint": "person portrait"
+    },
+    {
+      "name": "Jane Smith",
+      "role": "CTO, Innovate LLC",
+      "text": "The availability and security of their solutions have given us complete peace of mind. Their proactive support is second to none.",
+      "src": "https://picsum.photos/seed/person2/100/100",
+      "hint": "woman portrait"
+    },
+    {
+      "name": "Samuel Green",
+      "role": "IT Manager, Solutions Inc.",
+      "text": "Working with them feels like an extension of our own team. Their technical skill and strategic insight are highly recommended!",
+      "src": "https://picsum.photos/seed/person3/100/100",
+      "hint": "man portrait"
+    }
+  ]
+}
