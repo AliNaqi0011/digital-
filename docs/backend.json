@@ -1,0 +1,167 @@
+{
+  "entities": {
+    "CustomerTestimonial": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "CustomerTestimonial",
+      "type": "object",
+      "description": "Represents a customer testimonial.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the CustomerTestimonial entity."
+        },
+        "customerName": {
+          "type": "string",
+          "description": "Name of the customer providing the testimonial."
+        },
+        "companyName": {
+          "type": "string",
+          "description": "Name of the customer's company."
+        },
+        "testimonialText": {
+          "type": "string",
+          "description": "The actual text of the testimonial."
+        },
+        "logoUrl": {
+          "type": "string",
+          "description": "URL to the customer's company logo.",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "id",
+        "customerName",
+        "companyName",
+        "testimonialText",
+        "logoUrl"
+      ]
+    },
+    "Service": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Service",
+      "type": "object",
+      "description": "Represents a service offered by the company.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Service entity."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the service."
+        },
+        "description": {
+          "type": "string",
+          "description": "Brief description of the service."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL to the image representing the service.",
+          "format": "uri"
+        },
+        "reviewUrl": {
+          "type": "string",
+          "description": "URL to the review page for the service.",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "imageUrl",
+        "reviewUrl"
+      ]
+    },
+    "ValueProposition": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ValueProposition",
+      "type": "object",
+      "description": "Represents a value proposition of the company.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the ValueProposition entity."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the value proposition (e.g., Availability, Loyalty)."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the value proposition."
+        },
+        "iconUrl": {
+          "type": "string",
+          "description": "URL to the icon representing the value proposition.",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "iconUrl"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/customerTestimonials/{customerTestimonialId}",
+        "definition": {
+          "entityName": "CustomerTestimonial",
+          "schema": {
+            "$ref": "#/backend/entities/CustomerTestimonial"
+          },
+          "description": "Stores customer testimonials.",
+          "params": [
+            {
+              "name": "customerTestimonialId",
+              "description": "The unique identifier of the customer testimonial."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/services/{serviceId}",
+        "definition": {
+          "entityName": "Service",
+          "schema": {
+            "$ref": "#/backend/entities/Service"
+          },
+          "description": "Stores services offered by the company.",
+          "params": [
+            {
+              "name": "serviceId",
+              "description": "The unique identifier of the service."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/valuePropositions/{valuePropositionId}",
+        "definition": {
+          "entityName": "ValueProposition",
+          "schema": {
+            "$ref": "#/backend/entities/ValueProposition"
+          },
+          "description": "Stores value propositions of the company.",
+          "params": [
+            {
+              "name": "valuePropositionId",
+              "description": "The unique identifier of the value proposition."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to store data related to customer testimonials, services, and value propositions. The root-level collections `customerTestimonials`, `services`, and `valuePropositions` store the corresponding entities. This flat structure simplifies data retrieval and management, avoiding complex nested queries. Each collection stores documents with the information described in the schemas. Since authorization is not based on user roles or ownership, and all data is generally public-facing, this simple structure is appropriate.  The structure supports QAPs because listing testimonials, services, and value propositions can be done securely using rules that simply ensure the data conforms to the schema.  Authorization Independence is achieved because no subcollections or hierarchical dependencies exist."
+  }
+}

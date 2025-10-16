@@ -1,0 +1,64 @@
+/**
+ * @fileoverview Firestore Security Rules for Prototyping.
+ *
+ * Core Philosophy:
+ * This ruleset allows public read access to all collections (`customerTestimonials`, `services`, and `valuePropositions`)
+ * and restricts write access to prevent unauthorized data modification.
+ *
+ * Data Structure:
+ * The data is organized in three root-level collections:
+ * - `/customerTestimonials/{customerTestimonialId}`
+ * - `/services/{serviceId}`
+ * - `/valuePropositions/{valuePropositionId}`
+ *
+ * Key Security Decisions:
+ * - Public read access is granted to all collections.
+ * - Write operations are denied across all collections.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Allows public read access to customer testimonials, but prevents unauthorized writes.
+     * @path /customerTestimonials/{customerTestimonialId}
+     * @allow (get, list) - Any user can read customer testimonials.
+     * @deny (create, update, delete) - No user can create, update, or delete customer testimonials.
+     * @principle Allows public read access, denies all writes.
+     */
+    match /customerTestimonials/{customerTestimonialId} {
+      allow get, list: if true;
+      allow create: if false;
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    /**
+     * @description Allows public read access to services, but prevents unauthorized writes.
+     * @path /services/{serviceId}
+     * @allow (get, list) - Any user can read services.
+     * @deny (create, update, delete) - No user can create, update, or delete services.
+     * @principle Allows public read access, denies all writes.
+     */
+    match /services/{serviceId} {
+      allow get, list: if true;
+      allow create: if false;
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    /**
+     * @description Allows public read access to value propositions, but prevents unauthorized writes.
+     * @path /valuePropositions/{valuePropositionId}
+     * @allow (get, list) - Any user can read value propositions.
+     * @deny (create, update, delete) - No user can create, update, or delete value propositions.
+     * @principle Allows public read access, denies all writes.
+     */
+    match /valuePropositions/{valuePropositionId} {
+      allow get, list: if true;
+      allow create: if false;
+      allow update: if false;
+      allow delete: if false;
+    }
+  }
+}
