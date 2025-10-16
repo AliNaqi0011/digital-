@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ParticleBackground } from '@/components/ui/particle-background';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { PageLoader } from '@/components/ui/page-loader';
 import { TypewriterEffect } from '@/components/ui/typewriter-effect';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
@@ -18,6 +18,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { CursorFollower } from '@/components/ui/cursor-follower';
 import placeholderImages from '@/lib/placeholder-images.json';
+import content from '@/lib/content.json';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -35,6 +36,29 @@ const subscribeFormSchema = z.object({
   email: z.string().email('Please enter a valid email address.'),
 });
 
+function useAnimateOnScroll() {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+    });
+
+    const elements = document.querySelectorAll('.scroll-animate');
+    elements.forEach(el => observer.observe(el));
+
+    return () => elements.forEach(el => observer.unobserve(el));
+  }, []);
+}
+
+const iconMap: { [key: string]: React.ElementType } = {
+  Clock, Heart, Zap, Shield, CheckCircle, Server, Network, Users, Cloud, GitCommit, Briefcase, Rocket, Code
+};
 
 function ThemeToggle() {
   const { setTheme } = useTheme()
@@ -76,6 +100,7 @@ function QuoteForm({ setOpen }: { setOpen: (open: boolean) => void }) {
     if (!firestore) return;
     const leadsCollection = collection(firestore, 'leads');
     addDocumentNonBlocking(leadsCollection, {
+      id: crypto.randomUUID(),
       ...data,
       type: 'quote',
       createdAt: new Date().toISOString(),
@@ -117,7 +142,9 @@ function SubscribeForm() {
     if (!firestore) return;
     const leadsCollection = collection(firestore, 'leads');
     addDocumentNonBlocking(leadsCollection, {
+      id: crypto.randomUUID(),
       email: data.email,
+      name: '',
       type: 'subscribe',
       createdAt: new Date().toISOString(),
     });
@@ -140,10 +167,10 @@ function SubscribeForm() {
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [openQuoteDialog, setOpenQuoteDialog] = useState(false);
-
+  useAnimateOnScroll();
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000); // Simulate loading
+    const timer = setTimeout(() => setLoading(false), 1000); 
     return () => clearTimeout(timer);
   }, []);
 
@@ -154,28 +181,29 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <CursorFollower />
-       <div className="text-secondary-foreground py-2 px-4 md:px-8 text-sm bg-gradient-to-r from-white via-sky-200 to-blue-500 dark:from-black dark:via-sky-900 dark:to-blue-800 bg-[length:200%_auto] animate-gradient-shift">
+       <div className="text-secondary-foreground py-2 px-4 md:px-8 text-sm bg-gradient-to-r from-white via-sky-200 to-blue-500 dark:from-black dark:via-sky-900 dark:to-blue-800">
           <div className="container mx-auto flex justify-between items-center">
               <div className="flex gap-4 items-center">
-                  <span className="flex items-center gap-1.5"><Mail className="w-4 h-4" /> contact@creativeexperts.dev</span>
-                  <span className="hidden md:flex items-center gap-1.5"><Phone className="w-4 h-4" /> (123) 456-7890</span>
+                  <span className="flex items-center gap-1.5"><Mail className="w-4 h-4" /> {content.contact.email}</span>
+                  <span className="hidden md:flex items-center gap-1.5"><Phone className="w-4 h-4" /> {content.contact.phone}</span>
               </div>
               <div className="flex gap-4 items-center">
-                  <Link href="#" className="hover:text-primary transition-colors" aria-label="Twitter"><Twitter className="w-4 h-4" /></Link>
-                  <Link href="#" className="hover:text-primary transition-colors" aria-label="LinkedIn"><Linkedin className="w-4 h-4" /></Link>
+                  <Link href={content.socials.twitter} className="hover:text-primary transition-colors" aria-label="Twitter"><Twitter className="w-4 h-4" /></Link>
+                  <Link href={content.socials.linkedin} className="hover:text-primary transition-colors" aria-label="LinkedIn"><Linkedin className="w-4 h-4" /></Link>
               </div>
           </div>
        </div>
       <header className="sticky top-0 z-50 flex items-center justify-between h-20 px-4 md:px-8 bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-2xl shadow-primary/10">
         <Link href="#" className="flex items-center gap-3" prefetch={false}>
           <Briefcase className="w-8 h-8 text-primary animate-pulse" />
-          <h1 className="text-xl font-bold tracking-wider">Creative Experts Solution</h1>
+          <h1 className="text-xl font-bold tracking-wider">{content.companyName}</h1>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-lg font-semibold">
-          <Link href="#services" className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>Services</Link>
-          <Link href="#about" className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>About</Link>
-          <Link href="#process" className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>Process</Link>
-          <Link href="#contact" className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>Contact</Link>
+          {content.navigation.map(item => (
+            <Link key={item.name} href={item.href} className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>
+              {item.name}
+            </Link>
+          ))}
         </nav>
         <div className="flex items-center gap-2">
             <Dialog open={openQuoteDialog} onOpenChange={setOpenQuoteDialog}>
@@ -184,9 +212,9 @@ export default function Home() {
             </DialogTrigger>
             <DialogContent className="sm:max-w-md bg-secondary border-primary/20">
                 <DialogHeader>
-                <DialogTitle className="text-2xl text-primary">Let's Build Something Amazing</DialogTitle>
+                <DialogTitle className="text-2xl text-primary">{content.quoteDialog.title}</DialogTitle>
                 <DialogDescription>
-                    Share your project idea, and our experts will be in touch.
+                    {content.quoteDialog.description}
                 </DialogDescription>
                 </DialogHeader>
                 <QuoteForm setOpen={setOpenQuoteDialog} />
@@ -201,10 +229,11 @@ export default function Home() {
               </SheetTrigger>
               <SheetContent>
                 <nav className="flex flex-col gap-6 mt-8 text-lg">
-                    <Link href="#services" className="text-muted-foreground hover:text-primary" prefetch={false}>Services</Link>
-                    <Link href="#about" className="text-muted-foreground hover:text-primary" prefetch={false}>About</Link>
-                    <Link href="#process" className="text-muted-foreground hover:text-primary" prefetch={false}>Process</Link>
-                    <Link href="#contact" className="text-muted-foreground hover:text-primary" prefetch={false}>Contact</Link>
+                  {content.navigation.map(item => (
+                      <Link key={item.name} href={item.href} className="text-muted-foreground hover:text-primary" prefetch={false}>
+                        {item.name}
+                      </Link>
+                  ))}
                 </nav>
               </SheetContent>
             </Sheet>
@@ -217,65 +246,64 @@ export default function Home() {
           <div className="absolute inset-0 z-0 bg-gradient-to-b from-background via-background/90 to-background"></div>
           <ParticleBackground />
           <div className="container relative z-10 px-4 md:px-6 animate-fade-in-up">
-            <TypewriterEffect text="We Add Value To Your Business" className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-sky-400" />
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">We meet your brand’s IT infrastructure needs.</p>
+            <TypewriterEffect text={content.hero.title} className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-sky-400" />
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">{content.hero.subtitle}</p>
              <div className="mt-10 flex flex-wrap justify-center gap-4">
-                <Button size="lg" className="group rounded-full text-lg px-8 py-6 transition-all duration-300 ease-in-out hover:bg-primary/90 hover:shadow-lg">
-                    Explore Services <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                <Button asChild size="lg" className="group rounded-full text-lg px-8 py-6 transition-all duration-300 ease-in-out hover:bg-primary/90 hover:shadow-lg">
+                    <Link href="#services">
+                      Explore Services <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full text-lg px-8 py-6 transition-all duration-300 ease-in-out hover:bg-accent hover:text-accent-foreground">
-                    Contact Us
+                <Button asChild size="lg" variant="outline" className="rounded-full text-lg px-8 py-6 transition-all duration-300 ease-in-out hover:bg-accent hover:text-accent-foreground">
+                    <Link href="#contact">
+                      Contact Us
+                    </Link>
                 </Button>
             </div>
           </div>
         </section>
 
         {/* Why Choose Us Section */}
-        <section id="about" className="py-24 md:py-32 bg-secondary/30">
+        <section id="about" className="py-24 md:py-32 bg-secondary/30 scroll-animate">
             <div className="container px-4 md:px-6">
-                <div className="text-center space-y-4 mb-16 animate-fade-in-up">
-                    <h2 className="text-4xl font-bold tracking-tight">Why Partner With Creative Experts Solution?</h2>
-                    <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We're not just a service provider; we're your dedicated technology partner.</p>
+                <div className="text-center space-y-4 mb-16">
+                    <h2 className="text-4xl font-bold tracking-tight">{content.whyChooseUs.title}</h2>
+                    <p className="text-muted-foreground max-w-3xl mx-auto text-lg">{content.whyChooseUs.subtitle}</p>
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                     {[
-                        { icon: <Clock className="w-10 h-10" />, title: 'Availability', description: 'Reliable, in-house solutions for critical services with 99.9% uptime.' },
-                        { icon: <Heart className="w-10 h-10" />, title: 'Loyalty', description: 'Long-term partnerships focused on mutual success and growth.' },
-                        { icon: <Zap className="w-10 h-10" />, title: 'Experience', description: 'Decades of combined expertise in cutting-edge enterprise solutions.' },
-                        { icon: <Shield className="w-10 h-10" />, title: 'Support', description: 'Transparent, 24/7 guideline-driven support from our expert team.' }
-                     ].map((item, index) => (
+                     {content.whyChooseUs.items.map((item, index) => {
+                       const Icon = iconMap[item.icon];
+                       return (
                         <div key={index} className="flex flex-col items-center text-center p-6 rounded-2xl bg-background/50 transition-all duration-300 hover:bg-background hover:shadow-2xl hover:shadow-primary/20 transform hover:-translate-y-2">
-                            <div className="p-5 rounded-full bg-primary/10 text-primary ring-4 ring-primary/20 mb-6">{item.icon}</div>
+                            <div className="p-5 rounded-full bg-primary/10 text-primary ring-4 ring-primary/20 mb-6">{Icon && <Icon className="w-10 h-10" />}</div>
                             <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
                             <p className="text-muted-foreground">{item.description}</p>
                         </div>
-                     ))}
+                     )})}
                 </div>
             </div>
         </section>
         
         {/* Software Engineering Section */}
-        <section className="py-24 md:py-32">
+        <section className="py-24 md:py-32 scroll-animate">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl font-bold tracking-tight mb-4">Software Engineering</h2>
-                <p className="text-muted-foreground text-lg mb-8">Custom solutions to drive your business forward.</p>
+                <h2 className="text-4xl font-bold tracking-tight mb-4">{content.softwareEngineering.title}</h2>
+                <p className="text-muted-foreground text-lg mb-8">{content.softwareEngineering.subtitle}</p>
                 <ul className="space-y-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-xl mb-1">Corporate Consulting</h4>
-                      <p className="text-muted-foreground">Tailored technology roadmaps and infrastructure design to align with your strategic goals.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-xl mb-1">IT Service System</h4>
-                      <p className="text-muted-foreground">Comprehensive support, maintenance, and system optimization for seamless operations.</p>
-                    </div>
-                  </li>
+                  {content.softwareEngineering.points.map((point, index) => {
+                    const Icon = iconMap[point.icon];
+                    return (
+                      <li key={index} className="flex items-start">
+                        {Icon && <Icon className="w-6 h-6 text-primary mt-1 mr-4 flex-shrink-0" />}
+                        <div>
+                          <h4 className="font-bold text-xl mb-1">{point.title}</h4>
+                          <p className="text-muted-foreground">{point.description}</p>
+                        </div>
+                      </li>
+                    )
+                  })}
                 </ul>
                 <Button asChild size="lg" className="mt-10 group rounded-full">
                   <Link href="#services">
@@ -291,24 +319,19 @@ export default function Home() {
         </section>
 
         {/* Services & Solutions Section */}
-        <section id="services" className="py-24 md:py-32 bg-secondary/30">
+        <section id="services" className="py-24 md:py-32 bg-secondary/30 scroll-animate">
           <div className="container px-4 md:px-6">
             <div className="text-center space-y-4 mb-16">
-              <h2 className="text-4xl font-bold tracking-tight">Our Services and Solutions</h2>
-              <p className="text-muted-foreground max-w-3xl mx-auto text-lg">Your IT infrastructure is Enhanced to Us.</p>
+              <h2 className="text-4xl font-bold tracking-tight">{content.services.title}</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto text-lg">{content.services.subtitle}</p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {[
-                  { icon: <Server className="w-10 h-10" />, title: 'Server & Storage Systems', description: 'Boost efficiency with technology.' },
-                  { icon: <Network className="w-10 h-10" />, title: 'Network Security', description: 'Professional data protection.' },
-                  { icon: <Users className="w-10 h-10" />, title: 'Managed IT Support', description: 'Reliable task support.' },
-                  { icon: <Cloud className="w-10 h-10" />, title: 'Cloud Services', description: 'Cutting-edge cloud tech.' },
-                  { icon: <GitCommit className="w-10 h-10" />, title: 'Virtualization', description: 'Access data from any device.' },
-                  { icon: <Briefcase className="w-10 h-10" />, title: 'Tracing & Observability', description: 'Cloud monitoring for clients.' }
-                ].map((service, index) => (
+                {content.services.items.map((service, index) => {
+                  const Icon = iconMap[service.icon];
+                  return (
                   <Card key={index} className="group flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 border-border/50 hover:border-primary/50 bg-background overflow-hidden">
                     <CardHeader className="items-start p-6">
-                      <div className="p-4 rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground mb-4">{service.icon}</div>
+                      <div className="p-4 rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground mb-4">{Icon && <Icon className="w-10 h-10" />}</div>
                       <CardTitle className="text-2xl">{service.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-1 p-6 pt-0">
@@ -320,49 +343,45 @@ export default function Home() {
                       </Button>
                     </CardFooter>
                   </Card>
-                ))
-              }
+                )})}
             </div>
           </div>
         </section>
         
         {/* Our Process Section */}
-        <section id="process" className="py-24 md:py-32">
+        <section id="process" className="py-24 md:py-32 scroll-animate">
             <div className="container px-4 md:px-6">
                 <div className="text-center space-y-4 mb-20">
-                    <h2 className="text-4xl font-bold tracking-tight">Our Proven Process</h2>
-                    <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We follow a structured, agile methodology to ensure project success and client satisfaction.</p>
+                    <h2 className="text-4xl font-bold tracking-tight">{content.process.title}</h2>
+                    <p className="text-muted-foreground max-w-3xl mx-auto text-lg">{content.process.subtitle}</p>
                 </div>
                 <div className="relative">
                     <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-primary/20 -translate-y-1/2"></div>
                     <div className="grid gap-16 lg:gap-8 md:grid-cols-2 lg:grid-cols-4">
-                        {[
-                            { icon: <Rocket className="w-10 h-10" />, title: "1. Discovery & Strategy", description: "We start by understanding your goals, challenges, and requirements to create a tailored project roadmap." },
-                            { icon: <Code className="w-10 h-10" />, title: "2. Design & Development", description: "Our team designs and develops robust solutions using best practices and cutting-edge technology." },
-                            { icon: <CheckCircle className="w-10 h-10" />, title: "3. Testing & QA", description: "Rigorous testing at every stage ensures a bug-free, high-performance, and secure final product." },
-                            { icon: <Zap className="w-10 h-10" />, title: "4. Deployment & Support", description: "We handle a seamless deployment and provide ongoing support to ensure your system runs smoothly." }
-                        ].map((step, index) => (
+                        {content.process.steps.map((step, index) => {
+                            const Icon = iconMap[step.icon];
+                            return (
                             <div key={index} className="relative flex flex-col items-center text-center">
                                 <div className="absolute -top-12 flex items-center justify-center w-24 h-24 rounded-full bg-primary text-primary-foreground border-8 border-background">
-                                    {step.icon}
+                                    {Icon && <Icon className="w-10 h-10" />}
                                 </div>
                                 <div className="pt-20 p-6 rounded-2xl bg-secondary/50 h-full">
                                     <h3 className="text-xl font-bold mb-3">{step.title}</h3>
                                     <p className="text-muted-foreground">{step.description}</p>
                                 </div>
                             </div>
-                        ))}
+                        )})}
                     </div>
                 </div>
             </div>
         </section>
 
         {/* Tech Stack Section */}
-        <section className="py-24 md:py-32 bg-secondary/30">
+        <section className="py-24 md:py-32 bg-secondary/30 scroll-animate">
             <div className="container px-4 md:px-6">
                 <div className="text-center space-y-4 mb-16">
-                    <h2 className="text-4xl font-bold tracking-tight">Our Technology Stack</h2>
-                    <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We use a modern, robust stack to build scalable and maintainable solutions.</p>
+                    <h2 className="text-4xl font-bold tracking-tight">{content.techStack.title}</h2>
+                    <p className="text-muted-foreground max-w-3xl mx-auto text-lg">{content.techStack.subtitle}</p>
                 </div>
                 <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
                     {placeholderImages.techStack.map((tech) => (
@@ -375,11 +394,11 @@ export default function Home() {
         </section>
 
         {/* Customer Testimonials Section */}
-        <section className="py-24 md:py-32 relative">
+        <section className="py-24 md:py-32 relative scroll-animate">
           <div className="container px-4 md:px-6">
             <div className="text-center space-y-4 mb-16 pt-16">
-              <h2 className="text-4xl font-bold tracking-tight">Our Customers Who Make Us</h2>
-              <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We work day and night to ensure our customers thrive.</p>
+              <h2 className="text-4xl font-bold tracking-tight">{content.testimonials.title}</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto text-lg">{content.testimonials.subtitle}</p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {placeholderImages.testimonials.map((testimonial, index) => (
@@ -406,12 +425,12 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer id="contact" className="border-t border-border/50 bg-gradient-to-r from-white via-sky-200 to-blue-500 dark:from-black dark:via-sky-900 dark:to-blue-800 bg-[length:200%_auto] animate-gradient-shift">
+      <footer id="contact" className="border-t border-border/50 bg-gradient-to-r from-white via-sky-200 to-blue-500 dark:from-black dark:via-sky-900 dark:to-blue-800">
         <div className="container mx-auto px-6 py-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <div className="lg:col-span-2">
-                    <h3 className="text-2xl font-bold">Creative Experts Solution</h3>
-                    <p className="text-muted-foreground mt-4 max-w-md">Engineering the future of your business with value-driven IT solutions.</p>
+                    <h3 className="text-2xl font-bold">{content.companyName}</h3>
+                    <p className="text-muted-foreground mt-4 max-w-md">{content.footer.description}</p>
                     <div className="mt-6">
                         <h4 className="font-semibold text-lg">Stay Connected</h4>
                         <SubscribeForm />
@@ -420,43 +439,40 @@ export default function Home() {
                 <div>
                     <h4 className="font-semibold text-lg">Services</h4>
                     <ul className="space-y-3 mt-4">
-                        <li><a className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">Server & Storage</a></li>
-                        <li><a className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">Network Security</a></li>
-                        <li><a className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">Cloud Services</a></li>
-                        <li><a className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">Managed IT</a></li>
-                        <li><a className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">Virtualization</a></li>
+                        {content.services.items.map(service => (
+                          <li key={service.title}><a className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">{service.title}</a></li>
+                        ))}
                     </ul>
                 </div>
                 <div>
                     <h4 className="font-semibold text-lg">Company</h4>
                     <ul className="space-y-3 mt-4">
-                        <li><Link href="#about" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>About Us</Link></li>
-                        <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Careers</Link></li>
-                        <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Press</Link></li>
-                        <li><Link href="#process" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Our Process</Link></li>
+                      {content.footer.companyLinks.map(link => (
+                        <li key={link.name}><Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>{link.name}</Link></li>
+                      ))}
                     </ul>
                 </div>
                 <div>
                     <h4 className="font-semibold text-lg">Contact Us</h4>
                     <div className="flex items-start gap-3 text-muted-foreground mt-4">
                         <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
-                        <span>contact@creativeexperts.dev</span>
+                        <span>{content.contact.email}</span>
                     </div>
                     <div className="flex items-start gap-3 text-muted-foreground mt-2">
                         <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
-                        <span>(123) 456-7890</span>
+                        <span>{content.contact.phone}</span>
                     </div>
                     <div className="flex items-start gap-3 text-muted-foreground mt-2">
                         <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
-                        <span>123 Tech Avenue, Silicon Valley, CA</span>
+                        <span>{content.contact.address}</span>
                     </div>
                 </div>
             </div>
             <div className="mt-12 border-t border-border/50 pt-6 flex flex-col sm:flex-row justify-between items-center">
-                <p className="text-sm text-muted-foreground">&copy; 2024 Creative Experts Solution. All rights reserved. Built with passion and code.</p>
+                <p className="text-sm text-muted-foreground">{content.footer.copyright}</p>
                 <div className="flex items-center gap-4 mt-4 sm:mt-0">
-                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false} aria-label="Twitter"><Twitter className="w-6 h-6" /></Link>
-                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false} aria-label="LinkedIn"><Linkedin className="w-6 h-6" /></Link>
+                    <Link href={content.socials.twitter} className="text-muted-foreground hover:text-primary transition-colors" prefetch={false} aria-label="Twitter"><Twitter className="w-6 h-6" /></Link>
+                    <Link href={content.socials.linkedin} className="text-muted-foreground hover:text-primary transition-colors" prefetch={false} aria-label="LinkedIn"><Linkedin className="w-6 h-6" /></Link>
                 </div>
             </div>
         </div>

@@ -1,0 +1,84 @@
+{
+  "companyName": "Creative Experts Solution",
+  "contact": {
+    "email": "contact@creativeexperts.dev",
+    "phone": "(123) 456-7890",
+    "address": "123 Tech Avenue, Silicon Valley, CA"
+  },
+  "socials": {
+    "twitter": "#",
+    "linkedin": "#"
+  },
+  "navigation": [
+    { "name": "Services", "href": "#services" },
+    { "name": "About", "href": "#about" },
+    { "name": "Process", "href": "#process" },
+    { "name": "Contact", "href": "#contact" }
+  ],
+  "quoteDialog": {
+    "title": "Let's Build Something Amazing",
+    "description": "Share your project idea, and our experts will be in touch."
+  },
+  "hero": {
+    "title": "We Add Value To Your Business",
+    "subtitle": "We meet your brand’s IT infrastructure needs."
+  },
+  "whyChooseUs": {
+    "title": "Why Partner With Creative Experts Solution?",
+    "subtitle": "We're not just a service provider; we're your dedicated technology partner.",
+    "items": [
+      { "icon": "Clock", "title": "Availability", "description": "Reliable, in-house solutions for critical services with 99.9% uptime." },
+      { "icon": "Heart", "title": "Loyalty", "description": "Long-term partnerships focused on mutual success and growth." },
+      { "icon": "Zap", "title": "Experience", "description": "Decades of combined expertise in cutting-edge enterprise solutions." },
+      { "icon": "Shield", "title": "Support", "description": "Transparent, 24/7 guideline-driven support from our expert team." }
+    ]
+  },
+  "softwareEngineering": {
+    "title": "Software Engineering",
+    "subtitle": "Custom solutions to drive your business forward.",
+    "points": [
+      { "icon": "CheckCircle", "title": "Corporate Consulting", "description": "Tailored technology roadmaps and infrastructure design to align with your strategic goals." },
+      { "icon": "CheckCircle", "title": "IT Service System", "description": "Comprehensive support, maintenance, and system optimization for seamless operations." }
+    ]
+  },
+  "services": {
+    "title": "Our Services and Solutions",
+    "subtitle": "Your IT infrastructure is Enhanced to Us.",
+    "items": [
+      { "icon": "Server", "title": "Server & Storage Systems", "description": "Boost efficiency with technology." },
+      { "icon": "Network", "title": "Network Security", "description": "Professional data protection." },
+      { "icon": "Users", "title": "Managed IT Support", "description": "Reliable task support." },
+      { "icon": "Cloud", "title": "Cloud Services", "description": "Cutting-edge cloud tech." },
+      { "icon": "GitCommit", "title": "Virtualization", "description": "Access data from any device." },
+      { "icon": "Briefcase", "title": "Tracing & Observability", "description": "Cloud monitoring for clients." }
+    ]
+  },
+  "process": {
+    "title": "Our Proven Process",
+    "subtitle": "We follow a structured, agile methodology to ensure project success and client satisfaction.",
+    "steps": [
+      { "icon": "Rocket", "title": "1. Discovery & Strategy", "description": "We start by understanding your goals, challenges, and requirements to create a tailored project roadmap." },
+      { "icon": "Code", "title": "2. Design & Development", "description": "Our team designs and develops robust solutions using best practices and cutting-edge technology." },
+      { "icon": "CheckCircle", "title": "3. Testing & QA", "description": "Rigorous testing at every stage ensures a bug-free, high-performance, and secure final product." },
+      { "icon": "Zap", "title": "4. Deployment & Support", "description": "We handle a seamless deployment and provide ongoing support to ensure your system runs smoothly." }
+    ]
+  },
+  "techStack": {
+    "title": "Our Technology Stack",
+    "subtitle": "We use a modern, robust stack to build scalable and maintainable solutions."
+  },
+  "testimonials": {
+    "title": "Our Customers Who Make Us",
+    "subtitle": "We work day and night to ensure our customers thrive."
+  },
+  "footer": {
+    "description": "Engineering the future of your business with value-driven IT solutions.",
+    "copyright": "© 2024 Creative Experts Solution. All rights reserved. Built with passion and code.",
+    "companyLinks": [
+        { "name": "About Us", "href": "#about" },
+        { "name": "Careers", "href": "#" },
+        { "name": "Press", "href": "#" },
+        { "name": "Our Process", "href": "#process" }
+    ]
+  }
+}
