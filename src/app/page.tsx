@@ -18,6 +18,22 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { CursorFollower } from '@/components/ui/cursor-follower';
 import placeholderImages from '@/lib/placeholder-images.json';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { useToast } from '@/hooks/use-toast';
+import { useFirebase } from '@/firebase';
+import { addDocumentNonBlocking } from '@/firebase/non-blocking-updates';
+import { collection } from 'firebase/firestore';
+
+const quoteFormSchema = z.object({
+  name: z.string().min(1, 'Full name is required.'),
+  email: z.string().email('Please enter a valid email address.'),
+});
+
+const subscribeFormSchema = z.object({
+  email: z.string().email('Please enter a valid email address.'),
+});
 
 
 function ThemeToggle() {
@@ -26,7 +42,7 @@ function ThemeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" size="icon" aria-label="Toggle theme">
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle theme</span>
@@ -47,9 +63,84 @@ function ThemeToggle() {
   )
 }
 
+function QuoteForm({ setOpen }: { setOpen: (open: boolean) => void }) {
+  const { toast } = useToast();
+  const { firestore } = useFirebase();
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<z.infer<typeof quoteFormSchema>>({
+    resolver: zodResolver(quoteFormSchema),
+    defaultValues: { name: "", email: "" },
+  });
+
+  const onSubmit = (data: z.infer<typeof quoteFormSchema>) => {
+    if (!firestore) return;
+    const leadsCollection = collection(firestore, 'leads');
+    addDocumentNonBlocking(leadsCollection, {
+      ...data,
+      type: 'quote',
+      createdAt: new Date().toISOString(),
+    });
+    toast({
+      title: 'Quote Requested!',
+      description: "Thanks for your interest. We'll be in touch shortly.",
+    });
+    reset();
+    setOpen(false);
+  };
+
+  return (
+    <form className="grid gap-6 py-4" onSubmit={handleSubmit(onSubmit)}>
+      <div className="grid gap-2">
+        <Label htmlFor="name">Full Name</Label>
+        <Input id="name" placeholder="John Doe" {...register('name')} className="bg-background/50 border-border" />
+        {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
+      </div>
+      <div className="grid gap-2">
+        <Label htmlFor="email">Email Address</Label>
+        <Input id="email" type="email" placeholder="john.doe@example.com" {...register('email')} className="bg-background/50 border-border" />
+        {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
+      </div>
+      <Button type="submit" size="lg" className="w-full mt-4 rounded-full">Request a Quote</Button>
+    </form>
+  );
+}
+
+function SubscribeForm() {
+  const { toast } = useToast();
+  const { firestore } = useFirebase();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<z.infer<typeof subscribeFormSchema>>({
+    resolver: zodResolver(subscribeFormSchema),
+    defaultValues: { email: "" },
+  });
+
+  const onSubmit = (data: z.infer<typeof subscribeFormSchema>) => {
+    if (!firestore) return;
+    const leadsCollection = collection(firestore, 'leads');
+    addDocumentNonBlocking(leadsCollection, {
+      email: data.email,
+      type: 'subscribe',
+      createdAt: new Date().toISOString(),
+    });
+    toast({
+      title: 'Subscribed!',
+      description: "You're now on our mailing list.",
+    });
+    reset();
+  };
+
+  return (
+    <form className="flex mt-2" onSubmit={handleSubmit(onSubmit)}>
+      <Input type="email" placeholder="Enter your email" {...register('email')} className="rounded-r-none" aria-label="Email for subscription" />
+      <Button type="submit" className="rounded-l-none">Subscribe</Button>
+      {errors.email && <p className="text-sm text-destructive absolute mt-12">{errors.email.message}</p>}
+    </form>
+  );
+}
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const [openQuoteDialog, setOpenQuoteDialog] = useState(false);
+
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000); // Simulate loading
@@ -63,15 +154,15 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <CursorFollower />
-       <div className="text-secondary-foreground py-2 px-4 md:px-8 text-sm bg-gradient-to-r from-background via-accent/50 to-primary/50 bg-[length:200%_auto] animate-gradient-shift">
+       <div className="text-secondary-foreground py-2 px-4 md:px-8 text-sm bg-gradient-to-r from-white via-sky-200 to-blue-500 dark:from-black dark:via-sky-900 dark:to-blue-800 bg-[length:200%_auto] animate-gradient-shift">
           <div className="container mx-auto flex justify-between items-center">
               <div className="flex gap-4 items-center">
                   <span className="flex items-center gap-1.5"><Mail className="w-4 h-4" /> contact@creativeexperts.dev</span>
                   <span className="hidden md:flex items-center gap-1.5"><Phone className="w-4 h-4" /> (123) 456-7890</span>
               </div>
               <div className="flex gap-4 items-center">
-                  <Link href="#" className="hover:text-primary transition-colors"><Twitter className="w-4 h-4" /></Link>
-                  <Link href="#" className="hover:text-primary transition-colors"><Linkedin className="w-4 h-4" /></Link>
+                  <Link href="#" className="hover:text-primary transition-colors" aria-label="Twitter"><Twitter className="w-4 h-4" /></Link>
+                  <Link href="#" className="hover:text-primary transition-colors" aria-label="LinkedIn"><Linkedin className="w-4 h-4" /></Link>
               </div>
           </div>
        </div>
@@ -87,7 +178,7 @@ export default function Home() {
           <Link href="#contact" className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>Contact</Link>
         </nav>
         <div className="flex items-center gap-2">
-            <Dialog>
+            <Dialog open={openQuoteDialog} onOpenChange={setOpenQuoteDialog}>
             <DialogTrigger asChild>
                 <Button variant="default" size="lg" className="transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/50 hover:shadow-lg rounded-full">Get Started</Button>
             </DialogTrigger>
@@ -98,23 +189,13 @@ export default function Home() {
                     Share your project idea, and our experts will be in touch.
                 </DialogDescription>
                 </DialogHeader>
-                <form className="grid gap-6 py-4">
-                <div className="grid gap-2">
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input id="name" placeholder="John Doe" className="bg-background/50 border-border" />
-                </div>
-                <div className="grid gap-2">
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input id="email" type="email" placeholder="john.doe@example.com" className="bg-background/50 border-border" />
-                </div>
-                <Button type="submit" size="lg" className="w-full mt-4 rounded-full">Request a Quote</Button>
-                </form>
+                <QuoteForm setOpen={setOpenQuoteDialog} />
             </DialogContent>
             </Dialog>
             <ThemeToggle />
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
+                <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu">
                   <Menu />
                 </Button>
               </SheetTrigger>
@@ -325,7 +406,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer id="contact" className="border-t border-border/50 bg-gradient-to-r from-primary/50 via-accent/50 to-background bg-[length:200%_auto] animate-gradient-shift">
+      <footer id="contact" className="border-t border-border/50 bg-gradient-to-r from-white via-sky-200 to-blue-500 dark:from-black dark:via-sky-900 dark:to-blue-800 bg-[length:200%_auto] animate-gradient-shift">
         <div className="container mx-auto px-6 py-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <div className="lg:col-span-2">
@@ -333,10 +414,7 @@ export default function Home() {
                     <p className="text-muted-foreground mt-4 max-w-md">Engineering the future of your business with value-driven IT solutions.</p>
                     <div className="mt-6">
                         <h4 className="font-semibold text-lg">Stay Connected</h4>
-                        <form className="flex mt-2">
-                            <Input type="email" placeholder="Enter your email" className="rounded-r-none" />
-                            <Button type="submit" className="rounded-l-none">Subscribe</Button>
-                        </form>
+                        <SubscribeForm />
                     </div>
                 </div>
                 <div>
@@ -377,13 +455,12 @@ export default function Home() {
             <div className="mt-12 border-t border-border/50 pt-6 flex flex-col sm:flex-row justify-between items-center">
                 <p className="text-sm text-muted-foreground">&copy; 2024 Creative Experts Solution. All rights reserved. Built with passion and code.</p>
                 <div className="flex items-center gap-4 mt-4 sm:mt-0">
-                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}><Twitter className="w-6 h-6" /></Link>
-                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}><Linkedin className="w-6 h-6" /></Link>
+                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false} aria-label="Twitter"><Twitter className="w-6 h-6" /></Link>
+                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false} aria-label="LinkedIn"><Linkedin className="w-6 h-6" /></Link>
                 </div>
             </div>
         </div>
       </footer>
     </div>
   );
-
-    
+}

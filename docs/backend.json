@@ -1,5 +1,45 @@
 {
   "entities": {
+    "Lead": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Lead",
+      "type": "object",
+      "description": "Represents a lead captured from a website form.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Lead entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "Full name of the lead."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Email address of the lead."
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "quote",
+            "subscribe"
+          ],
+          "description": "The type of form submission."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp when the lead was created."
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "type",
+        "createdAt"
+      ]
+    },
     "CustomerTestimonial": {
       "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "CustomerTestimonial",
@@ -112,56 +152,29 @@
     ]
   },
   "firestore": {
-    "structure": [
-      {
-        "path": "/customerTestimonials/{customerTestimonialId}",
-        "definition": {
-          "entityName": "CustomerTestimonial",
-          "schema": {
-            "$ref": "#/backend/entities/CustomerTestimonial"
-          },
-          "description": "Stores customer testimonials.",
-          "params": [
-            {
-              "name": "customerTestimonialId",
-              "description": "The unique identifier of the customer testimonial."
-            }
-          ]
-        }
+    "/leads/{leadId}": {
+      "schema": {
+        "$ref": "#/entities/Lead"
       },
-      {
-        "path": "/services/{serviceId}",
-        "definition": {
-          "entityName": "Service",
-          "schema": {
-            "$ref": "#/backend/entities/Service"
-          },
-          "description": "Stores services offered by the company.",
-          "params": [
-            {
-              "name": "serviceId",
-              "description": "The unique identifier of the service."
-            }
-          ]
-        }
+      "description": "Stores leads captured from the website forms."
+    },
+    "/customerTestimonials/{customerTestimonialId}": {
+      "schema": {
+        "$ref": "#/entities/CustomerTestimonial"
       },
-      {
-        "path": "/valuePropositions/{valuePropositionId}",
-        "definition": {
-          "entityName": "ValueProposition",
-          "schema": {
-            "$ref": "#/backend/entities/ValueProposition"
-          },
-          "description": "Stores value propositions of the company.",
-          "params": [
-            {
-              "name": "valuePropositionId",
-              "description": "The unique identifier of the value proposition."
-            }
-          ]
-        }
-      }
-    ],
-    "reasoning": "The Firestore structure is designed to store data related to customer testimonials, services, and value propositions. The root-level collections `customerTestimonials`, `services`, and `valuePropositions` store the corresponding entities. This flat structure simplifies data retrieval and management, avoiding complex nested queries. Each collection stores documents with the information described in the schemas. Since authorization is not based on user roles or ownership, and all data is generally public-facing, this simple structure is appropriate.  The structure supports QAPs because listing testimonials, services, and value propositions can be done securely using rules that simply ensure the data conforms to the schema.  Authorization Independence is achieved because no subcollections or hierarchical dependencies exist."
+      "description": "Stores customer testimonials."
+    },
+    "/services/{serviceId}": {
+      "schema": {
+        "$ref": "#/entities/Service"
+      },
+      "description": "Stores services offered by the company."
+    },
+    "/valuePropositions/{valuePropositionId}": {
+      "schema": {
+        "$ref": "#/entities/ValueProposition"
+      },
+      "description": "Stores value propositions of the company."
+    }
   }
 }
