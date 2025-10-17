@@ -51,12 +51,15 @@
         "icon": "Server", 
         "title": "Server & Storage Systems", 
         "description": "Boost efficiency with technology.",
-        "detailedDescription": "We provide robust and scalable server and storage solutions tailored to your business needs. From on-premise servers to hybrid cloud infrastructures, we ensure your data is secure, accessible, and managed efficiently. Our solutions are designed for high performance and reliability, ensuring your critical applications run smoothly.",
+        "detailedDescription": "In today's data-driven world, a robust and scalable infrastructure is the bedrock of any successful enterprise. We specialize in designing and implementing bespoke server and storage solutions that are not just powerful, but also resilient and cost-effective. Whether you need on-premise physical servers for maximum control, a virtualized environment for flexibility, or a hybrid cloud model to get the best of both worlds, we architect systems that grow with you. Our focus is on ensuring high availability, minimizing latency, and building a foundation that your critical applications can rely on, day in and day out. We go beyond simple hardware provision; we analyze your workload, data flow, and growth projections to deliver a truly tailored infrastructure.",
         "features": [
-          "Custom Server Configuration",
-          "High-Speed Storage Arrays",
-          "Data Backup and Recovery",
-          "24/7 Performance Monitoring"
+          "Custom-built server configurations (Blade, Rack, Tower)",
+          "High-performance SAN, NAS, and DAS storage solutions",
+          "Advanced data backup, replication, and disaster recovery strategies",
+          "24/7 real-time performance monitoring and predictive analysis",
+          "Infrastructure capacity planning and lifecycle management",
+          "Hardware procurement, installation, and configuration",
+          "Firmware and security patch management"
         ],
         "image": {
           "src": "https://picsum.photos/seed/server-room/1200/600",
@@ -69,12 +72,15 @@
         "icon": "Network", 
         "title": "Network Security", 
         "description": "Professional data protection.",
-        "detailedDescription": "In an age of constant threats, our network security services provide comprehensive protection for your digital assets. We implement multi-layered security strategies, including firewalls, intrusion detection systems, and proactive threat hunting to safeguard your network from both internal and external threats.",
+        "detailedDescription": "As digital boundaries dissolve, a proactive and multi-layered approach to network security is non-negotiable. Our mission is to protect your digital assets from an ever-evolving landscape of threats. We move beyond basic firewalls to implement a comprehensive security posture that encompasses your entire network. This includes advanced threat detection, intrusion prevention, and robust access control policies. We conduct thorough risk assessments to identify vulnerabilities and create a layered defense strategy that protects your data, applications, and users from both external attacks and internal threats. Our goal is to create a secure, resilient, and compliant network environment that fosters trust and enables business innovation without compromise.",
         "features": [
-          "Next-Generation Firewalls",
-          "Endpoint Security",
-          "VPN and Remote Access",
-          "Security Audits & Compliance"
+          "Next-Generation Firewall (NGFW) deployment and management",
+          "Advanced Endpoint Detection and Response (EDR)",
+          "Secure VPN, Zero Trust Network Access (ZTNA), and SASE solutions",
+          "Comprehensive security audits, penetration testing, and compliance reporting (e.g., ISO, GDPR)",
+          "SIEM and SOAR implementation for threat intelligence and incident response",
+          "Data Loss Prevention (DLP) and encryption strategies",
+          "Employee security awareness training and phishing simulations"
         ],
         "image": {
           "src": "https://picsum.photos/seed/network-security/1200/600",
@@ -87,12 +93,15 @@
         "icon": "Users", 
         "title": "Managed IT Support", 
         "description": "Reliable task support.",
-        "detailedDescription": "Offload the burden of IT management with our managed support services. Our team acts as your dedicated IT department, providing proactive maintenance, helpdesk support, and strategic guidance. We ensure your systems are always up-to-date, secure, and optimized for performance, so you can focus on your core business.",
+        "detailedDescription": "Focus on what you do best—running your business—while we handle the complexities of your IT environment. Our Managed IT Support services offer a comprehensive, all-in-one solution for your technology needs. We act as your outsourced IT department, providing proactive maintenance, round-the-clock monitoring, and responsive helpdesk support for your team. Our approach is preventative; we aim to identify and resolve issues before they can impact your operations. From managing software updates and hardware lifecycles to providing strategic technology guidance, we ensure your IT infrastructure is a powerful asset that drives efficiency and growth, rather than a source of distraction.",
         "features": [
-          "24/7 Helpdesk Support",
-          "Proactive System Maintenance",
-          "Software and Hardware Management",
-          "IT Strategy and Consulting"
+          "24/7/365 multi-channel helpdesk support (phone, email, chat)",
+          "Proactive system monitoring and preventative maintenance",
+          "Full hardware and software lifecycle management",
+          "Strategic IT consulting and technology roadmap planning",
+          "Vendor management and coordination",
+          "User onboarding and offboarding processes",
+          "Detailed performance and service level reporting"
         ],
         "image": {
           "src": "https://picsum.photos/seed/it-support/1200/600",
@@ -105,12 +114,15 @@
         "icon": "Cloud", 
         "title": "Cloud Services", 
         "description": "Cutting-edge cloud tech.",
-        "detailedDescription": "Leverage the power and flexibility of the cloud with our expert services. We specialize in cloud migration, infrastructure as a service (IaaS), and platform as a service (PaaS). Whether you're moving to the cloud for the first time or optimizing your existing setup, we provide a clear path to success.",
+        "detailedDescription": "Harness the transformative power of the cloud to unlock unprecedented scalability, flexibility, and innovation. Our cloud experts guide you through every stage of your cloud journey, from initial strategy and migration to ongoing optimization and management. We work with leading cloud platforms like AWS, Azure, and Google Cloud to architect solutions that perfectly match your business objectives. Whether you're looking to lift-and-shift existing applications, build new cloud-native services, or create a powerful data analytics platform, we provide the expertise to make your cloud adoption a resounding success. We focus on security, cost-efficiency, and performance to ensure you realize the full potential of your cloud investment.",
         "features": [
-          "Cloud Migration & Strategy",
-          "Infrastructure as a Service (IaaS)",
-          "Platform as a Service (PaaS)",
-          "Cost Optimization"
+          "Comprehensive cloud readiness assessment and migration strategy",
+          "Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Serverless architecture",
+          "Cloud-native application development and containerization (Docker, Kubernetes)",
+          "Continuous cloud cost management and optimization",
+          "DevOps and CI/CD pipeline implementation for cloud environments",
+          "Cloud security posture management and compliance automation",
+          "Hybrid and multi-cloud integration and management"
         ],
         "image": {
           "src": "https://picsum.photos/seed/cloud-tech/1200/600",
@@ -123,12 +135,15 @@
         "icon": "GitCommit", 
         "title": "Virtualization", 
         "description": "Access data from any device.",
-        "detailedDescription": "Maximize hardware utilization and increase flexibility with our virtualization solutions. We can help you create a more agile and efficient IT environment by virtualizing servers, desktops, and applications. This reduces hardware costs, simplifies management, and improves disaster recovery capabilities.",
+        "detailedDescription": "Unlock significant cost savings, improve operational efficiency, and increase IT agility through virtualization. By abstracting your computing resources from the underlying physical hardware, we can help you do more with less. Our virtualization solutions cover everything from servers to desktops and applications, allowing you to consolidate hardware, streamline management, and deploy new resources in minutes, not weeks. This leads to a more dynamic, resilient, and manageable IT environment. We help you create a software-defined datacenter that reduces your physical footprint, lowers energy consumption, and dramatically improves your disaster recovery capabilities, all while providing a flexible foundation for future growth.",
         "features": [
-          "Server Virtualization (VMware, Hyper-V)",
-          "Desktop Virtualization (VDI)",
-          "Application Virtualization",
-          "Resource Optimization"
+          "Server virtualization with VMware vSphere and Microsoft Hyper-V",
+          "Virtual Desktop Infrastructure (VDI) for secure remote work",
+          "Application virtualization and containerization",
+          "Physical-to-Virtual (P2V) migration services",
+          "Performance tuning and resource optimization for virtual environments",
+          "High-availability and failover clustering",
+          "Simplified backup and disaster recovery for virtual machines"
         ],
         "image": {
           "src": "https://picsum.photos/seed/virtualization/1200/600",
@@ -141,12 +156,15 @@
         "icon": "Briefcase", 
         "title": "Tracing & Observability", 
         "description": "Cloud monitoring for clients.",
-        "detailedDescription": "Gain deep insights into your application's performance and health with our tracing and observability services. We help you implement distributed tracing, logging, and metrics to provide a complete picture of your system's behavior. This allows for rapid troubleshooting, performance tuning, and proactive issue detection.",
+        "detailedDescription": "In complex, distributed systems, understanding 'why' something is happening is just as important as knowing 'what' is happening. Our Tracing and Observability services provide deep, end-to-end visibility into your applications and infrastructure. We move beyond traditional monitoring by implementing solutions that allow you to trace requests as they travel across microservices, correlate logs from disparate systems, and analyze performance metrics in real-time. This holistic view empowers your development and operations teams to rapidly troubleshoot issues, identify performance bottlenecks, and understand the true user experience. By making your systems 'observable,' we enable you to build more resilient, performant, and reliable software.",
         "features": [
-          "Distributed Tracing Implementation",
-          "Centralized Logging",
-          "Custom Dashboards and Alerting",
-          "Performance Bottleneck Analysis"
+          "End-to-end distributed tracing implementation (e.g., OpenTelemetry)",
+          "Centralized logging platform deployment (e.g., ELK Stack, Splunk)",
+          "Application Performance Monitoring (APM)",
+          "Custom dashboard creation for key performance indicators (KPIs)",
+          "Proactive alerting and anomaly detection",
+          "Root cause analysis and performance bottleneck identification",
+          "Service-level objective (SLO) and service-level indicator (SLI) definition"
         ],
         "image": {
           "src": "https://picsum.photos/seed/observability/1200/600",
@@ -199,3 +217,5 @@
     ]
   }
 }
+
+    
