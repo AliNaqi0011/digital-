@@ -19,6 +19,7 @@ interface TechStackProps {
     title: string;
     subtitle: string;
     categories: {
+      id: string;
       title: string;
       technologies: {
         name: string;
@@ -38,12 +39,12 @@ export function TechStack({ techStackContent }: TechStackProps) {
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg">{techStackContent.subtitle}</p>
         </div>
         
-        <Tabs defaultValue={techStackContent.categories[0].title} className="w-full">
+        <Tabs defaultValue={techStackContent.categories[0].id} className="w-full">
           <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 h-auto">
             {techStackContent.categories.map((category) => {
               const Icon = categoryIcons[category.title];
               return (
-                <TabsTrigger key={category.title} value={category.title} className="text-lg py-3 flex gap-2 items-center">
+                <TabsTrigger key={category.id} value={category.id} className="text-lg py-3 flex gap-2 items-center">
                   {Icon && <Icon className="w-6 h-6" />}
                   {category.title}
                 </TabsTrigger>
@@ -52,18 +53,18 @@ export function TechStack({ techStackContent }: TechStackProps) {
           </TabsList>
 
           {techStackContent.categories.map((category) => (
-            <TabsContent key={category.title} value={category.title}>
+            <TabsContent key={category.id} value={category.id}>
               <div className="p-8 mt-6 bg-background rounded-2xl shadow-lg">
                 <div className="flex flex-wrap gap-x-12 gap-y-8 justify-center">
                   {category.technologies.map((tech) => (
                     <div key={tech.name} className="flex flex-col items-center justify-center gap-2 group transition-transform duration-300 hover:scale-110" title={tech.name}>
-                      <div className="p-3 rounded-lg bg-secondary/50">
+                      <div className="w-24 h-12 relative flex items-center justify-center">
                         <Image 
                           src={tech.src} 
-                          alt={tech.name} 
-                          width={100} 
-                          height={40} 
-                          className="grayscale group-hover:grayscale-0 transition-all duration-300 object-contain" 
+                          alt={tech.name}
+                          layout="fill"
+                          objectFit="contain"
+                          className="grayscale group-hover:grayscale-0 transition-all duration-300"
                           data-ai-hint={tech.hint} 
                         />
                       </div>

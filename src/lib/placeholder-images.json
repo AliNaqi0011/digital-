@@ -8,96 +8,96 @@
     "fullStack": [
       {
         "name": "React",
-        "src": "https://picsum.photos/seed/reactlogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K",
         "hint": "react logo"
       },
       {
         "name": "Next.js",
-        "src": "https://picsum.photos/seed/nextjslogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KICA8Y2lyY2xlIGN4PSI2NCIgY3k9IjY0IiByPSI2NCIgZmlsbD0iYmxhY2siLz4KICA8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTg4LjEgMjQuM3Y3My41aDExLjFWMjQuM0g4OC4xek01MS4zIDM3LjZsMjggNjQuNGg5LjVMNTguMiAzNy42aC02Ljl6Ii8+Cjwvc3ZnPgo=",
         "hint": "nextjs logo"
       },
       {
         "name": "Nuxt.js",
-        "src": "https://picsum.photos/seed/nuxtjslogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KICA8cGF0aCBmaWxsPSIjMDAwMDJCIiBkPSJNNjQgMTI4YzM1LjQgMCA2NC0yOC42IDY0LTY0UzEwMC42IDAgNjQgMCAwIDI4LjYgMCA2NHMyOC42IDY0IDY0IDY0eiIvPgogIDxwYXRoIGZpbGw9IiMwMEQxQzIiIGQ9Ik04MiA5M2wtMTggMzUgMTgtMzUgMzUgMTggMzUtMTh6Ii8+CiAgPHBhdGggZmlsbD0iIzAwQzU4MyIgZD0iTTY0IDExOGwtMTgtMjUgMTggMjUgMTggMjVMMzEgODBsMzMgMzh6Ii8+CiAgPHBhdGggZmlsbD0iIzQxQjM4MiIgZD0iTTY0IDExOEwzMSA4MGwzMyAzOHYtNzdsLTMzIDM0IDMzIDQzeiIvPgogIDxwYXRoIGZpbGw9IiMwMENDOTEiIGQ9Ik02NCA0MWwtMzMgMzdMMzEgODBsMzMtNDIgMzMgNDJMMTMgMTEzbDMzLTM1IDMzLTM3eiIvPgo8L3N2Zz4K",
         "hint": "nuxtjs logo"
       },
       {
         "name": "Node.js",
-        "src": "https://picsum.photos/seed/nodejslogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMy44NTYiPgogIDxwYXRoIGZpbGw9IiM2OGEwNjEiIGQ9Ik01Ljk0NSAwTC4wMjQgMy40MzJ2Ni45OTJsNS45MjEtMy40MzJWMy41NjRsNC4yOCA0LjI4YS4zNjQuMzY0IDAgMCAwIC4yMTUuMDY5bDEuNDYyLS4wMDNhLjM2Ni4zNjYgMCAwIDAgLjI2OS0uNDI5VjMuNDMyTDUuOTQ1AAAALE0xMC4yMTMgOC42NzRsLTEuNTIuODQ1Yy0uMTM2LjA4Ni0uMjczLjA0My0uMjc3LS4xMDhsLS4wMDUtNC41MzdjMC0uMTUuMDgyLS4yNDIuMjAzLS4yNDJsMS41NTQtLjAwM2MuMTUgMCAuMjM3LjA3OS4yMzcuMjI2djQuNThjLS4wMi4xMzQtLjEwOC4yMjgtLjI4Mi4yM3ptLTguOTMgMS4xNDJMLjAwNiA5LjQyMWwuMDA1IDIuNDM2YS40MTIuNDEyIDAgMCAwIC4zOS40MDRsMS40OTQtLjAwM2MuMiAwIC4zNjItLjE3MS4zNi0uMzZWOS43MTlsLS45NzctLjU3NmMtLjE3Mi0uMDktLjI4Ni0uMDMtLjI4Ni4xNDZ2LjQxMmMwIC4xNzEtLjEyOC4yNTktLjI4My4yNTlsLS40MTItLjAwMyIvPgo8L3N2Zz4K",
         "hint": "nodejs logo"
       },
       {
         "name": "Django",
-        "src": "https://picsum.photos/seed/djangologo/120/40",
+        "src/": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MCAxMDciIGZpbGw9IiMwOTJiMjkiPgogIDxwYXRoIGQ9Ik0zMy44NTYgMTA2LjI2MWw0NS40NTUtMzQuMTM2VjM3Ljk5MkwzMy44NTYgNzEuNzUxem0tMzMuNDY3IDBsNDUuNDU1LTM0LjEzNlYzNy45OTJMLjM4OSAxMDYuMjYxem0xLjM2NS03MS43NTFsNDQuMDkgMzMuNzQ5VjM4LjQzTDQuNzE1IDcuMDc2em0yOS40MDItNi42OThsNDUuNDU1IDM0LjEzNlYwSDMzLjc1NHoiLz4KPC9zdmc+Cg==",
         "hint": "django logo"
       },
       {
         "name": "Flask",
-        "src": "https://picsum.photos/seed/flasklogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIj4KICAgIDxwYXRoIGQ9Ik0yOS4zIDU0LjVjMjAuMi0yNS42IDM1LTQzLjcgNjguNC00My43TTk3LjcgNzMuNWMtMjAuMiAyNS42LTM1IDQzLjctNjguNCA0My43Ii8+CiAgICA8cGF0aCBkPSJNNDkuNSA5MC4zcy0yLjgtMjAuNyA5LjQtMzcuN20xOC40IDYxLjJjNC44LTEyLjkgNC42LTIzLjIgMi42LTMxLjgiLz4KICA8L2c+Cjwvc3ZnPgo=",
         "hint": "flask logo"
       },
       {
         "name": "Laravel",
-        "src": "https://picsum.photos/seed/laravellogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNiAyNiI+CiAgPHBhdGggZmlsbD0iI0ZGOTM3QiIgZD0iTTI1NC4yODUgMTUuNzU4bC0xMi4zMzYgNy4xMDQtNC42NDUgMi42NzcgOS4xODIgNS4yODggOS4wMTgtNS4xOTZ6bS0xNS4yNzItOC43OTJsOS4xODIgNS4yODcgOS4wMTctNS4xOTYtOS4xODItNS4yODd6bS05LjM0IDUuMzczbC05LjE4IDUuMjg3IDkuMTggNS4yODggOS4wMTctNS4xOTZ6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjMxLjAxNCAtNi45NjYpIi8+CiAgPHBhdGggZmlsbD0iI0ZENDQzQiIgZD0iTTI0NS4xNDggMEwyMzIgNy4wMWw0LjY0NSAyLjY3OEwyNDUuMTQ4IDQuNSA2LjgzNCAxMS42M0wyNTAuOCA5LjY0MnoiIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIC0yMzIgMTEuNjMpIi8+Cjwvc3ZnPgo=",
         "hint": "laravel logo"
       },
       {
         "name": "CodeIgniter",
-        "src": "https://picsum.photos/seed/codeigniterlogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iI0RGNEMyRiIgZD0iTTIyLjUgMy4zNzVIMTYuMTI1bC0zLjM3NSAzLjM3NUwxNi4xMjUgMTBoNi4zNzVWMjAuNjI1SDE2LjEyNWwtMy4zNzUtMy4zNzUtMy4zNzUgMy4zNzVINS42MjVWMTBIOS4yNUw2Ljg3NSA2Ljc1IDMuNSA5LjM3NXYxMy4xMjVoMjFWMi4yNUwyMi41IDMuMzc1ek0xOCAxOC43NUgxNC42MjVsLTgtOEg4LjI1djMuMzc1SDUuNjI1di00LjVINy41TDEwLjUgN0gxMy41bDIuNjI1IDIuNjI1djEuMTI1SDEzLjVsMy43NSA0LjEyNXYtNS4yNUgyMS43NXY2Ljc1SDE4di0xLjEyNXpNOS43NSA5SDEyVjYuNzVoMS41djQuNWgtNS4yNXYtMS41aDEuNVY5eiIvPgo8L3N2Zz4K",
         "hint": "codeigniter logo"
       },
       {
         "name": "Python",
-        "src": "https://picsum.photos/seed/pythonlogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iIzMzNzJCMyIgZD0iTTIzIDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KICA8cGF0aCBmaWxsPSIjRkZDMzUyIiBkPSJNMiA5aDEwVjBINXY0YS41LjUgMCAwMS0uNS0uNVY0aC0zVjJoNXY3em05IDZoOVY1aC00djRoLTljMCA0Ljk3MSA0LjAyOSA5IDkgOWg5VjEySDExdjMuNXptNS04djJoM3YtMkgxNnoiLz4KPC9zdmc+Cg==",
         "hint": "python logo"
       },
       {
         "name": "PHP",
-        "src": "https://picsum.photos/seed/phplogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAxMyI+CiAgPHBhdGggZmlsbD0iIzZCOEVCRSIgZD0iTTIxLjMgMS40aC0xLjhsLS42IDMuM0MyMCA2IDExLjYgNiAxMy4yIDZjLS40IDAtLjgxLS4wMi0xLjIyLS4wMi0xLjcyIDAtMy4yLjQ2LTQuMiAxLjY0LTEuMDcgMS4yNC0xLjYgMi45LTEuNiA0LjggMCAxLjkuNSAzLjYgMS40IDQuOSAxIDEuMyAyLjUgMi4yIDQuMiAyLjIgMS4zIDAgMi42LS40IDMuNi0xLjMgMS4zLTEuMiAxLjktMi45IDEuOS01LjQgMC0xLjMtLjEtMi40LS40LTMuM0wyMS4zIDEuNHpNMTAuMiAxNC4yYy0xLjIgMC0yLjQtLjMtMy4xLTEuMS0uOS0uOC0xLjQtMi0xLjQtMy40IDAtMS40LjYtMi44IDEuNC0zLjcgMS0xIDIuMS0xLjQgMy41LTEuNCAuNSAwIDEgLjEgMS40LjIgMCAuMS4xLjEuMS4yaC4xbC4xLjFzMCAuMS4xLjFjMCAuMiAwIC40LS4xLjYtLjEuMy0uMy41LS41LjctLjEuMS0uMy4yLS40LjQtLjIuMi0uMy40LS40LjYtLjIuMy0uMy43LS4zIDEgMCAxIC4zIDEuOS44IDIuNi41LjYgMS4yIDEgMi4xIDEgMS4xIDAgMi0uNSAyLjctMS4zLjYtLjggMS0xLjkgMS0zLjUgMC0uNC0uMS0uOC0uMS0xLjItLjEtLjUtLjQtLjgtLjgtMS0uMy0uMi0uNi0uMy0uOS0uMy0uNCAwLS45LjItMS4yLjQtLjQuMi0uNy40LTEgLjYtLjUuMy0xLjEgLjUtMS44LjUtLjggMC0xLjUtLjItMi0uNy0uNS0uNC0uOC0xLS44LTEuNyAwLS42LjMtMS4xLjctMS41cy45LS42IDEuNS0uNmMuMyAwIC41IDAgLjggLjEuMSAwIC4xLjEuMi4xLjIgMCAuNC0uMS41LS4zLjItLjMuMi0uNi4xLTEgMC0uMi0uMS0uMy0uMi0uNC0uMy0uMy0uNi0uNS0xLS43LTEuNy0uNi0zLjYtLjYtNS4yLjItMS4xLjYtMiAxLjYtMi41IDIuNy0uNiAxLjEtLjkgMi40LS45IDMuOCAwIDEuNy41IDMuMyAxLjQgNC41IDEgMS4yIDIuNCAxLjggMy45IDEuOCA4IDAgMS42LS4xIDIuMy0uMi0uMS0uMy0uMy0uNS0uNC0uNmgwem0xMC41LTEyLjZoLTIuM2wtLjcgMy44Yy0uMiAxLjUtMy42IDEuNC0zLjYgMS40cy4xIDAgLjEgMGMuMy0uMS42LS4xIDEtLjFzMS40LjEgMi4xLjNjLjYtMy40IDEuMS01LjUgMS4xLTUuNWgwWiIvPgo8L3N2Zz4K",
         "hint": "php logo"
       },
       {
         "name": "TypeScript",
-        "src": "https://picsum.photos/seed/typescriptlogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KICA8rectIHg9IjAiIHk9IjAiIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiByeD0iMTUiIGZpbGw9IiMwMDc0YjEiLz4KICA8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTI4LjkgMzIuNEg1OC4xdjUuNEgyOC45di01LjR6bTE0LjYgNTUuMmMzLjcgMCA2LjYtMS4xIDguNi0zLjRsLTMuNy0zLjRjLTEuMSAxLjEtMi42IDEuNy00LjUgMS43LTMuNyAwLTUuOS0yLjYtNS45LTYuNGMwLTMuNiAyLjItNi4zIDUuOC02LjNzNC43IDEuNSA1LjcgMy4xbDMuOC0zLjJjLTIuMS0yLjYtNS41LTQuMS05LjUtNC4xLTcuNyAwLTEyLjggNS4zLTEyLjggMTMuN0MyOC4xIDgwLjkgMzQuOCA4Ny42IDQzLjUgODcuNnptMjEuMy0yMi45aC04LjVWODMuN2gtNi4yVjY0LjdoLTguNFY1OS4zaDIzLjF2NS40em0yMC4xIDE4LjRjMCAzLjEgMS40IDQuOSA0IDQuOSAyLjggMCA0LjItMiA0LjItMy45IDAtMi43LTEuOS0zLjQtNC44LTMuOUw4MS44IDY5Yy00LS45LTYuNy0yLjctNi43LTYuNyAwLTQuMiAzLjUtNy4zIDguOC03LjMgNC45IDAgOC4yIDIuNyA4LjggNi4xbC00LjkgMi4xYy0uNC0xLjgtMS42LTIuNy0zLjgtMi43cy0zLjMgMS4xLTMuMyAyLjljMCAyLjEgMS4xIDIuOCA0LjMgMy40bDUuNyAxLjNjNC4zIDEgNi4zIDIuOCA2LjMgNi45eiIvPgo8L3N2Zz4K",
         "hint": "typescript logo"
       }
     ],
     "socialMedia": [
       {
         "name": "Facebook",
-        "src": "https://picsum.photos/seed/facebooklogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzE4NzcxMSI+CiAgPHBhdGggZD0iTTE5IDNoLTJjLTIuNzYgMC01IDIgLTUgNXYzSDd2NGgydjloNGYtOXYtMmE0IDQgMCAwMS0xLTNoMlYzaDMuNSIvPgo8L3N2Zz4K",
         "hint": "facebook logo"
       },
       {
         "name": "Instagram",
-        "src": "https://picsum.photos/seed/instagramlogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZmlsbD0ibm9uZSI+CiAgPHJlY3QgeD0iMiIgeT0iMiIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiByeD0iNSIgcnk9IjUiIHN0cm9rZT0iIzE4NzcxMSIgZmlsbD0iIzE4NzcxMSIvPgogIDxwYXRoIGQ9Ik0xNiAxMS4zN2E0IDQgMCAxMS04IDAgNCA0IDAgMDE4IDB6IiBzdHJva2U9IndoaXRlIi8+CiAgPGxpbmUgeDE9IjE3LjUiIHkxPSI2LjUiIHgyPSIxNy41MSIgeTI9IjYuNSIgc3Ryb2tlPSJ3aGl0ZSIvPgo8L3N2Zz4K",
         "hint": "instagram logo"
       },
       {
         "name": "TikTok",
-        "src": "https://picsum.photos/seed/tiktoklogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwMDAwMCI+CiAgPHBhdGggZD0iTTEyLjU3IDQuMzhWMTRoLTMuMTFWMi4xNmgzLjExQzEyLjU3IDIuMTYgMTIuNTcgMi4xNiAxMi41NyA0LjM4WiIvPgogIDxwYXRoIGZpbGw9IiNmZjAwNTAiIGQ9Ik0yMC44MiA5LjY3Yy0uMTItLjM1LS4yOC0uNjgtLjQ4LTEuMDEtMi4xLTQuMjgtNS4xOC00LjI4LTUuMTgtNC4yOEwxMi41NyA3LjdjLjAyIDAgLjA1IDAgLjA3LjAwMiAzLjQzLjE4IDQuOTQgMy4zNiA1LjE0IDUuMTYuMDIuMTguMDMuMzYuMDQuNTUgMCAuMTQtLjAxLjI4LS4wMi40Mi0uMDYuNzYtLjE4IDEuNDktLjM0IDIuMTktLjEuNDQtLjI0LjktLjM5IDEuMzEtLjM4IDEuMDktMS4xOSAxLjY4LTEuODkgMS42OC0uNDQgMC0uODYtLjIxLTEuMTktLjQ4LS41OS0uNDgtLjc5LTEuMjctLjc5LTEuOTIgMC0xLjA4IDEuMDItMi4zMiAyLjY0LTIuODcgMS4wOS0uMzcgMi4wNi0uMzEgMi42NC0uMjQtLjE0LTIuMjgtMi4yOS00LjQtNC45Mi00LjVaIi8+CiAgPHBhdGggZmlsbD0iIzAwZjJjOCIgZD0iTTEyLjU4IDcuNzFoLS4wMXMtMy4wOCAwLTUuMTggNC4yOEM3LjIgMTIuNDQgNy4wNCAxMy4xNyA2Ljk0IDEzLjkzYy0uMTYuNzEtLjI4IDEuNDQtLjM0IDIuMTgtLjAxLjE0LS4wMi4yOC0uMDIuNDIgMCAuMTkuMDEuMzcuMDQuNTUuMiAxLjggMS43MSA0Ljk4IDUuMTQgNS4xNi4wMiAwIC4wNCAwIC4wNi4wMWgwbC0yLjY0LTEuMDhjLS4xNS0uMDYtLjI4LS4xNS0uNC0uMjctMS42NS0xLjY1LTEuNC00LjM1LTEuMy01LjEgMS4zMi0yLjQxIDMuNzgtMy4zIDQuODctMy41MWguMDNWMTRoMy4xMXYtOS42MmMuMyAwIC41OS4wMi44OC4wNiAyLjYzLjE0IDQuNzggMi4yOCA0LjkxIDQuOTEuMDMuNTkuMDEgMS4xOS0uMDYgMS43Ny0xLjYyLjU1LTQuMjYgMS43OS00LjI2IDIuODcgMCAuNjUuMiAxLjQ0LjggMS45Mi4zMi4yNy43NS40OCAxLjE4LjQ4LjcxIDAgMS41Mi0uNTkgMS44OS0xLjY4LjE1LTEuMTEuMy0xLjgxLjM5LTIuMjQuMTYtLjcuMjgtMS40My4zNC0yLjE5LjAxLS4xNC4wMi0uMjguMDItLjQyIDAtLjE5LS4wMS0uMzctLjA0LS41NXoiLz4KPC9zdmc+Cg==",
         "hint": "tiktok logo"
       }
     ],
     "artificialIntelligence": [
       {
         "name": "Machine Learning",
-        "src": "https://picsum.photos/seed/ml-logo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1widthPSIxLjUiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTQgN2gybDJtMiAwbDItMm0wIDJsMiAybTEwLTEwdi0yaC0ybS04IDEzaDJ2MmgtMnptLTggMGgydjJoLTJ6bTYgMGgydjJoLTJ6bS00LTEwdi0yaC0ybS0yIDJoMlY3bS0yIDBoMlY3bS0yIDJoMnYtM20yIDNoMnYtM20yIDNoMnYtMyIvPgogIDxyZWN0IHg9IjMiIHk9IjMiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgcng9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K",
         "hint": "machine learning"
       },
       {
         "name": "Deep Learning",
-        "src": "https://picsum.photos/seed/dl-logo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1widthPSIxLjUiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEzIDVIMTFhMiAyIDAgMDAgMCA0aDJhMiAyIDAgMDEwLTR6bS0xIDdsMS41IDEtMS41IDFNOC41IDEzbDEuNS0xLTEuNS0xTTEyIDE5djIiLz4KICA8cmVjdCB4PSIzIiB5PSIzIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiByeD0iMSIvPgogIDxyZWN0IHg9IjEzIiB5PSIxMyIgd2lkdGg9IjgiIGhlaWdodD0iOCIgcng9IjEiLz4KPC9zdmc+Cg==",
         "hint": "deep learning"
       },
       {
         "name": "Automation",
-        "src": "https://picsum.photos/seed/automationlogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1widthPSIxLjUiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTggMTJhMiAyIDAgMTA0IDAgMiAyIDAgMDEwLTQgMHpNMjEgMTFhOSg5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6bS05IDBhMiAyIDAgMTA0IDAgMiAyIDAgMDEwLTQgMHoiLz4KPC9zdmc+Cg==",
         "hint": "automation robot"
       },
       {
         "name": "Scraping",
-        "src": "https://picsum.photos/seed/scrapinglogo/120/40",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29b3IiIHN0cm9rZS1widthPSIxLjUiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTQgN2gybDIuNSA1IDEuNS01aDEybS0xNC41IDdsMS41IDUgMS41LTUgMS41IDUtMS41IDIgMS41IDIgMy0xMW0tMTctNWgxNSIvPgo8L3N2Zz4K",
         "hint": "data scraping"
       }
     ]
