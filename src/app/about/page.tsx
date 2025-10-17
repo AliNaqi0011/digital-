@@ -7,8 +7,7 @@ import { Footer } from '@/components/landing/Footer';
 import content from '@/lib/content.json';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Github, Linkedin, Twitter, CheckCircle } from 'lucide-react';
+import { Github, Linkedin, Twitter, CheckCircle, Code, BrainCircuit, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
@@ -23,6 +22,12 @@ export const metadata: Metadata = {
       description: content.aboutPage.description,
   },
 }
+
+const iconMap: { [key: string]: React.ElementType } = {
+  Development: Code,
+  'Artificial Intelligence': BrainCircuit,
+  'Data Science': Database
+};
 
 export default function AboutPage() {
   const { aboutPage } = content;
@@ -65,18 +70,27 @@ export default function AboutPage() {
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{aboutPage.offerings.title}</h2>
                 </div>
                 <div className="grid md:grid-cols-3 gap-8">
-                    {aboutPage.offerings.categories.map((category) => (
-                        <Card key={category.title} className="bg-background/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
-                            <CardHeader>
-                                <CardTitle className="text-2xl text-primary">{category.title}</CardTitle>
-                            </CardHeader>
-                            <CardContent className="flex flex-wrap gap-2">
-                                {category.items.map((item) => (
-                                    <Badge key={item} variant="secondary" className="text-sm font-medium">{item}</Badge>
-                                ))}
-                            </CardContent>
-                        </Card>
-                    ))}
+                    {aboutPage.offerings.categories.map((category) => {
+                        const Icon = iconMap[category.title];
+                        return (
+                            <Card key={category.title} className="bg-background/60 backdrop-blur-sm border-border/30 rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/50">
+                                <CardHeader className="flex flex-row items-center gap-4">
+                                    {Icon && <div className="p-3 rounded-lg bg-primary/10 text-primary"><Icon className="w-8 h-8" /></div>}
+                                    <CardTitle className="text-2xl text-primary">{category.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="space-y-3">
+                                        {category.items.map((item) => (
+                                            <li key={item} className="flex items-center gap-3">
+                                                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                                                <span className="text-muted-foreground">{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </CardContent>
+                            </Card>
+                        )
+                    })}
                 </div>
             </div>
         </section>
