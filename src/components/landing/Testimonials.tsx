@@ -28,11 +28,11 @@ export function Testimonials({ testimonialsContent, images }: TestimonialsProps)
         </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {images.map((testimonial, index) => (
-            <Card key={index} className="flex flex-col bg-secondary/50 border-border/50 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <Card key={index} className="flex flex-col bg-secondary/50 border-border/50 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-primary">
               <CardContent className="flex-1 pt-8">
                 <p className="text-muted-foreground italic text-lg leading-relaxed">"{testimonial.text}"</p>
               </CardContent>
-              <CardFooter className="flex items-center gap-4 mt-6 p-6 bg-secondary/20">
+              <CardFooter className="flex items-center gap-4 mt-6 p-6 bg-transparent border-t border-border/30">
                 <Avatar className="w-14 h-14 border-2 border-primary">
                   <AvatarImage src={testimonial.src} alt={testimonial.name} data-ai-hint={testimonial.hint} />
                   <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
