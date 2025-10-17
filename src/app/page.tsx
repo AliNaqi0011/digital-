@@ -33,12 +33,12 @@ export default function Home() {
       />
       <main className="flex-1">
         <Hero heroContent={content.hero} />
+        <Services servicesContent={content.services} />
         <WhyChooseUs whyChooseUsContent={content.whyChooseUs} />
         <SoftwareEngineering 
           softwareEngineeringContent={content.softwareEngineering}
           image={placeholderImages.softwareEngineering} 
         />
-        <Services servicesContent={content.services} />
         <Process processContent={content.process} />
         <TechStack 
           techStackContent={techStackContent}
