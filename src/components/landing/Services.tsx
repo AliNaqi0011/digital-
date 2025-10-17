@@ -13,7 +13,7 @@ interface ServicesProps {
   servicesContent: {
     title: string;
     subtitle: string;
-    items: { icon: string; title: string; description: string }[];
+    items: { id: string; icon: string; title: string; description: string }[];
   }
 }
 
@@ -39,7 +39,7 @@ export function Services({ servicesContent }: ServicesProps) {
                 </CardContent>
                 <CardFooter className="p-6 pt-0 mt-auto">
                   <Button variant="ghost" asChild className="group/link text-primary text-base px-0">
-                    <Link href={'#contact'}>Review <ArrowRight className="ml-2 transition-transform group-hover/link:translate-x-1" /></Link>
+                    <Link href={`/services/${service.id}`}>Learn More <ArrowRight className="ml-2 transition-transform group-hover/link:translate-x-1" /></Link>
                   </Button>
                 </CardFooter>
               </Card>

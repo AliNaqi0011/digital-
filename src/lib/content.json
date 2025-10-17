@@ -46,12 +46,114 @@
     "title": "Our Services and Solutions",
     "subtitle": "Your IT infrastructure is Enhanced to Us.",
     "items": [
-      { "icon": "Server", "title": "Server & Storage Systems", "description": "Boost efficiency with technology." },
-      { "icon": "Network", "title": "Network Security", "description": "Professional data protection." },
-      { "icon": "Users", "title": "Managed IT Support", "description": "Reliable task support." },
-      { "icon": "Cloud", "title": "Cloud Services", "description": "Cutting-edge cloud tech." },
-      { "icon": "GitCommit", "title": "Virtualization", "description": "Access data from any device." },
-      { "icon": "Briefcase", "title": "Tracing & Observability", "description": "Cloud monitoring for clients." }
+      { 
+        "id": "server-storage-systems",
+        "icon": "Server", 
+        "title": "Server & Storage Systems", 
+        "description": "Boost efficiency with technology.",
+        "detailedDescription": "We provide robust and scalable server and storage solutions tailored to your business needs. From on-premise servers to hybrid cloud infrastructures, we ensure your data is secure, accessible, and managed efficiently. Our solutions are designed for high performance and reliability, ensuring your critical applications run smoothly.",
+        "features": [
+          "Custom Server Configuration",
+          "High-Speed Storage Arrays",
+          "Data Backup and Recovery",
+          "24/7 Performance Monitoring"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/server-room/1200/600",
+          "alt": "Modern server room with glowing lights",
+          "hint": "server room"
+        }
+      },
+      { 
+        "id": "network-security",
+        "icon": "Network", 
+        "title": "Network Security", 
+        "description": "Professional data protection.",
+        "detailedDescription": "In an age of constant threats, our network security services provide comprehensive protection for your digital assets. We implement multi-layered security strategies, including firewalls, intrusion detection systems, and proactive threat hunting to safeguard your network from both internal and external threats.",
+        "features": [
+          "Next-Generation Firewalls",
+          "Endpoint Security",
+          "VPN and Remote Access",
+          "Security Audits & Compliance"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/network-security/1200/600",
+          "alt": "Abstract visualization of a secure network",
+          "hint": "network security"
+        }
+      },
+      { 
+        "id": "managed-it-support",
+        "icon": "Users", 
+        "title": "Managed IT Support", 
+        "description": "Reliable task support.",
+        "detailedDescription": "Offload the burden of IT management with our managed support services. Our team acts as your dedicated IT department, providing proactive maintenance, helpdesk support, and strategic guidance. We ensure your systems are always up-to-date, secure, and optimized for performance, so you can focus on your core business.",
+        "features": [
+          "24/7 Helpdesk Support",
+          "Proactive System Maintenance",
+          "Software and Hardware Management",
+          "IT Strategy and Consulting"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/it-support/1200/600",
+          "alt": "Friendly IT support staff assisting a customer",
+          "hint": "support team"
+        }
+      },
+      { 
+        "id": "cloud-services",
+        "icon": "Cloud", 
+        "title": "Cloud Services", 
+        "description": "Cutting-edge cloud tech.",
+        "detailedDescription": "Leverage the power and flexibility of the cloud with our expert services. We specialize in cloud migration, infrastructure as a service (IaaS), and platform as a service (PaaS). Whether you're moving to the cloud for the first time or optimizing your existing setup, we provide a clear path to success.",
+        "features": [
+          "Cloud Migration & Strategy",
+          "Infrastructure as a Service (IaaS)",
+          "Platform as a Service (PaaS)",
+          "Cost Optimization"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/cloud-tech/1200/600",
+          "alt": "Abstract representation of cloud computing",
+          "hint": "cloud technology"
+        }
+      },
+      { 
+        "id": "virtualization",
+        "icon": "GitCommit", 
+        "title": "Virtualization", 
+        "description": "Access data from any device.",
+        "detailedDescription": "Maximize hardware utilization and increase flexibility with our virtualization solutions. We can help you create a more agile and efficient IT environment by virtualizing servers, desktops, and applications. This reduces hardware costs, simplifies management, and improves disaster recovery capabilities.",
+        "features": [
+          "Server Virtualization (VMware, Hyper-V)",
+          "Desktop Virtualization (VDI)",
+          "Application Virtualization",
+          "Resource Optimization"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/virtualization/1200/600",
+          "alt": "Diagram showing virtual machines on a server",
+          "hint": "virtualization diagram"
+        }
+      },
+      { 
+        "id": "tracing-observability",
+        "icon": "Briefcase", 
+        "title": "Tracing & Observability", 
+        "description": "Cloud monitoring for clients.",
+        "detailedDescription": "Gain deep insights into your application's performance and health with our tracing and observability services. We help you implement distributed tracing, logging, and metrics to provide a complete picture of your system's behavior. This allows for rapid troubleshooting, performance tuning, and proactive issue detection.",
+        "features": [
+          "Distributed Tracing Implementation",
+          "Centralized Logging",
+          "Custom Dashboards and Alerting",
+          "Performance Bottleneck Analysis"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/observability/1200/600",
+          "alt": "Dashboard with graphs and charts showing application metrics",
+          "hint": "data dashboard"
+        }
+      }
     ]
   },
   "process": {
