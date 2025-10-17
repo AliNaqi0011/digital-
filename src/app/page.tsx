@@ -13,6 +13,14 @@ import placeholderImages from '@/lib/placeholder-images.json';
 import content from '@/lib/content.json';
 
 export default function Home() {
+  const techStackContent = {
+    ...content.techStack,
+    categories: content.techStack.categories.map(category => ({
+      ...category,
+      technologies: placeholderImages.techStack[category.id as keyof typeof placeholderImages.techStack]
+    }))
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <CursorFollower />
@@ -33,8 +41,7 @@ export default function Home() {
         <Services servicesContent={content.services} />
         <Process processContent={content.process} />
         <TechStack 
-          techStackContent={content.techStack}
-          images={placeholderImages.techStack}
+          techStackContent={techStackContent}
         />
         <Testimonials 
           testimonialsContent={content.testimonials}

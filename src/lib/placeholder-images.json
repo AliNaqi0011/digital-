@@ -4,43 +4,104 @@
     "alt": "Abstract visualization of software code and development.",
     "hint": "abstract code"
   },
-  "techStack": [
-    {
-      "name": "Next.js",
-      "src": "https://picsum.photos/seed/nextjs/120/40",
-      "hint": "nextjs logo"
-    },
-    {
-      "name": "React",
-      "src": "https://picsum.photos/seed/react/120/40",
-      "hint": "react logo"
-    },
-    {
-      "name": "TypeScript",
-      "src": "https://picsum.photos/seed/typescript/120/40",
-      "hint": "typescript logo"
-    },
-    {
-      "name": "Node.js",
-      "src": "https://picsum.photos/seed/nodejs/120/40",
-      "hint": "nodejs logo"
-    },
-    {
-      "name": "Docker",
-      "src": "https://picsum.photos/seed/docker/120/40",
-      "hint": "docker logo"
-    },
-    {
-      "name": "Kubernetes",
-      "src": "https://picsum.photos/seed/kubernetes/120/40",
-      "hint": "kubernetes logo"
-    },
-    {
-      "name": "Google Cloud",
-      "src": "https://picsum.photos/seed/gcp/120/40",
-      "hint": "google cloud"
-    }
-  ],
+  "techStack": {
+    "fullStack": [
+      {
+        "name": "React",
+        "src": "https://picsum.photos/seed/reactlogo/120/40",
+        "hint": "react logo"
+      },
+      {
+        "name": "Next.js",
+        "src": "https://picsum.photos/seed/nextjslogo/120/40",
+        "hint": "nextjs logo"
+      },
+      {
+        "name": "Nuxt.js",
+        "src": "https://picsum.photos/seed/nuxtjslogo/120/40",
+        "hint": "nuxtjs logo"
+      },
+      {
+        "name": "Node.js",
+        "src": "https://picsum.photos/seed/nodejslogo/120/40",
+        "hint": "nodejs logo"
+      },
+      {
+        "name": "Django",
+        "src": "https://picsum.photos/seed/djangologo/120/40",
+        "hint": "django logo"
+      },
+      {
+        "name": "Flask",
+        "src": "https://picsum.photos/seed/flasklogo/120/40",
+        "hint": "flask logo"
+      },
+      {
+        "name": "Laravel",
+        "src": "https://picsum.photos/seed/laravellogo/120/40",
+        "hint": "laravel logo"
+      },
+      {
+        "name": "CodeIgniter",
+        "src": "https://picsum.photos/seed/codeigniterlogo/120/40",
+        "hint": "codeigniter logo"
+      },
+      {
+        "name": "Python",
+        "src": "https://picsum.photos/seed/pythonlogo/120/40",
+        "hint": "python logo"
+      },
+      {
+        "name": "PHP",
+        "src": "https://picsum.photos/seed/phplogo/120/40",
+        "hint": "php logo"
+      },
+      {
+        "name": "TypeScript",
+        "src": "https://picsum.photos/seed/typescriptlogo/120/40",
+        "hint": "typescript logo"
+      }
+    ],
+    "socialMedia": [
+      {
+        "name": "Facebook",
+        "src": "https://picsum.photos/seed/facebooklogo/120/40",
+        "hint": "facebook logo"
+      },
+      {
+        "name": "Instagram",
+        "src": "https://picsum.photos/seed/instagramlogo/120/40",
+        "hint": "instagram logo"
+      },
+      {
+        "name": "TikTok",
+        "src": "https://picsum.photos/seed/tiktoklogo/120/40",
+        "hint": "tiktok logo"
+      }
+    ],
+    "artificialIntelligence": [
+      {
+        "name": "Machine Learning",
+        "src": "https://picsum.photos/seed/ml-logo/120/40",
+        "hint": "machine learning"
+      },
+      {
+        "name": "Deep Learning",
+        "src": "https://picsum.photos/seed/dl-logo/120/40",
+        "hint": "deep learning"
+      },
+      {
+        "name": "Automation",
+        "src": "https://picsum.photos/seed/automationlogo/120/40",
+        "hint": "automation robot"
+      },
+      {
+        "name": "Scraping",
+        "src": "https://picsum.photos/seed/scrapinglogo/120/40",
+        "hint": "data scraping"
+      }
+    ]
+  },
   "testimonials": [
     {
       "name": "John Doe",

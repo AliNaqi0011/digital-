@@ -1,3 +1,4 @@
+
 {
   "companyName": "Creative Experts Solution",
   "contact": {
@@ -65,7 +66,21 @@
   },
   "techStack": {
     "title": "Our Technology Stack",
-    "subtitle": "We use a modern, robust stack to build scalable and maintainable solutions."
+    "subtitle": "We use a modern, robust stack to build scalable and maintainable solutions.",
+    "categories": [
+      {
+        "id": "fullStack",
+        "title": "Full Stack Development"
+      },
+      {
+        "id": "socialMedia",
+        "title": "Social Media Marketing"
+      },
+      {
+        "id": "artificialIntelligence",
+        "title": "Artificial Intelligence"
+      }
+    ]
   },
   "testimonials": {
     "title": "Our Customers Who Make Us",
