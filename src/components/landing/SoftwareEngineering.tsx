@@ -46,7 +46,7 @@ export function SoftwareEngineering({ softwareEngineeringContent, image }: Softw
               })}
             </ul>
             <Button asChild size="lg" className="mt-10 group rounded-full">
-              <Link href="#services">
+              <Link href="/about">
                 Get to Know Us <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>

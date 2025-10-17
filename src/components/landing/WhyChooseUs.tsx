@@ -29,8 +29,6 @@ function useAnimateOnScroll() {
 
 interface WhyChooseUsProps {
   whyChooseUsContent: {
-    title: string;
-    subtitle: string;
     items: { icon: string; title: string; description: string }[];
   }
 }
@@ -39,11 +37,11 @@ export function WhyChooseUs({ whyChooseUsContent }: WhyChooseUsProps) {
   useAnimateOnScroll();
 
   return (
-    <section id="about" className="py-24 md:py-32 bg-secondary/30 scroll-animate">
+    <section id="why-choose-us" className="py-24 md:py-32 bg-secondary/30 scroll-animate">
       <div className="container px-4 md:px-6">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl font-bold tracking-tight">{whyChooseUsContent.title}</h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto text-lg">{whyChooseUsContent.subtitle}</p>
+          <h2 className="text-4xl font-bold tracking-tight">Why Partner With Creative Experts Solution?</h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg">We're not just a service provider; we're your dedicated technology partner.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {whyChooseUsContent.items.map((item, index) => {

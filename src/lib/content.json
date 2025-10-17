@@ -12,7 +12,7 @@
   },
   "navigation": [
     { "name": "Services", "href": "#services" },
-    { "name": "About", "href": "#about" },
+    { "name": "About", "href": "/about" },
     { "name": "Process", "href": "#process" },
     { "name": "Contact", "href": "#contact" }
   ],
@@ -25,14 +25,78 @@
     "subtitle": "We meet your brand’s IT infrastructure needs."
   },
   "whyChooseUs": {
-    "title": "Why Partner With Creative Experts Solution?",
-    "subtitle": "We're not just a service provider; we're your dedicated technology partner.",
     "items": [
-      { "icon": "Clock", "title": "Availability", "description": "Reliable, in-house solutions for critical services with 99.9% uptime." },
-      { "icon": "Heart", "title": "Loyalty", "description": "Long-term partnerships focused on mutual success and growth." },
-      { "icon": "Zap", "title": "Experience", "description": "Decades of combined expertise in cutting-edge enterprise solutions." },
-      { "icon": "Shield", "title": "Support", "description": "Transparent, 24/7 guideline-driven support from our expert team." }
+      {
+        "icon": "Zap",
+        "title": "Availability",
+        "description": "24/7 access to our expert team ensures your operations run smoothly without interruption."
+      },
+      {
+        "icon": "Heart",
+        "title": "Loyalty",
+        "description": "We build lasting partnerships based on trust, transparency, and a commitment to your success."
+      },
+      {
+        "icon": "Clock",
+        "title": "Experience",
+        "description": "Decades of combined experience in the IT industry, delivering proven results for our clients."
+      },
+      {
+        "icon": "Shield",
+        "title": "Security",
+        "description": "Protecting your digital assets is our top priority with state-of-the-art security solutions."
+      }
     ]
+  },
+  "aboutPage": {
+    "title": "About Us",
+    "description": "Driving innovation and excellence in the digital realm.",
+    "companyDetails": "Creative Experts Solution is a forward-thinking technology firm dedicated to crafting bespoke digital solutions that drive growth and efficiency. Our mission is to empower businesses by leveraging cutting-edge technology, deep industry expertise, and a passion for innovation. We believe in building long-term partnerships, turning complex challenges into powerful opportunities for our clients.",
+    "offerings": {
+      "title": "Our Core Competencies",
+      "categories": [
+        {
+          "title": "Development",
+          "items": ["Next.js", "React", "Vue.js", "Express", "Node.js", "Python", "Django", "Flask"]
+        },
+        {
+          "title": "Artificial Intelligence",
+          "items": ["Machine Learning", "Deep Learning", "Natural Language Processing", "AI-driven Automation"]
+        },
+        {
+          "title": "Data Science",
+          "items": ["Power BI", "Pandas", "NumPy", "Matplotlib", "MATLAB", "Data Scraping"]
+        }
+      ]
+    },
+    "team": {
+      "title": "Meet the Experts",
+      "subtitle": "The architects of your digital success.",
+      "members": [
+        {
+          "name": "Ali Naqi",
+          "role": "Full Stack Software Engineer",
+          "bio": "A passionate engineer dedicated to building scalable and robust web applications with a focus on clean architecture and user-centric design.",
+          "image": "team_ali_naqi",
+          "socials": {
+            "linkedin": "#",
+            "twitter": "#",
+            "github": "#"
+          }
+        },
+        {
+          "name": "Umar Murtaza",
+          "role": "Data Engineer",
+          "bio": "An expert in transforming complex datasets into actionable insights. Umar specializes in data pipelines, analytics, and machine learning infrastructure.",
+          "image": "team_umar_murtaza",
+          "socials": {
+            "linkedin": "#",
+            "twitter": "#",
+            "github": "#"
+          }
+        }
+      ]
+    }
   },
   "softwareEngineering": {
     "title": "Software Engineering",
@@ -210,7 +274,7 @@
     "description": "Engineering the future of your business with value-driven IT solutions.",
     "copyright": "© 2024 Creative Experts Solution. All rights reserved. Built with passion and code.",
     "companyLinks": [
-        { "name": "About Us", "href": "#about" },
+        { "name": "About Us", "href": "/about" },
         { "name": "Careers", "href": "#" },
         { "name": "Press", "href": "#" },
         { "name": "Our Process", "href": "#process" }

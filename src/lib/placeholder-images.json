@@ -4,6 +4,18 @@
     "alt": "Abstract visualization of software code and development.",
     "hint": "abstract code"
   },
+  "about": {
+    "team_ali_naqi": {
+      "src": "https://picsum.photos/seed/ali-naqi/400/400",
+      "alt": "Portrait of Ali Naqi",
+      "hint": "man portrait"
+    },
+    "team_umar_murtaza": {
+      "src": "https://picsum.photos/seed/umar-murtaza/400/400",
+      "alt": "Portrait of Umar Murtaza",
+      "hint": "person portrait"
+    }
+  },
   "techStack": {
     "fullStack": [
       {
