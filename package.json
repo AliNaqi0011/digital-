@@ -13,8 +13,7 @@
     "lint:check": "next lint",
     "typecheck": "tsc --noEmit",
     "analyze": "ANALYZE=true npm run build",
-    "clean": "rm -rf .next out",
-    "prepare": "npm run typecheck && npm run lint:check"
+    "clean": "rm -rf .next out"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",
