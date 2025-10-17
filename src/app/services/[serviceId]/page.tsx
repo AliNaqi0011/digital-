@@ -7,6 +7,9 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { CheckCircle } from 'lucide-react';
 import placeholderImages from '@/lib/placeholder-images.json';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 type ServicePageProps = {
   params: {
@@ -66,14 +69,6 @@ export default function ServicePage({ params }: ServicePageProps) {
     notFound();
   }
 
-  const techStackContent = {
-    ...content.techStack,
-    categories: content.techStack.categories.map(category => ({
-      ...category,
-      technologies: placeholderImages.techStack[category.id as keyof typeof placeholderImages.techStack]
-    }))
-  };
-
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header 
@@ -86,7 +81,7 @@ export default function ServicePage({ params }: ServicePageProps) {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative h-[50vh] flex items-center justify-center text-center overflow-hidden">
-            <div className="absolute inset-0 z-10 bg-black/50"></div>
+            <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-black/40 to-transparent"></div>
             <Image 
                 src={service.image.src}
                 alt={service.image.alt}
@@ -97,32 +92,55 @@ export default function ServicePage({ params }: ServicePageProps) {
                 priority
             />
             <div className="container relative z-20 px-4 md:px-6 animate-fade-in-up">
+                <p className="text-lg font-semibold text-primary mb-2">Our Services</p>
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-white">{service.title}</h1>
             </div>
         </section>
 
-        {/* Service Details Section */}
+        {/* Service Overview Section */}
         <section className="py-24 md:py-32">
             <div className="container px-4 md:px-6">
-                <div className="grid md:grid-cols-3 gap-12">
-                    <div className="md:col-span-2">
-                        <h2 className="text-3xl font-bold tracking-tight mb-4 text-primary">Service Overview</h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">{service.detailedDescription}</p>
-                    </div>
-                    <div>
-                        <h3 className="text-2xl font-bold tracking-tight mb-4">Key Features</h3>
-                        <ul className="space-y-4">
-                            {service.features.map((feature, index) => (
-                                <li key={index} className="flex items-start">
-                                    <CheckCircle className="w-6 h-6 text-primary mt-1 mr-3 flex-shrink-0" />
-                                    <span className="text-muted-foreground">{feature}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-primary text-center">Service Overview</h2>
+                    <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">{service.detailedDescription}</p>
                 </div>
             </div>
         </section>
+
+        {/* Key Features Section */}
+        <section className="py-24 md:py-32 bg-secondary/30">
+            <div className="container px-4 md:px-6">
+                <div className="max-w-4xl mx-auto text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Key Features & Benefits</h2>
+                    <p className="text-lg text-muted-foreground">Discover what makes our {service.title} solution stand out.</p>
+                </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {service.features.map((feature, index) => (
+                        <Card key={index} className="bg-background/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                            <CardHeader className="flex flex-row items-center gap-4 pb-4">
+                                <CheckCircle className="w-8 h-8 text-primary flex-shrink-0" />
+                                <CardTitle className="text-xl">{feature.split(':')[0]}</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-muted-foreground">{feature.substring(feature.indexOf(':') + 2)}</p>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-24 md:py-32">
+            <div className="container text-center">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Ready to elevate your business?</h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">Let's discuss how our {service.title} expertise can help you achieve your goals.</p>
+                <Button asChild size="lg" className="group rounded-full text-lg px-8 py-6">
+                    <Link href="#contact">Get a Free Quote</Link>
+                </Button>
+            </div>
+        </section>
+
       </main>
       <Footer 
         companyName={content.companyName}
