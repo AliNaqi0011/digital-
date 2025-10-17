@@ -29,15 +29,15 @@ export function Services({ servicesContent }: ServicesProps) {
           {servicesContent.items.map((service, index) => {
             const Icon = iconMap[service.icon];
             return (
-              <Card key={index} className="group flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 border-border/50 hover:border-primary/50 bg-background overflow-hidden">
-                <CardHeader className="items-start p-6">
+              <Card key={index} className="group flex flex-col transition-all duration-300 shadow-2xl shadow-primary/10 -translate-y-2 border-border/50 hover:border-primary/50 bg-background overflow-hidden rounded-2xl">
+                <CardHeader className="items-center text-center p-6">
                   <div className="p-4 rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground mb-4">{Icon && <Icon className="w-10 h-10" />}</div>
                   <CardTitle className="text-2xl">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-1 p-6 pt-0">
+                <CardContent className="flex-1 p-6 pt-0 text-center">
                   <CardDescription className="text-base">{service.description}</CardDescription>
                 </CardContent>
-                <CardFooter className="p-6 pt-0 mt-auto">
+                <CardFooter className="p-6 pt-0 mt-auto flex justify-center">
                   <Button variant="ghost" asChild className="group/link text-primary text-base px-0">
                     <Link href={`/services/${service.id}`}>Learn More <ArrowRight className="ml-2 transition-transform group-hover/link:translate-x-1" /></Link>
                   </Button>
