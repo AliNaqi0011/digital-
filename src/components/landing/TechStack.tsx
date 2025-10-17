@@ -1,7 +1,7 @@
 
 'use client';
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   BrainCircuit,
   Megaphone,
@@ -37,28 +37,44 @@ export function TechStack({ techStackContent }: TechStackProps) {
           <h2 className="text-4xl font-bold tracking-tight">{techStackContent.title}</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg">{techStackContent.subtitle}</p>
         </div>
-        <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-3">
+        
+        <Tabs defaultValue={techStackContent.categories[0].title} className="w-full">
+          <TabsList className="grid w-full grid-cols-1 md:grid-cols-3 h-auto">
             {techStackContent.categories.map((category) => {
-                const Icon = categoryIcons[category.title];
-                return (
-                    <Card key={category.title} className="group flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 border-border/50 hover:border-primary/50 bg-background overflow-hidden">
-                        <CardHeader className="flex flex-row items-center gap-4 p-6">
-                            {Icon && <div className="p-3 rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground"><Icon className="w-8 h-8" /></div>}
-                            <CardTitle className="text-2xl">{category.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex-1 p-6 pt-0">
-                           <div className="flex flex-wrap gap-4 justify-center">
-                                {category.technologies.map((tech) => (
-                                    <div key={tech.name} className="flex items-center justify-center p-2 rounded-lg bg-secondary/50 transition-transform duration-300 hover:scale-110" title={tech.name}>
-                                        <Image src={tech.src} alt={tech.name} width={80} height={30} className="grayscale hover:grayscale-0 transition-all duration-300 object-contain" data-ai-hint={tech.hint} />
-                                    </div>
-                                ))}
-                            </div>
-                        </CardContent>
-                    </Card>
-                )
+              const Icon = categoryIcons[category.title];
+              return (
+                <TabsTrigger key={category.title} value={category.title} className="text-lg py-3 flex gap-2 items-center">
+                  {Icon && <Icon className="w-6 h-6" />}
+                  {category.title}
+                </TabsTrigger>
+              );
             })}
-        </div>
+          </TabsList>
+
+          {techStackContent.categories.map((category) => (
+            <TabsContent key={category.title} value={category.title}>
+              <div className="p-8 mt-6 bg-background rounded-2xl shadow-lg">
+                <div className="flex flex-wrap gap-x-12 gap-y-8 justify-center">
+                  {category.technologies.map((tech) => (
+                    <div key={tech.name} className="flex flex-col items-center justify-center gap-2 group transition-transform duration-300 hover:scale-110" title={tech.name}>
+                      <div className="p-3 rounded-lg bg-secondary/50">
+                        <Image 
+                          src={tech.src} 
+                          alt={tech.name} 
+                          width={100} 
+                          height={40} 
+                          className="grayscale group-hover:grayscale-0 transition-all duration-300 object-contain" 
+                          data-ai-hint={tech.hint} 
+                        />
+                      </div>
+                      <span className="text-sm font-medium text-muted-foreground">{tech.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
       </div>
     </section>
   );
