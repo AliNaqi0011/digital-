@@ -67,7 +67,7 @@ interface FooterProps {
     copyright: string;
     companyLinks: { name: string; href: string }[];
   };
-  services: { title: string }[];
+  services: { title: string; id: string }[];
   contact: {
     email: string;
     phone: string;
@@ -96,7 +96,7 @@ export function Footer({ companyName, footerContent, services, contact, socials 
             <h4 className="font-semibold text-lg">Services</h4>
             <ul className="space-y-3 mt-4">
               {services.map(service => (
-                <li key={service.title}><a className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">{service.title}</a></li>
+                <li key={service.id}><Link href={`/services/${service.id}`} className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>{service.title}</Link></li>
               ))}
             </ul>
           </div>

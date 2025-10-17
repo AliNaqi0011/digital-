@@ -138,7 +138,7 @@ export function Header({ companyName, navigation, contact, socials, quoteDialog 
         </div>
       </div>
       <header className="sticky top-0 z-50 flex items-center justify-between h-20 px-4 md:px-8 bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-2xl shadow-primary/10">
-        <Link href="#" className="flex items-center gap-3" prefetch={false}>
+        <Link href="/" className="flex items-center gap-3" prefetch={false}>
           <Briefcase className="w-8 h-8 text-primary animate-pulse" />
           <h1 className="text-xl font-bold tracking-wider">{companyName}</h1>
         </Link>

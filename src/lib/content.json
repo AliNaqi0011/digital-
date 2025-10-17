@@ -11,6 +11,7 @@
     "linkedin": "#"
   },
   "navigation": [
+    { "name": "Home", "href": "/" },
     { "name": "Services", "href": "#services" },
     { "name": "About", "href": "/about" },
     { "name": "Process", "href": "#process" },
@@ -272,14 +273,100 @@
     "title": "Our Customers Who Make Us",
     "subtitle": "We work day and night to ensure our customers thrive."
   },
+  "faqPage": {
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to common questions about our services and process.",
+    "questions": [
+      {
+        "question": "What kind of industries do you specialize in?",
+        "answer": "We have experience across a wide range of industries, including tech, finance, healthcare, and e-commerce. Our solutions are tailored to the unique challenges and opportunities of your specific sector."
+      },
+      {
+        "question": "What is your development process like?",
+        "answer": "We follow an agile development methodology, which includes discovery, design, development, testing, and deployment. We work in sprints, allowing for flexibility and regular feedback to ensure the final product meets your exact needs."
+      },
+      {
+        "question": "How do you ensure the security of my application?",
+        "answer": "Security is our top priority. We implement best practices at every stage of the development lifecycle, including code reviews, vulnerability scanning, and secure infrastructure design. We also adhere to industry standards like Zero Trust and conduct regular penetration testing."
+      },
+      {
+        "question": "What kind of post-launch support do you offer?",
+        "answer": "We offer a range of support and maintenance packages, from on-demand assistance to proactive 24/7 monitoring. Our goal is to ensure your application remains secure, performant, and up-to-date long after launch."
+      },
+      {
+        "question": "How long does it take to build a custom software solution?",
+        "answer": "The timeline for a project varies greatly depending on its complexity and scope. After our initial discovery and strategy phase, we provide a detailed project roadmap with clear timelines and milestones."
+      }
+    ]
+  },
+  "termsPage": {
+    "title": "Terms and Conditions",
+    "lastUpdated": "July 31, 2024",
+    "sections": [
+      {
+        "title": "1. Introduction",
+        "content": "Welcome to Creative Experts Solution. These Terms and Conditions govern your use of our website and services. By accessing or using our service, you agree to be bound by these terms. If you disagree with any part of the terms, then you do not have permission to access the service."
+      },
+      {
+        "title": "2. Intellectual Property Rights",
+        "content": "Other than the content you own, under these Terms, Creative Experts Solution and/or its licensors own all the intellectual property rights and materials contained in this Website. You are granted a limited license only for purposes of viewing the material contained on this Website."
+      },
+      {
+        "title": "3. Restrictions",
+        "content": "You are specifically restricted from all of the following: publishing any Website material in any other media; selling, sublicensing and/or otherwise commercializing any Website material; publicly performing and/or showing any Website material; using this Website in any way that is or may be damaging to this Website; using this Website in any way that impacts user access to this Website."
+      },
+      {
+        "title": "4. Your Content",
+        "content": "In these Website Standard Terms and Conditions, “Your Content” shall mean any audio, video, text, images or other material you choose to display on this Website. By displaying Your Content, you grant Creative Experts Solution a non-exclusive, worldwide irrevocable, sub-licensable license to use, reproduce, adapt, publish, translate and distribute it in any and all media."
+      },
+      {
+        "title": "5. Limitation of Liability",
+        "content": "In no event shall Creative Experts Solution, nor any of its officers, directors and employees, be held liable for anything arising out of or in any way connected with your use of this Website whether such liability is under contract. Creative Experts Solution, including its officers, directors and employees shall not be held liable for any indirect, consequential or special liability arising out of or in any way related to your use of this Website."
+      },
+      {
+        "title": "6. Governing Law & Jurisdiction",
+        "content": "These Terms will be governed by and interpreted in accordance with the laws of the State of California, and you submit to the non-exclusive jurisdiction of the state and federal courts located in California for the resolution of any disputes."
+      }
+    ]
+  },
+  "privacyPage": {
+    "title": "Privacy Policy",
+    "lastUpdated": "July 31, 2024",
+    "sections": [
+      {
+        "title": "1. Information We Collect",
+        "content": "We collect information that you provide directly to us when you request a quote, subscribe to our newsletter, or otherwise communicate with us. This information may include your name, email address, phone number, and any other details you provide about your project."
+      },
+      {
+        "title": "2. How We Use Your Information",
+        "content": "We use the information we collect to provide, maintain, and improve our services, to respond to your comments and questions, to send you technical notices, updates, security alerts, and support messages, and to communicate with you about products, services, offers, and events offered by Creative Experts Solution."
+      },
+      {
+        "title": "3. Information Sharing",
+        "content": "We do not share your personal information with third parties except as described in this Privacy Policy. We may share personal information with vendors, consultants, and other service providers who need access to such information to carry out work on our behalf."
+      },
+      {
+        "title": "4. Data Security",
+        "content": "We take reasonable measures to help protect information about you from loss, theft, misuse and unauthorized access, disclosure, alteration, and destruction. However, no internet or email transmission is ever fully secure or error-free."
+      },
+      {
+        "title": "5. Your Choices",
+        "content": "You may opt out of receiving promotional emails from us by following the instructions in those emails. If you opt out, we may still send you non-promotional emails, such as those about your account or our ongoing business relations."
+      },
+      {
+        "title": "6. Changes to This Policy",
+        "content": "We may change this Privacy Policy from time to time. If we make changes, we will notify you by revising the date at the top of the policy and, in some cases, we may provide you with additional notice (such as adding a statement to our homepage or sending you a notification)."
+      }
+    ]
+  },
   "footer": {
     "description": "Engineering the future of your business with value-driven IT solutions.",
     "copyright": "© 2024 Creative Experts Solution. All rights reserved. Built with passion and code.",
     "companyLinks": [
         { "name": "About Us", "href": "/about" },
-        { "name": "Careers", "href": "#" },
-        { "name": "Press", "href": "#" },
-        { "name": "Our Process", "href": "#process" }
+        { "name": "FAQ", "href": "/faq" },
+        { "name": "Terms of Service", "href": "/terms" },
+        { "name": "Privacy Policy", "href": "/privacy" }
     ]
   }
 }
