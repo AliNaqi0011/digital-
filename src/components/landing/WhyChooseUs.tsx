@@ -131,8 +131,8 @@ export function WhyChooseUs({ whyChooseUsContent }: WhyChooseUsProps) {
             const Icon = iconMap[item.icon];
             return (
               <div key={index} 
-                   className="group relative p-8 rounded-2xl bg-background/50 backdrop-blur-xl transition-all duration-500 overflow-hidden"
-                   style={{ transformStyle: 'preserve-3d' }}>
+                   className="group relative p-8 rounded-2xl bg-background/50 backdrop-blur-xl transition-all duration-500 overflow-hidden hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 animate-scale-in"
+                   style={{ transformStyle: 'preserve-3d', animationDelay: `${index * 0.2}s` }}>
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute -top-1 -right-1 w-24 h-24 bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
 

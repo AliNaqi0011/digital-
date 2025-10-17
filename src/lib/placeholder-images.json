@@ -29,7 +29,7 @@
         "hint": "nextjs logo"
       },
       {
-        "name": "Nuxt.js",
+        "name": "Vue.js",
         "src": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNNjQgMTI4YzM1LjMgMCA2NC0yOC43IDY0LTY0cy0yOC43LTY0LTY0LTY0UzAgMjguNyAwIDY0czI4LjcgNjQgNjQgNjRaIiBmaWxsPSIjMDAwMDJCIi8+PHBhdGggZD0iTTc5IDg4IDY0IDExOC40IDQ5IDg4bDE1Ljc1LTE4Ljc1TDI5IDMxbDM1IDU3WiIgZmlsbD0iIzAwZGM4YyIvPjxwYXRoIGQ9Ik03OSA4OCAyOSAzMWwzNS4wNSA1Ny4wNEw2NCA5OS4yNSA0OS4yNSA4OEw0OSA4OHoiIGZpbGw9IiMwMGNiNzkiLz48cGF0aCBkPSJNNDkgODhsLTIwLjEgMzMuMWg5MC4yTDk5IDg4SDQ5WiIgZmlsbD0iIzQxYjg4MiIvPjwvc3ZnPg==",
         "hint": "nuxtjs logo"
       },
@@ -54,9 +54,39 @@
         "hint": "laravel logo"
       },
       {
-        "name": "CodeIgniter",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iI0RGNEMyRiIgZD0iTTIyLjUgMy4zNzVIMTYuMTI1bC0zLjM3NSAzLjM3NUwxNi4xMjUgMTBoNi4zNzVWMjAuNjI1SDE2LjEyNWwtMy4zNzUtMy4zNzUtMy4zNzUgMy4zNzVINS42MjVWMTBIOS4yNUw2Ljg3NSA2Ljc1IDMuNSA5LjM3NXYxMy4xMjVoMjFWMi4yNUwyMi41IDMuMzc1ek0xOCAxOC43NUgxNC42MjVsLTgtOEg4LjI1djMuMzc1SDUuNjI1di00LjVINy41TDEwLjUgN0gxMy41bDIuNjI1IDIuNjI1djEuMTI1SDEzLjVsMy43NSA0LjEyNXYtNS4yNUgyMS43NXY2Ljc1SDE4di0xLjEyNXpNOS43NSA5SDEyVjYuNzVoMS41djQuNWgtNS4yNXYtMS41aDEuNVY5eiIvPgo8L3N2Zz4K",
-        "hint": "codeigniter logo"
+        "name": "Express",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iIzAwMCIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KICA8cGF0aCBmaWxsPSIjRkZDMzUyIiBkPSJNMiA5aDEwVjBINXY0YS41LjUgMCAwMS0uNS0uNVY0aC0zVjJoNXY3em05IDZoOVY1aC00djRoLTljMCA0Ljk3MSA0LjAyOSA5IDkgOWg5VjEySDExdjMuNXptNS04djJoM3YtMkgxNnoiLz4KPC9zdmc+Cg==",
+        "hint": "express logo"
+      },
+      {
+        "name": "JavaScript",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iI0Y3REYxRSIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KPC9zdmc+Cg==",
+        "hint": "javascript logo"
+      },
+      {
+        "name": "HTML",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iI0U1NEMyNiIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KPC9zdmc+Cg==",
+        "hint": "html logo"
+      },
+      {
+        "name": "CSS",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iIzE1NzJCNiIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KPC9zdmc+Cg==",
+        "hint": "css logo"
+      },
+      {
+        "name": "Bootstrap",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iIzc5NTJCMyIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KPC9zdmc+Cg==",
+        "hint": "bootstrap logo"
+      },
+      {
+        "name": "Tailwind CSS",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iIzA2QjZENiIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KPC9zdmc+Cg==",
+        "hint": "tailwind logo"
+      },
+      {
+        "name": "Docker",
+        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iIzI0OTZFRCIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KPC9zdmc+Cg==",
+        "hint": "docker logo"
       },
       {
         "name": "Python",

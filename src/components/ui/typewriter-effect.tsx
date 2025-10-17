@@ -26,6 +26,7 @@ export function TypewriterEffect({ text, className, ...props }: TypewriterEffect
 
       return () => clearInterval(intervalId);
     }
+    return undefined;
   }, [text]);
 
   return (

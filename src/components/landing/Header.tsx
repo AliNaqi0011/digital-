@@ -142,9 +142,15 @@ export function Header({ companyName, navigation, contact, socials, quoteDialog 
           <Briefcase className="w-8 h-8 text-primary animate-pulse" />
           <h1 className="text-xl font-bold tracking-wider">{companyName}</h1>
         </Link>
-        <nav className="hidden md:flex items-center gap-8 text-lg font-semibold">
+        <nav className="hidden md:flex items-center gap-8 text-lg font-semibold" role="navigation" aria-label="Main navigation">
           {navigation.map(item => (
-            <Link key={item.name} href={item.href} className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5" prefetch={false}>
+            <Link 
+              key={item.name} 
+              href={item.href} 
+              className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1" 
+              prefetch={false}
+              aria-label={`Navigate to ${item.name}`}
+            >
               {item.name}
             </Link>
           ))}
@@ -172,9 +178,15 @@ export function Header({ companyName, navigation, contact, socials, quoteDialog 
               </Button>
             </SheetTrigger>
             <SheetContent>
-              <nav className="flex flex-col gap-6 mt-8 text-lg">
+              <nav className="flex flex-col gap-6 mt-8 text-lg" role="navigation" aria-label="Mobile navigation">
                 {navigation.map(item => (
-                  <Link key={item.name} href={item.href} className="text-muted-foreground hover:text-primary" prefetch={false}>
+                  <Link 
+                    key={item.name} 
+                    href={item.href} 
+                    className="text-muted-foreground hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1" 
+                    prefetch={false}
+                    aria-label={`Navigate to ${item.name}`}
+                  >
                     {item.name}
                   </Link>
                 ))}

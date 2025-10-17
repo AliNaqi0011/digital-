@@ -12,16 +12,17 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 type ServicePageProps = {
-  params: {
+  params: Promise<{
     serviceId: string;
-  }
+  }>
 }
 
 const services = content.services.items;
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
-  const service = services.find(s => s.id === params.serviceId);
+  const { serviceId } = await params;
+  const service = services.find(s => s.id === serviceId);
 
   if (!service) {
     return {
@@ -61,8 +62,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ServicePage({ params }: ServicePageProps) {
-  const service = services.find(s => s.id === params.serviceId);
+export default async function ServicePage({ params }: ServicePageProps) {
+  const { serviceId } = await params;
+  const service = services.find(s => s.id === serviceId);
 
   // If service is not found, show a 404 page
   if (!service) {
