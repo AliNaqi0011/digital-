@@ -7,17 +7,17 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Address',
-    details: ['123 Tech Avenue', 'Silicon Valley, CA 94000']
+    details: ['Alhama Town 76', 'Lahore, Pakistan']
   },
   {
     icon: Phone,
     title: 'Phone',
-    details: ['(123) 456-7890', 'Mon-Fri 9AM-6PM']
+    details: ['+92 311 4648875', 'Mon-Fri 9AM-6PM']
   },
   {
     icon: Mail,
     title: 'Email',
-    details: ['contact@creativeexperts.dev', 'support@creativeexperts.dev']
+    details: ['creativexperts10@gmail.com', 'creativexperts10@gmail.com']
   },
   {
     icon: Clock,

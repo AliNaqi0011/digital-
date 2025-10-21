@@ -44,53 +44,136 @@ export default function AboutPage() {
       />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative h-[40vh] flex items-center justify-center text-center bg-secondary/30">
+        <section className="relative h-[60vh] flex items-center justify-center text-center bg-gradient-to-br from-primary/10 via-secondary/20 to-background overflow-hidden">
+            <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
             <div className="container relative z-10 px-4 md:px-6 animate-fade-in-up">
-                <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary">{aboutPage.title}</h1>
-                <p className="max-w-2xl mx-auto mt-4 text-lg md:text-xl text-muted-foreground">{aboutPage.description}</p>
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                    Trusted by 100+ Businesses Worldwide
+                </div>
+                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary mb-6">
+                    Crafting Digital
+                    <span className="block bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                        Excellence
+                    </span>
+                </h1>
+                <p className="max-w-3xl mx-auto text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                    We transform ambitious ideas into powerful digital solutions that drive growth, 
+                    innovation, and lasting success in the modern business landscape.
+                </p>
             </div>
         </section>
 
         {/* Company Details Section */}
         <section className="py-24 md:py-32">
             <div className="container px-4 md:px-6">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-primary">Who We Are</h2>
-                    <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                        {aboutPage.companyDetails}
-                    </p>
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-primary mb-8">Who We Are</h2>
+                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                            {aboutPage.companyDetails}
+                        </p>
+                        <div className="grid grid-cols-2 gap-8">
+                            <div className="text-center">
+                                <div className="text-3xl font-bold text-primary">5+</div>
+                                <div className="text-sm text-muted-foreground">Years Experience</div>
+                            </div>
+                            <div className="text-center">
+                                <div className="text-3xl font-bold text-primary">100+</div>
+                                <div className="text-sm text-muted-foreground">Projects Delivered</div>
+                            </div>
+                            <div className="text-center">
+                                <div className="text-3xl font-bold text-primary">50+</div>
+                                <div className="text-sm text-muted-foreground">Happy Clients</div>
+                            </div>
+                            <div className="text-center">
+                                <div className="text-3xl font-bold text-primary">24/7</div>
+                                <div className="text-sm text-muted-foreground">Support Available</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="relative">
+                        <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 p-8">
+                            <Image 
+                                src="https://picsum.photos/seed/office-team/600/600"
+                                alt="Creative Experts Solution team workspace"
+                                width={600}
+                                height={600}
+                                className="rounded-xl object-cover w-full h-full"
+                                data-ai-hint="modern office workspace with developers"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         
-        {/* Core Competencies Section */}
+        {/* Technology Stack Section */}
         <section className="py-24 md:py-32 bg-secondary/30">
             <div className="container px-4 md:px-6">
                 <div className="max-w-4xl mx-auto text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{aboutPage.offerings.title}</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Our Technology Arsenal</h2>
+                    <p className="text-xl text-muted-foreground">Cutting-edge tools and frameworks that power exceptional digital experiences</p>
                 </div>
-                <div className="grid md:grid-cols-3 gap-8">
-                    {aboutPage.offerings.categories.map((category) => {
-                        const Icon = iconMap[category.title];
-                        return (
-                            <Card key={category.title} className="bg-background/60 backdrop-blur-sm border-border/30 rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/50">
-                                <CardHeader className="flex flex-row items-center gap-4">
-                                    {Icon && <div className="p-3 rounded-lg bg-primary/10 text-primary"><Icon className="w-8 h-8" /></div>}
-                                    <CardTitle className="text-2xl text-primary">{category.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <ul className="space-y-3">
-                                        {category.items.map((item) => (
-                                            <li key={item} className="flex items-center gap-3">
-                                                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                                                <span className="text-muted-foreground">{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </CardContent>
+                
+                {/* Frontend Technologies */}
+                <div className="mb-16">
+                    <h3 className="text-2xl font-bold text-center mb-8 text-primary">Frontend Excellence</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        {[
+                            { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+                            { name: 'Next.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+                            { name: 'Vue.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
+                            { name: 'Angular', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },
+                            { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+                            { name: 'Tailwind', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' }
+                        ].map((tech) => (
+                            <Card key={tech.name} className="p-6 text-center hover:scale-105 transition-transform duration-300 bg-background/80 backdrop-blur-sm">
+                                <Image src={tech.logo} alt={tech.name} width={48} height={48} className="mx-auto mb-3" />
+                                <p className="font-medium text-sm">{tech.name}</p>
                             </Card>
-                        )
-                    })}
+                        ))}
+                    </div>
+                </div>
+                
+                {/* Backend Technologies */}
+                <div className="mb-16">
+                    <h3 className="text-2xl font-bold text-center mb-8 text-primary">Backend Power</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        {[
+                            { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+                            { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+                            { name: 'Django', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
+                            { name: 'Express', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+                            { name: 'PostgreSQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+                            { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' }
+                        ].map((tech) => (
+                            <Card key={tech.name} className="p-6 text-center hover:scale-105 transition-transform duration-300 bg-background/80 backdrop-blur-sm">
+                                <Image src={tech.logo} alt={tech.name} width={48} height={48} className="mx-auto mb-3" />
+                                <p className="font-medium text-sm">{tech.name}</p>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+                
+                {/* AI & Cloud Technologies */}
+                <div>
+                    <h3 className="text-2xl font-bold text-center mb-8 text-primary">AI & Cloud Infrastructure</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                        {[
+                            { name: 'TensorFlow', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
+                            { name: 'PyTorch', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
+                            { name: 'AWS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
+                            { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+                            { name: 'Kubernetes', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' },
+                            { name: 'Firebase', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' }
+                        ].map((tech) => (
+                            <Card key={tech.name} className="p-6 text-center hover:scale-105 transition-transform duration-300 bg-background/80 backdrop-blur-sm">
+                                <Image src={tech.logo} alt={tech.name} width={48} height={48} className="mx-auto mb-3" />
+                                <p className="font-medium text-sm">{tech.name}</p>
+                            </Card>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
@@ -99,43 +182,41 @@ export default function AboutPage() {
         <section className="py-24 md:py-32">
             <div className="container px-4 md:px-6">
                 <div className="max-w-4xl mx-auto text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{aboutPage.team.title}</h2>
-                    <p className="text-lg text-muted-foreground">{aboutPage.team.subtitle}</p>
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">{aboutPage.team.title}</h2>
+                    <p className="text-xl text-muted-foreground">{aboutPage.team.subtitle}</p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                     {aboutPage.team.members.map((member) => {
                         const image = teamImages[member.image as keyof typeof teamImages];
                         return (
-                        <Card key={member.name} className="overflow-hidden border-2 border-transparent hover:border-primary transition-all duration-300 group">
+                        <Card key={member.name} className="overflow-hidden border-2 border-transparent hover:border-primary transition-all duration-500 group bg-gradient-to-br from-background to-secondary/20">
                             <CardContent className="p-0">
-                                <div className="relative h-64 bg-gradient-to-br from-primary/20 to-secondary/20">
+                                <div className="relative h-80 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden">
                                     <Image 
                                         src={image.src}
                                         alt={image.alt}
                                         fill
                                         style={{ objectFit: 'cover' }}
-                                        className="mix-blend-luminosity grayscale group-hover:grayscale-0 group-hover:mix-blend-normal transition-all duration-300"
+                                        className="group-hover:scale-110 transition-transform duration-500"
                                         data-ai-hint={image.hint}
                                     />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </div>
-                                <div className="p-6">
-                                    <h3 className="text-2xl font-bold">{member.name}</h3>
-                                    <p className="text-primary font-semibold text-md mb-4">{member.role}</p>
-                                    <p className="text-muted-foreground mb-6">{member.bio}</p>
-                                    <div className="flex gap-4">
-                                        <Button variant="ghost" size="icon" asChild>
+                                <div className="p-8">
+                                    <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
+                                    <p className="text-primary font-semibold text-lg mb-4">{member.role}</p>
+                                    <p className="text-muted-foreground mb-6 leading-relaxed">{member.bio}</p>
+                                    <div className="flex gap-3">
+                                        <Button variant="outline" size="sm" asChild className="hover:bg-primary hover:text-primary-foreground">
                                             <Link href={member.socials.linkedin} target="_blank" aria-label="LinkedIn">
-                                                <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                                                <Linkedin className="w-4 h-4 mr-2" />
+                                                LinkedIn
                                             </Link>
                                         </Button>
-                                        <Button variant="ghost" size="icon" asChild>
-                                            <Link href={member.socials.twitter} target="_blank" aria-label="Twitter">
-                                                <Twitter className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                                            </Link>
-                                        </Button>
-                                        <Button variant="ghost" size="icon" asChild>
+                                        <Button variant="outline" size="sm" asChild className="hover:bg-primary hover:text-primary-foreground">
                                             <Link href={member.socials.github} target="_blank" aria-label="GitHub">
-                                                <Github className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                                                <Github className="w-4 h-4 mr-2" />
+                                                GitHub
                                             </Link>
                                         </Button>
                                     </div>

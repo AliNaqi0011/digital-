@@ -22,13 +22,13 @@ export function CallToAction() {
               </Link>
             </Button>
             <div className="flex items-center gap-6 text-primary-foreground/90">
-              <a href="tel:+1234567890" className="flex items-center gap-2 hover:text-white transition-colors">
+              <a href="tel:+923114648875" className="flex items-center gap-2 hover:text-white transition-colors">
                 <Phone className="w-5 h-5" />
-                <span>(123) 456-7890</span>
+                <span>+92 311 4648875</span>
               </a>
-              <a href="mailto:contact@creativeexperts.dev" className="flex items-center gap-2 hover:text-white transition-colors">
+              <a href="mailto:creativexperts10@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors">
                 <Mail className="w-5 h-5" />
-                <span>contact@creativeexperts.dev</span>
+                <span>creativexperts10@gmail.com</span>
               </a>
             </div>
           </div>

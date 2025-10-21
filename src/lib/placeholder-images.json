@@ -18,130 +18,38 @@
   },
   "techStack": {
     "fullStack": [
-      {
-        "name": "React",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K",
-        "hint": "react logo"
-      },
-      {
-        "name": "Next.js",
-        "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00OCAwYzI2LjUxIDAgNDggMjEuNDkgNDggNDhzLTIxLjQ5IDQ4LTQ4IDQ4UzAgNzQuNTEgMCA0OCAwIDIxLjQ5IDIxLjQ5IDAgNDggMHptMCAyMC44NWMtNC4wMiAwLTcuNjcgMS41Ny0xMC4zOCAzLjhMMzcuNiA2MS4xNWE0LjI1IDQuMjUgMCAwIDAtLjA0IDIuMzkgNC4xOSA0LjE5IDAgMCAwIDMuOSA0LjE5YzIuMyAwIDQuMTktMS44NyA0LjE5LTQuMTkgMC0uNzYtLjItMS41LS41OS0yLjE1bDkuMDMtMzEuMTJoMy44djQ1LjI5aDYuNlYyMC44NUg0OHptMjIuMjkgMTguNDRsLTM0LjUgNjAgaDI3Ljk1TzgxLjE0IDQxLjUxYTQuMjUgNC4yNSAwIDAgMC0xLjM2LTIuNDIgNC4xOSA0LjE5IDAgMCAwLTUuNTQtMS41OSA0LjE5IDQuMTkgMCAwIDAtMS41OCA1LjU1YzAgLjQtLjA0IDEuMi41OCAyLjE5bDYuNDItNS4wM3oiIGZpbGw9IiNmZmYiLz48L3N2Zz4=",
-        "hint": "nextjs logo"
-      },
-      {
-        "name": "Vue.js",
-        "src": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBkPSJNNjQgMTI4YzM1LjMgMCA2NC0yOC43IDY0LTY0cy0yOC43LTY0LTY0LTY0UzAgMjguNyAwIDY0czI4LjcgNjQgNjQgNjRaIiBmaWxsPSIjMDAwMDJCIi8+PHBhdGggZD0iTTc5IDg4IDY0IDExOC40IDQ5IDg4bDE1Ljc1LTE4Ljc1TDI5IDMxbDM1IDU3WiIgZmlsbD0iIzAwZGM4YyIvPjxwYXRoIGQ9Ik03OSA4OCAyOSAzMWwzNS4wNSA1Ny4wNEw2NCA5OS4yNSA0OS4yNSA4OEw0OSA4OHoiIGZpbGw9IiMwMGNiNzkiLz48cGF0aCBkPSJNNDkgODhsLTIwLjEgMzMuMWg5MC4yTDk5IDg4SDQ5WiIgZmlsbD0iIzQxYjg4MiIvPjwvc3ZnPg==",
-        "hint": "nuxtjs logo"
-      },
-      {
-        "name": "Node.js",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij48cGF0aCBmaWxsPSIjODdjYzM4IiBkPSJNMjI0LjE1IDc3LjI0Yy0uNDItLjE2LTExLjM4LTUuMS0yMS4yNi01LjEtMTYuNjMgMC0zMC4xMyA5LjMxLTMwLjEzIDI0LjgyIDAgMTYuMjEgMTcuNjYgMjUuNTIgMzUuNDggMzUuODcgMTkuNDEgMTEuMjYgMjIuMzEgMTQuNTkgMjIuMzEgMjEuOTEtLjAxIDguNTItOC4yMSAxMC44NS0xNy43OCAxMC44NS0xMi42MiAwLTIwLjIxLTQtMjAuMjEtNGwtMy4wOSAxOC41M2MyLjM4Ljg0IDIxLjEzIDUuNTIgMzUuNDQgNS41MiAyMi45NSAwIDM4LjEtMTEuMjUgMzguMS0yOS40NCAwLTE4LjA1LTIwLjA2LTI4LjA1LTM0LjYyLTM3LjQyLTE2LjMtOS4zMS0yMy4xMy0xMy45My0yMy4xMy0yMS4yNiAwLTYuNDkgNS41MS05LjYyIDEzLjkzLTkuNjIgOC41MyAwIDE2LjY1IDMuMzggMTYuNjUgMy4zOGwzLjA5LTE4LjY3em0tOTEuMjQgNjEuODFjMCAzLjA4LS4xNiA2LjE3LS4zMiA5LjI0LTEuMDQgMTcuNjUtOC4xMSAyNS4wNi0yMy4wOCAyNS4wNi05LjQ0IDAtMTYuNi0yLjM5LTE2LjYtMi4zOWwtMi41MyAxNS4zMWMzLjM5IDEuNjcgMTcuMTMgNC4zOCAyMy4wOSA0LjM4IDMwLjM1IDAgNDAuNTctMTkuMTQgNDIuODItMzguNjYgMS40MS0xMi4zMSAxLjQxLTIzLjM3IDEuNDEtMjMuMzdoLTI0LjQxem0zLjI0LTE2Ljg5Yy4yMS0uODQuMzYtMS42OS41My0yLjU1IDEuNDEtNy4wNiAxLjU2LTE1LjQ2IDEuNTYtMTUuNDZoMjQuMjVzLjE1IDEyLjYzLTEuNDIgMjQuMThjLS4zMiAxLjgyLS42OCA0LjE0LTEuMDQgNS43OGgtMjMuOXoiLz48L3N2Zz4=",
-        "hint": "nodejs logo"
-      },
-      {
-        "name": "Django",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiA0MyIgZmlsbD0iIzA5MmUyMCI+PHBhdGggZD0iTTYuNDEgMTguOTVhNi4zIDYuMyAwIDAgMC0zLjEgNS45IDUuNyA1UuNyAwIDAgMCA1LjYgNS44YzMuMSAwIDUuNi0yLjYgNS42LTUuOCAwLTIuMy0xLjQtNC40LTMuNC01LjNhNC40IDQuNCAwIDAgMS0yLTNsLTQtNi41LTExLjUgNC40IDguOSA4LjV6bTE2LjEgMThhNC4xIDQuMSAwIDAgMC0zLjQgNS4xIDQuMyA0LjMgMCAwIDAgNS4xIDMuMyA0LjIgNC4yIDAgMCAwIDMuNC01IDQuMiA0LjIgMCAwIDAtNS4xLTMuNW0tMy41LTIyLjdhNC4yIDQuMiAwIDAgMCAzLjggNS44IDQuMiA0LjIgMCAwIDAgNS44LTMuOEE0LjIgNC4yIDAgMCAwIDIyLjUgOGE0LjIgNC4yIDAgMCAwLTUuOCAzLjhNMjAuNSAwaC05bDIzLjggNDNoOS4xTDIwLjUgMHoiLz48L3N2Zz4=",
-        "hint": "django logo"
-      },
-      {
-        "name": "Flask",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIj4KICAgIDxwYXRoIGQ9Ik0yOS4zIDU0LjVjMjAuMi0yNS42IDM1LTQzLjcgNjguNC00My43TTk3LjcgNzMuNWMtMjAuMiAyNS42LTM1IDQzLjctNjguNCA0My43Ii8+CiAgICA8cGF0aCBkPSJNNDkuNSA5MC4zcy0yLjgtMjAuNyA5LjQtMzcuN20xOC40IDYxLjJjNC44LTEyLjkgNC42LTIzLjIgMi42LTMxLjgiLz4KICA8L2c+Cjwvc3ZnPgo=",
-        "hint": "flask logo"
-      },
-      {
-        "name": "Laravel",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNiAyNiI+CiAgPHBhdGggZmlsbD0iI0ZGOTM3QiIgZD0iTTI1NC4yODUgMTUuNzU4bC0xMi4zMzYgNy4xMDQtNC42NDUgMi42NzcgOS4xODIgNS4yODggOS4wMTgtNS4xOTZ6bS0xNS4yNzItOC43OTJsOS4xODIgNS4yODcgOS4wMTctNS4xOTYtOS4xODItNS4yODd6bS05LjM0IDUuMzczbC05LjE4IDUuMjg3IDkuMTggNS4yODggOS4wMTctNS4xOTZ6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjMxLjAxNCAtNi45NjYpIi8+CiAgPHBhdGggZmlsbD0iI0ZENDQzQiIgZD0iTTI0NS4xNDggMEwyMzIgNy4wMWw0LjY0NSAyLjY3OEwyNDUuMTQ4IDQuNSA2LjgzNCAxMS42M0wyNTAuOCA5LjY0MnoiIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIC0xIC0yMzIgMTEuNjMpIi8+Cjwvc3ZnPgo=",
-        "hint": "laravel logo"
-      },
-      {
-        "name": "Express",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iIzAwMCIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KICA8cGF0aCBmaWxsPSIjRkZDMzUyIiBkPSJNMiA5aDEwVjBINXY0YS41LjUgMCAwMS0uNS0uNVY0aC0zVjJoNXY3em05IDZoOVY1aC00djRoLTljMCA0Ljk3MSA0LjAyOSA5IDkgOWg5VjEySDExdjMuNXptNS04djJoM3YtMkgxNnoiLz4KPC9zdmc+Cg==",
-        "hint": "express logo"
-      },
-      {
-        "name": "JavaScript",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iI0Y3REYxRSIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KPC9zdmc+Cg==",
-        "hint": "javascript logo"
-      },
-      {
-        "name": "HTML",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iI0U1NEMyNiIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KPC9zdmc+Cg==",
-        "hint": "html logo"
-      },
-      {
-        "name": "CSS",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iIzE1NzJCNiIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KPC9zdmc+Cg==",
-        "hint": "css logo"
-      },
-      {
-        "name": "Bootstrap",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iIzc5NTJCMyIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KPC9zdmc+Cg==",
-        "hint": "bootstrap logo"
-      },
-      {
-        "name": "Tailwind CSS",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iIzA2QjZENiIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KPC9zdmc+Cg==",
-        "hint": "tailwind logo"
-      },
-      {
-        "name": "Docker",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iIzI0OTZFRCIgZD0iTTI0IDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KPC9zdmc+Cg==",
-        "hint": "docker logo"
-      },
-      {
-        "name": "Python",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHBhdGggZmlsbD0iIzMzNzJCMyIgZD0iTTIzIDEyYzAgNC45NzEtNC4wMjkgOS05IDlIMHYtOWg5VjRINnY1YS41LjUgMCAwMS0uNS0uNVY0aC01VjJoMTB2MTBoNFY4YzAtMy4zMDktMi42OTEtNi02LTZIMzVjNC45NzEgMCA5IDQuMDI5IDkgOXoiLz4KICA8cGF0aCBmaWxsPSIjRkZDMzUyIiBkPSJNMiA5aDEwVjBINXY0YS41LjUgMCAwMS0uNS0uNVY0aC0zVjJoNXY3em05IDZoOVY1aC00djRoLTljMCA0Ljk3MSA0LjAyOSA5IDkgOWg5VjEySDExdjMuNXptNS04djJoM3YtMkgxNnoiLz4KPC9zdmc+Cg==",
-        "hint": "python logo"
-      },
-      {
-        "name": "PHP",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4OCIgaGVpZ2h0PSI0NyIgdmlld0JveD0iMCAwIDg4IDQ3Ij48cGF0aCBmaWxsPSIjNzM3NEJCIiBkPSJNODEuMyAxOC43SDY4LjlsLTIuMyAxMi4zYy0uOCAxLjItNC42IDIuNC04LjUgMi40LTYuNCAwLTExLjgtMS43LTE1LjYtNi4xLTQuMS00LjYtNi0xMC44LTYtMTguMSAwLTcuMiAyLTEzLjMgNS44LTE4LjFDNDYgMi43IDUwLjggMSA1Ny4zIDFjNS44IDAgMTAuNyAxLjQgMTQuMyA0LjQgNC4zIDMuNyA2LjUgOSA3IDguNWg0LjZ6Ii8+PHBhdGggZmlsbD0iIzAwMDAwMCIgZD0iTTM5LjYgMTguN0gyNy4zTDI1IDEwLjljLS44IDEtNC42IDIuNC04LjUgMi40LTYuNCAwLTExLjgtMS43LTE1LjYtNi4xQy44IDMuNS0xLjIgMi43LS44LjggMSA1Ny4zIDEtLjUgMS0xMC40IDEuNC0xNC4xIDQuNC0xOS4zIDMuNy0yNS4zIDgtMjkuNSA4LjVoNC42eiIvPjxwYXRoIGZpbGw9IiMwMDAwMDAiIGQ9Ik02NC4xNSAxOC43SDUxLjlsLTIuMyAxMi4zYy0uOCAxLjItNC42IDIuNC04LjUgMi40LTYuNCAwLTExLjgtMS43LTE1LjYtNi4xLTQuMS00LjYtNi0xMC44LTYtMTguMSAwLTcuMiAyLTEzLjMgNS44LTE4LjFDMTguNyAyLjcgMjMuNSAxIDMwIDFTNDAgMi40IDQzLjYgNS40YzQuMyAzLjcgNi41IDkgNyA4LjVoNC42ek0zOS42IDI1LjdoLjVsLS4zLjEgMS4xLjItMTEuMy4yLTQuMiA0LjMgMS4zLTEuMiAyLjctOC4zLTMuNS0xLS4xLjEtLjgtLjItLjQtLjktLjktMi4xLTEuNS0zLjUtMy44LTUuNC0xLjgtMi4xLTEuOS0zLjktLjItNi4xIDIuMy0yLjggNS44LTQuMyA5LjYtNC4zIDUuOSAwIDEwLjggMS40IDE0LjQgNC4zIDQuMyAzLjYgNi41IDguOSA3IDguNWg0LjZ6Ii8+PHBhdGggZmlsbD0iIzQ3NDc0NyIgZD0iTTg4IDI1LjdoLTEyLjRsLTIuMyAxMi4zYy0uOCAxLjItNC42IDIuNC04LjUgMi40LTYuNCAwLTExLjgtMS43LTE1LjYtNi4xLTQuMS00LjYtNi0xMC44LTYtMTguMSAwLTcuMiAyLTEzLjMgNS44LTE4LjFDNDYgMi43IDUwLjggMSA1Ny4zIDFjNS44IDAgMTAuNyAxLjQgMTQuMyA0LjQgNC4zIDMuNyA2LjUgOSA3IDguNWg0LjZ6Ii8+PC9zdmc+",
-        "hint": "php logo"
-      },
-      {
-        "name": "TypeScript",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KICA8cmVjdCB4PSIjAiIHk9IjAiIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiByeD0iMTUiIGZpbGw9IiMwMDc0YjEiLz4KICA8cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTI4LjkgMzIuNEg1OC4xdjUuNEgyOC45di01LjR6bTE0LjYgNTUuMmMzLjcgMCA2LjYtMS4xIDguNi0zLjRsLTMuNy0zLjRjLTEuMSAxLjEtMi42IDEuNy00LjUgMS43LTMuNyAwLTUuOS0yLjYtNS45LTYuNGMwLTMuNiAyLjItNi4zIDUuOC02LjNzNC43IDEuNSA1LjcgMy4xbDMuOC0zLjJjLTIuMS0yLjYtNS41LTQuMS05LjUtNC4xLTcuNyAwLTEyLjggNS4zLTEyLjggMTMuN0MyOC4xIDgwLjkgMzQuOCA4Ny42IDQ3LjUgODcuNnptMjEuMy0yMi45aC04LjVWODMuN2gtNi4yVjY0LjdoLTguNFY1OS4zaDIzLjF2NS40em0yMC4xIDE4LjRjMCAzLjEgMS40IDQuOSA0IDQuOSAyLjggMCA0LjItMiA0LjItMy45IDAtMi43LTEuOS0zLjQtNC44LTMuOUw4MS44IDY5Yy00LS45LTYuNy0yLjctNi43LTYuNyAwLTQuMiAzLjUtNy4zIDguOC03LjMgNC45IDAgOC4yIDIuNyA4LjggNi4xbC00LjkgMi4xYy0uNC0xLjgtMS42LTIuNy0zLjgtMi43cy0zLjMgMS4xLTMuMyAyLjljMCAyLjEgMS4xIDIuOCA0LjMgMy40bDUuNyAxLjNjNC4zIDEgNi4zIDIuOCA2LjMgNi45eiIvPgo8L3N2Zz4K",
-        "hint": "typescript logo"
-      }
+      { "name": "React", "src": "/images/react js.jpeg", "hint": "react logo" },
+      { "name": "Next.js", "src": "/images/next js.jpeg", "hint": "nextjs logo" },
+      { "name": "Vue.js", "src": "/images/vue js.jpeg", "hint": "vuejs logo" },
+      { "name": "Node.js", "src": "/images/node js.jpeg", "hint": "nodejs logo" },
+      { "name": "Django", "src": "/images/django.jpeg", "hint": "django logo" },
+      { "name": "Flask", "src": "/images/flask.jpeg", "hint": "flask logo" },
+      { "name": "Laravel", "src": "/images/laravel.jpeg", "hint": "laravel logo" },
+      { "name": "Express", "src": "/images/express.jpeg", "hint": "express logo" },
+      { "name": "JavaScript", "src": "/images/js.jpeg", "hint": "javascript logo" },
+      { "name": "HTML", "src": "/images/html.jpeg", "hint": "html logo" },
+      { "name": "CSS", "src": "/images/css.jpeg", "hint": "css logo" },
+      { "name": "Bootstrap", "src": "/images/bootstrap.jpeg", "hint": "bootstrap logo" },
+      { "name": "Tailwind CSS", "src": "/images/tailwind css.jpeg", "hint": "tailwind logo" },
+      { "name": "Docker", "src": "/images/docker.jpeg", "hint": "docker logo" },
+      { "name": "Python", "src": "/images/python.jpeg", "hint": "python logo" },
+      { "name": "PHP", "src": "/images/php.jpeg", "hint": "php logo" },
+      { "name": "TypeScript", "src": "/images/type script.jpeg", "hint": "typescript logo" }
     ],
     "socialMedia": [
-      {
-        "name": "Facebook",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzE4NzcxMSI+CiAgPHBhdGggZD0iTTE5IDNoLTJjLTIuNzYgMC01IDIgLTUgNXYzSDd2NGgydjloNGYtOXYtMmE0IDQgMCAwMS0xLTNoMlYzaDMuNSIvPgo8L3N2Zz4K",
-        "hint": "facebook logo"
-      },
-      {
-        "name": "Instagram",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHJhZGlhbEdyYWRpZW50IGlkPSJpbnN0YSIgY3g9IjMwJSIgY3k9IjEwNyUiIHI9IjMzJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZGM0MCIvPjxzdG9wIG9mZnNldD0iNSUiIHN0b3AtY29sb3I9IiNmZjc3MzciLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2Y1MzM2NSIvPjxzdG9wIG9mZnNldD0iOTAlIiBzdG9wLWNvbG9yPSIjYzkzZDg5Ii8+PC9yYWRpYWxHcmFkaWVudD48cGF0aCBmaWxsPSJ1cmwoI2luc3RhKSIgZD0iTTcgMnYyMEg1Yy0xLjY1IDAtMy0xLjM1LTMtM1Y1YzAtMS42NSAxLjM1LTMgMy0zaDJ6bTQtMmg2YzEuNjUgMCAzIDEuMzUgMyAzdjE0YzAgMS42NS0xLjM1IDMtMyAzSDExVjB6bS0yaDJoMTRWNUExIDEgMCAwIDAgMjAgNFYyaC05em0xNCAwaC0yaDE0djE0YTEgMSAwIDAgMC0xIDFWMnoiLz48cGF0aCBmaWxsPSJ1cmwoI2luc3RhKSIgZD0iTTEyIDdoNWE1IDUgMCAxIDEtNSA1eiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xMiA5YTMgMyAwIDEgMCAxIDMgMyAwIDEgMSAwLTZ6bTYtMWExIDEgMCAxIDEtMiAwIDEgMSAwIDEgMSAyIDB6Ii8+PC9zdmc+",
-        "hint": "instagram logo"
-      },
-      {
-        "name": "TikTok",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiByeD0iMyIgZmlsbD0iIzAwMCIvPjxwYXRoIGZpbGw9IiNGRjAwNTAiIGQ9Ik0xNi4zIDUuNnY4LjZoLTMuMVYyLjVoMy4xYzAgMS4zIDAgMi4xIDAgMi4xem0xLjQtLjVjLS4xLS40LS4zLS43LS41LTEtMi00LjItNS00LjItNS00LjJsMi42IDMuM2MwIDAgMCAwIDAgMCAzLjQuMiA1IDMuMyA1IDUuMiAwIC4xIDAgLjIgMCAuMyAwIC4xIDAgLjMtLjEuNC0uMS44LS4yIDEuNS0uMyAyLjItLjEgMS4xLS40IDEuOC0uOSAyLjItLjQuNC0uOC42LTEuMi42LS40IDAtLjktLjItMS4yLS41LS42LS41LS44LTEuMy0uOC0yIDAtMS4xIDEtdi0uMWMxLjctLjYgMi44LS42IDMuMy0uNS0uMS0yLjMtMi4zLTQuNC01LTQuNVoiLz48cGF0aCBmaWxsPSIjMDBGMkM4IiBkPSJNMTYuMyAxMS4xbC0yLjYtMS4xYy0uMi0uMS0uMy0uMS0uNC0uMy0xLjYtMS42LTEuNC00LjQtMS4zLTUuMSAxLjMtMi40IDMuOC0zLjMgNC45LTMuNWwwIDAgMCAxMC40aDMuMXYtOS4xYy4zIDAgLjYgMCAuOS4xIDIuNi4xIDQuOCAyLjMgNSA1IDAgLjYgMCAxLjItLjEgMS44LTEuNi42LTQuMyAxLjgtNC4zIDIuOSAwIC42LjIgMS40LjggMi4xLjMuMy43LjUgMS4yLjUuNyAwIDEuNS0uNiAxLjktMS44LjItMS4xLjMtMS44LjQtMi4yLjItLjcuMy0xLjQuMy0yLjIgMC0uMiAwLS4zIDAtLjQgMC0uMiAwLS40LS4xLS41WiIvPjwvc3ZnPg==",
-        "hint": "tiktok logo"
-      }
+      { "name": "Facebook", "src": "/images/facebook.jpeg", "hint": "facebook logo" },
+      { "name": "TikTok", "src": "/images/tiktok.jpeg", "hint": "tiktok logo" }
     ],
     "artificialIntelligence": [
-      {
-        "name": "Machine Learning",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS41Ij4KICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik00IDdoMmwybTItMGwyLTJtMCAybDIgMm0xMC0xMHYtMmgtMm0tOCAxM2gydjJoLTJ6bS04IDBoMnYyaC0yem02IDBoMnYyaC0yem0tNC0xMHYtMmgtMm0tMiAyaDJWN20tMiAwaDJWN20tMiAyaDJ2LTNtMiAzaDJ2LTNtMiAzaDJ2LTMiLz4KICA8cmVjdCB4PSIzIiB5PSIzIiB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHJ4PSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1jaW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==",
-        "hint": "machine learning"
-      },
-      {
-        "name": "Deep Learning",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS41Ij4KICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik0xMyA1SDExYTIgMiAwIDAgMCAwIDRoMmEyIDIgMCAwIDEgMCAwLTR6bS0xIDdsMS41IDEtMS41IDFNOC41IDEzbDEuNS0xLTEuNS0xTTEyIDE5djIiLz4KICA8cmVjdCB4PSIzIiB5PSIzIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiByeD0iMSIvPgogIDxyZWN0IHg9IjEzIiB5PSIxMyIgd2lkdGg9IjgiIGhlaWdodD0iOCIgcng9IjEiLz4KPC9zdmc+Cg==",
-        "hint": "deep learning"
-      },
-      {
-        "name": "Automation",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29lo3IiIHN0cm9rZS1widthPSIxLjUiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTggMTJhMiAyIDAgMTA0IDAgMiAyIDAgMDEwLTQgMHpNMjEgMTFhOSg5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6bS05IDBhMiAyIDAgMTA0IDAgMiAyIDAgMDEwLTQgMHoiLz4KPC9zdmc+Cg==",
-        "hint": "automation robot"
-      },
-      {
-        "name": "Scraping",
-        "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1widthPSIxLjUiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTQgN2gybDIuNSA1IDEuNS01aDEybS0xNC41IDdsMS41IDUgMS41LTUgMS41IDUtMS41IDIgMS41IDIgMy0xMW0tMTctNWgxNSIvPgo8L3N2Zz4K",
-        "hint": "data scraping"
-      }
+      { "name": "Machine Learning", "src": "/images/machine learning.jpeg", "hint": "machine learning" },
+      { "name": "Deep Learning", "src": "/images/deep learning.jpeg", "hint": "deep learning" },
+      { "name": "AI Automation", "src": "/images/automation.jpeg", "hint": "ai automation" },
+      { "name": "Web Scraping", "src": "/images/web scrapng.jpeg", "hint": "web scraping" },
+      { "name": "Selenium Automation", "src": "/images/selenium.jpeg", "hint": "selenium automation" },
+      { "name": "ChatGPT Integration", "src": "/images/open ai.jpeg", "hint": "chatgpt integration" },
+      { "name": "OpenAI API", "src": "/images/open ai.jpeg", "hint": "openai api" },
+      { "name": "PyTorch", "src": "/images/putourch.jpeg", "hint": "pytorch" },
+      { "name": "Data Analysis & Prediction", "src": "/images/data analytics.jpeg", "hint": "data analysis" }
     ]
   },
   "testimonials": [

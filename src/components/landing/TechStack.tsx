@@ -30,7 +30,44 @@ const techImages: { [key: string]: string } = {
   'Tailwind CSS': '/images/tailwind css.jpeg',
   'Docker': '/images/docker.jpeg',
   'TikTok': '/images/tiktok.jpeg',
+  'Facebook': '/images/facebook.jpeg',
+  'GitHub': '/images/github.jpeg',
+  'Google': '/images/google.jpeg',
+  'Heroku': '/images/heruko.jpeg',
+  'Machine Learning': '/images/machine learning.jpeg',
+  'Deep Learning': '/images/deep learning.jpeg',
+  'AI Automation': '/images/automation.jpeg',
+  'Web Scraping': '/images/web scrapng.jpeg',
+  'Selenium Automation': '/images/selenium.jpeg',
+  'ChatGPT Integration': '/images/open ai.jpeg',
+  'OpenAI API': '/images/open ai.jpeg',
+  'TensorFlow': '/images/python.jpeg',
+  'PyTorch': '/images/putourch.jpeg',
+  'Data Analysis & Prediction': '/images/data analytics.jpeg',
 };
+
+// Web Development Service Page Images
+const webDevImages = [
+  { name: 'React', src: '/images/react js.jpeg' },
+  { name: 'Next.js', src: '/images/next js.jpeg' },
+  { name: 'Vue.js', src: '/images/vue js.jpeg' },
+  { name: 'Node.js', src: '/images/node js.jpeg' },
+  { name: 'Django', src: '/images/django.jpeg' },
+  { name: 'Flask', src: '/images/flask.jpeg' },
+  { name: 'Laravel', src: '/images/laravel.jpeg' },
+  { name: 'Express', src: '/images/express.jpeg' },
+  { name: 'Python', src: '/images/python.jpeg' },
+  { name: 'PHP', src: '/images/php.jpeg' },
+  { name: 'TypeScript', src: '/images/type script.jpeg' },
+  { name: 'JavaScript', src: '/images/js.jpeg' },
+  { name: 'HTML', src: '/images/html.jpeg' },
+  { name: 'CSS', src: '/images/css.jpeg' },
+  { name: 'Bootstrap', src: '/images/bootstrap.jpeg' },
+  { name: 'Tailwind CSS', src: '/images/tailwind css.jpeg' },
+  { name: 'Docker', src: '/images/docker.jpeg' },
+];
+
+export { webDevImages };
 
 interface TechStackProps {
   techStackContent: {
@@ -84,23 +121,24 @@ export function TechStack({ techStackContent }: TechStackProps) {
               {currentCategory.technologies.map((tech) => {
                 const imagePath = techImages[tech.name];
                 return (
-                  <div key={tech.name} className="flex flex-col items-center justify-center gap-3 group transition-transform duration-300 hover:scale-110" title={tech.name}>
-                    <div className="w-20 h-16 relative flex items-center justify-center bg-white rounded-lg group-hover:shadow-lg transition-all">
+                  <div key={tech.name} className="flex flex-col items-center justify-center gap-3 group tilt-3d transition-all duration-500" title={tech.name}>
+                    <div className="w-20 h-16 relative flex items-center justify-center bg-white rounded-lg group-hover:shadow-2xl group-hover:shadow-primary/30 transition-all duration-300 transform group-hover:scale-110 group-hover:-translate-y-2">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       {imagePath ? (
                         <Image 
                           src={imagePath}
                           alt={tech.name}
                           width={60}
                           height={50}
-                          className="object-contain rounded"
+                          className="object-contain rounded relative z-10 group-hover:scale-110 transition-transform duration-300"
                         />
                       ) : (
-                        <div className="w-12 h-12 bg-primary/20 rounded flex items-center justify-center">
+                        <div className="w-12 h-12 bg-primary/20 rounded flex items-center justify-center relative z-10">
                           <span className="text-xs font-bold text-primary">{tech.name.slice(0,2)}</span>
                         </div>
                       )}
                     </div>
-                    <span className="text-sm font-medium text-muted-foreground group-hover:text-primary transition-colors">{tech.name}</span>
+                    <span className="text-sm font-medium text-muted-foreground group-hover:text-primary transition-colors duration-300 transform group-hover:scale-105">{tech.name}</span>
                   </div>
                 );
               })}

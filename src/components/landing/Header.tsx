@@ -128,8 +128,8 @@ export function Header({ companyName, navigation, contact, socials, quoteDialog 
       <div className="text-secondary-foreground py-2 px-4 md:px-8 text-sm bg-gradient-to-r from-white via-sky-200 to-blue-500 dark:from-black dark:via-sky-900 dark:to-blue-800">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex gap-4 items-center">
-            <span className="flex items-center gap-1.5"><Mail className="w-4 h-4" /> {contact.email}</span>
-            <span className="hidden md:flex items-center gap-1.5"><Phone className="w-4 h-4" /> {contact.phone}</span>
+            <a href={`mailto:${contact.email}`} className="flex items-center gap-1.5 hover:text-primary transition-colors"><Mail className="w-4 h-4" /> {contact.email}</a>
+            <a href={`tel:${contact.phone}`} className="hidden md:flex items-center gap-1.5 hover:text-primary transition-colors"><Phone className="w-4 h-4" /> {contact.phone}</a>
           </div>
           <div className="flex gap-4 items-center">
             <Link href={socials.twitter} className="hover:text-primary transition-colors" aria-label="Twitter"><Twitter className="w-4 h-4" /></Link>

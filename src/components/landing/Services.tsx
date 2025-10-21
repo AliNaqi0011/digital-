@@ -1,12 +1,12 @@
 
 'use client';
-import { ArrowRight, Server, Network, Users, Cloud, GitCommit, Briefcase } from 'lucide-react';
+import { ArrowRight, Server, Network, Users, Cloud, GitCommit, Briefcase, Code, Globe, Brain, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 const iconMap: { [key: string]: React.ElementType } = {
-  Server, Network, Users, Cloud, GitCommit, Briefcase
+  Server, Network, Users, Cloud, GitCommit, Briefcase, Code, Globe, Brain, Smartphone
 };
 
 interface ServicesProps {
@@ -29,7 +29,7 @@ export function Services({ servicesContent }: ServicesProps) {
           {servicesContent.items.map((service, index) => {
             const Icon = iconMap[service.icon];
             return (
-              <Card key={index} className="group flex flex-col transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 border-border/50 hover:border-primary/50 bg-background overflow-hidden rounded-2xl animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+              <Card key={index} className="group flex flex-col card-3d tilt-3d transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-primary/20 border-border/50 hover:border-primary/50 bg-background overflow-hidden rounded-2xl animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
                 <CardHeader className="items-center text-center p-6">
                   <div className="p-4 rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground mb-4">{Icon && <Icon className="w-10 h-10" />}</div>
                   <CardTitle className="text-2xl">{service.title}</CardTitle>
@@ -38,7 +38,7 @@ export function Services({ servicesContent }: ServicesProps) {
                   <CardDescription className="text-base">{service.description}</CardDescription>
                 </CardContent>
                 <CardFooter className="p-6 pt-0 mt-auto flex justify-center">
-                  <Button variant="ghost" asChild className="group/link text-primary text-base px-0">
+                  <Button variant="ghost" asChild className="group/link btn-3d text-primary text-base px-0">
                     <Link href={`/services/${service.id}`}>Learn More <ArrowRight className="ml-2 transition-transform group-hover/link:translate-x-1" /></Link>
                   </Button>
                 </CardFooter>
