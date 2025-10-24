@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Mail, MapPin, Phone, Twitter, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Phone, Facebook, Linkedin } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -83,7 +83,7 @@ export function Footer({ companyName, footerContent, services, contact, socials 
   return (
     <footer id="contact" className="border-t border-border/50 bg-gradient-to-r from-white via-sky-200 to-blue-500 dark:from-black dark:via-sky-900 dark:to-blue-800">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-bold">{companyName}</h3>
             <p className="text-muted-foreground mt-4 max-w-md">{footerContent.description}</p>
@@ -124,10 +124,10 @@ export function Footer({ companyName, footerContent, services, contact, socials 
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-border/50 pt-6 flex flex-col sm:flex-row justify-between items-center">
+        <div className="mt-8 lg:mt-12 border-t border-border/50 pt-4 lg:pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">{footerContent.copyright}</p>
           <div className="flex items-center gap-4 mt-4 sm:mt-0">
-            <Link href={socials.twitter} className="text-muted-foreground hover:text-primary transition-colors" prefetch={false} aria-label="Twitter"><Twitter className="w-6 h-6" /></Link>
+            <Link href={socials.twitter} className="text-muted-foreground hover:text-primary transition-colors" prefetch={false} aria-label="Facebook"><Facebook className="w-6 h-6" /></Link>
             <Link href={socials.linkedin} className="text-muted-foreground hover:text-primary transition-colors" prefetch={false} aria-label="LinkedIn"><Linkedin className="w-6 h-6" /></Link>
           </div>
         </div>

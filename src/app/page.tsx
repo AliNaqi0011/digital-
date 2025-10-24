@@ -37,8 +37,8 @@ export default function Home() {
       <main className="flex-1">
         <Hero heroContent={content.hero} />
         <Statistics />
-        <ClientLogos />
         <Services servicesContent={content.services} />
+        <ClientLogos />
         <WhyChooseUs whyChooseUsContent={content.whyChooseUs} />
         <SoftwareEngineering 
           softwareEngineeringContent={content.softwareEngineering}

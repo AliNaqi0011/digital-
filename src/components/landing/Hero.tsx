@@ -29,16 +29,16 @@ export function Hero({ heroContent }: HeroProps) {
             <ParticleBackground />
             <div className="container relative z-10 px-4 md:px-6 animate-fade-in-up">
                 <div className="hero-title-3d">
-                    <TypewriterEffect text={heroContent.title} className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500" />
+                    <TypewriterEffect text={heroContent.title} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500" />
                 </div>
-                <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">{heroContent.subtitle}</p>
-                <div className="mt-10 flex flex-wrap justify-center gap-4">
-                    <Button asChild size="lg" className="group btn-3d rounded-full text-lg px-8 py-6 transition-all duration-300 ease-in-out hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/50">
+                <p className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-muted-foreground px-4">{heroContent.subtitle}</p>
+                <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                    <Button asChild size="lg" className="group btn-3d rounded-full text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 transition-all duration-300 ease-in-out hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/50">
                         <Link href="#services">
                             Explore Services <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </Button>
-                    <Button asChild size="lg" variant="outline" className="btn-3d rounded-full text-lg px-8 py-6 transition-all duration-300 ease-in-out hover:bg-accent hover:text-accent-foreground hover:shadow-lg">
+                    <Button asChild size="lg" variant="outline" className="btn-3d rounded-full text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 transition-all duration-300 ease-in-out hover:bg-accent hover:text-accent-foreground hover:shadow-lg">
                         <Link href="#contact">
                             Contact Us
                         </Link>

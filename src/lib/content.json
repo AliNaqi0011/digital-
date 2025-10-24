@@ -1,6 +1,6 @@
 
 {
-  "companyName": "Creative Experts Solution",
+  "companyName": "CreativeXperts Technological Solutions",
   "contact": {
     "email": "creativexperts10@gmail.com",
     "phone": "+92 311 4648875",
@@ -12,10 +12,10 @@
   },
   "navigation": [
     { "name": "Home", "href": "/" },
-    { "name": "Services", "href": "#services" },
+    { "name": "Services", "href": "/#services" },
     { "name": "About", "href": "/about" },
-    { "name": "Process", "href": "#process" },
-    { "name": "Contact", "href": "#contact" }
+    { "name": "Process", "href": "/#process" },
+    { "name": "Contact", "href": "/#contact" }
   ],
   "quoteDialog": {
     "title": "Let's Build Something Amazing",

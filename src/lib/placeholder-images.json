@@ -6,12 +6,12 @@
   },
   "about": {
     "team_ali_naqi": {
-      "src": "https://picsum.photos/seed/ali-naqi/400/400",
+      "src": "/images/naqi.jfif",
       "alt": "Portrait of Ali Naqi",
       "hint": "man portrait"
     },
     "team_umar_murtaza": {
-      "src": "https://picsum.photos/seed/umar-murtaza/400/400",
+      "src": "/images/umar.jfif",
       "alt": "Portrait of Umar Murtaza",
       "hint": "person portrait"
     }

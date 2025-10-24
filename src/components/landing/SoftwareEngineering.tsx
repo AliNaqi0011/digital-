@@ -26,8 +26,8 @@ interface SoftwareEngineeringProps {
 export function SoftwareEngineering({ softwareEngineeringContent, image }: SoftwareEngineeringProps) {
   return (
     <section className="py-24 md:py-32 scroll-animate">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 md:px-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
           <div>
             <h2 className="text-4xl font-bold tracking-tight mb-4">{softwareEngineeringContent.title}</h2>
             <p className="text-muted-foreground text-lg mb-8">{softwareEngineeringContent.subtitle}</p>
@@ -51,13 +51,14 @@ export function SoftwareEngineering({ softwareEngineeringContent, image }: Softw
               </Link>
             </Button>
           </div>
-          <div className="relative h-[500px] group">
+          <div className="relative h-[300px] sm:h-[350px] lg:h-[400px] group px-4 sm:px-8">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
             <div className="relative h-full tilt-3d transition-all duration-500 transform group-hover:scale-105 group-hover:-translate-y-4">
               <Image 
                 src="/images/software.jpeg" 
                 alt="Software Engineering" 
                 fill 
+                priority
                 style={{objectFit: 'cover'}} 
                 className="rounded-3xl shadow-2xl group-hover:shadow-3xl group-hover:shadow-primary/30 transition-all duration-500" 
               />

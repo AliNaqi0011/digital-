@@ -25,7 +25,7 @@ export function Services({ servicesContent }: ServicesProps) {
           <h2 className="text-4xl font-bold tracking-tight">{servicesContent.title}</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg">{servicesContent.subtitle}</p>
         </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {servicesContent.items.map((service, index) => {
             const Icon = iconMap[service.icon];
             return (
@@ -38,7 +38,7 @@ export function Services({ servicesContent }: ServicesProps) {
                   <CardDescription className="text-base">{service.description}</CardDescription>
                 </CardContent>
                 <CardFooter className="p-6 pt-0 mt-auto flex justify-center">
-                  <Button variant="ghost" asChild className="group/link btn-3d text-primary text-base px-0">
+                  <Button variant="ghost" asChild className="group/link btn-3d text-primary text-base px-6 py-2 min-w-[120px]">
                     <Link href={`/services/${service.id}`}>Learn More <ArrowRight className="ml-2 transition-transform group-hover/link:translate-x-1" /></Link>
                   </Button>
                 </CardFooter>

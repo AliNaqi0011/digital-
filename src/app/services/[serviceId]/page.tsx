@@ -1,4 +1,3 @@
-
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import type { Metadata } from 'next';
@@ -10,6 +9,7 @@ import placeholderImages from '@/lib/placeholder-images.json';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { ServiceHero } from '@/components/landing/ServiceHero';
 
 // Web Development Technologies
 const webDevTechnologies = [
@@ -115,22 +115,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative h-[50vh] flex items-center justify-center text-center overflow-hidden">
-            <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-black/40 to-transparent"></div>
-            <Image 
-                src={service.image.src}
-                alt={service.image.alt}
-                fill
-                style={{ objectFit: 'cover' }}
-                className="z-0"
-                data-ai-hint={service.image.hint}
-                priority
-            />
-            <div className="container relative z-20 px-4 md:px-6 animate-fade-in-up">
-                <p className="text-lg font-semibold text-primary mb-2">Our Services</p>
-                <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-white">{service.title}</h1>
-            </div>
-        </section>
+        <ServiceHero title={service.title} />
 
         {/* Service Overview Section */}
         <section className="py-24 md:py-32">

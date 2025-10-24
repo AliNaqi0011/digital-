@@ -131,6 +131,7 @@ export function TechStack({ techStackContent }: TechStackProps) {
                           width={60}
                           height={50}
                           className="object-contain rounded relative z-10 group-hover:scale-110 transition-transform duration-300"
+                          style={{ width: 'auto', height: 'auto' }}
                         />
                       ) : (
                         <div className="w-12 h-12 bg-primary/20 rounded flex items-center justify-center relative z-10">

@@ -7,7 +7,7 @@ import { Footer } from '@/components/landing/Footer';
 import content from '@/lib/content.json';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Github, Linkedin, Twitter, CheckCircle, Code, BrainCircuit, Database } from 'lucide-react';
+import { CheckCircle, Code, BrainCircuit, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
@@ -51,13 +51,13 @@ export default function AboutPage() {
                     <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
                     Trusted by 100+ Businesses Worldwide
                 </div>
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary mb-6">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter text-primary mb-6">
                     Crafting Digital
                     <span className="block bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
                         Excellence
                     </span>
                 </h1>
-                <p className="max-w-3xl mx-auto text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                <p className="max-w-3xl mx-auto text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed px-4">
                     We transform ambitious ideas into powerful digital solutions that drive growth, 
                     innovation, and lasting success in the modern business landscape.
                 </p>
@@ -185,7 +185,7 @@ export default function AboutPage() {
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">{aboutPage.team.title}</h2>
                     <p className="text-xl text-muted-foreground">{aboutPage.team.subtitle}</p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
                     {aboutPage.team.members.map((member) => {
                         const image = teamImages[member.image as keyof typeof teamImages];
                         return (
@@ -196,7 +196,7 @@ export default function AboutPage() {
                                         src={image.src}
                                         alt={image.alt}
                                         fill
-                                        style={{ objectFit: 'cover' }}
+                                        style={{ objectFit: 'cover', objectPosition: member.name === 'Ali Naqi' ? 'center 20%' : 'center center' }}
                                         className="group-hover:scale-110 transition-transform duration-500"
                                         data-ai-hint={image.hint}
                                     />
@@ -206,20 +206,7 @@ export default function AboutPage() {
                                     <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
                                     <p className="text-primary font-semibold text-lg mb-4">{member.role}</p>
                                     <p className="text-muted-foreground mb-6 leading-relaxed">{member.bio}</p>
-                                    <div className="flex gap-3">
-                                        <Button variant="outline" size="sm" asChild className="hover:bg-primary hover:text-primary-foreground">
-                                            <Link href={member.socials.linkedin} target="_blank" aria-label="LinkedIn">
-                                                <Linkedin className="w-4 h-4 mr-2" />
-                                                LinkedIn
-                                            </Link>
-                                        </Button>
-                                        <Button variant="outline" size="sm" asChild className="hover:bg-primary hover:text-primary-foreground">
-                                            <Link href={member.socials.github} target="_blank" aria-label="GitHub">
-                                                <Github className="w-4 h-4 mr-2" />
-                                                GitHub
-                                            </Link>
-                                        </Button>
-                                    </div>
+
                                 </div>
                             </CardContent>
                         </Card>

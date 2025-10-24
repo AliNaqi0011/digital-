@@ -4,7 +4,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-import { Briefcase, Mail, Menu, Moon, Phone, Sun, Twitter, Linkedin } from 'lucide-react';
+import { Briefcase, Mail, Menu, Moon, Phone, Sun, Linkedin, Facebook } from 'lucide-react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
@@ -132,17 +133,17 @@ export function Header({ companyName, navigation, contact, socials, quoteDialog 
             <a href={`tel:${contact.phone}`} className="hidden md:flex items-center gap-1.5 hover:text-primary transition-colors"><Phone className="w-4 h-4" /> {contact.phone}</a>
           </div>
           <div className="flex gap-4 items-center">
-            <Link href={socials.twitter} className="hover:text-primary transition-colors" aria-label="Twitter"><Twitter className="w-4 h-4" /></Link>
+            <Link href={socials.twitter} className="hover:text-primary transition-colors" aria-label="Facebook"><Facebook className="w-4 h-4" /></Link>
             <Link href={socials.linkedin} className="hover:text-primary transition-colors" aria-label="LinkedIn"><Linkedin className="w-4 h-4" /></Link>
           </div>
         </div>
       </div>
-      <header className="sticky top-0 z-50 flex items-center justify-between h-20 px-4 md:px-8 bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-2xl shadow-primary/10">
+      <header className="sticky top-0 z-50 flex items-center justify-between h-20 px-4 md:px-8 bg-gradient-to-r from-white via-sky-200 to-blue-500 dark:from-black dark:via-sky-900 dark:to-blue-800 backdrop-blur-xl border-b border-border/50 shadow-2xl shadow-primary/10">
         <Link href="/" className="flex items-center gap-3" prefetch={false}>
-          <Briefcase className="w-8 h-8 text-primary animate-pulse" />
-          <h1 className="text-xl font-bold tracking-wider">{companyName}</h1>
+          <Image src="/images/logo.png" alt="Creative Experts Solution Logo" width={48} height={48} className="animate-pulse" />
+          <h1 className="text-sm sm:text-lg font-bold tracking-wider">{companyName}</h1>
         </Link>
-        <nav className="hidden md:flex items-center gap-8 text-lg font-semibold" role="navigation" aria-label="Main navigation">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-base xl:text-lg font-semibold" role="navigation" aria-label="Main navigation">
           {navigation.map(item => (
             <Link 
               key={item.name} 
@@ -158,7 +159,7 @@ export function Header({ companyName, navigation, contact, socials, quoteDialog 
         <div className="flex items-center gap-2">
           <Dialog open={openQuoteDialog} onOpenChange={setOpenQuoteDialog}>
             <DialogTrigger asChild>
-              <Button variant="default" size="lg" className="transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/50 hover:shadow-lg rounded-full">Get Started</Button>
+              <Button variant="default" size="lg" className="hidden md:flex transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/50 hover:shadow-lg rounded-full">Get Started</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-md bg-secondary border-primary/20">
               <DialogHeader>
@@ -173,7 +174,7 @@ export function Header({ companyName, navigation, contact, socials, quoteDialog 
           <ThemeToggle />
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu">
+              <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open menu">
                 <Menu />
               </Button>
             </SheetTrigger>

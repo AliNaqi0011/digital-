@@ -136,7 +136,7 @@ export function WhyChooseUs({ whyChooseUsContent }: WhyChooseUsProps) {
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute -top-1 -right-1 w-24 h-24 bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
 
-                <div className="relative z-10 flex flex-col items-start text-left">
+                <div className="relative z-10 flex flex-col items-center text-center">
                     <div className="relative mb-6">
                         <div className="absolute -inset-2 bg-primary/20 rounded-xl blur-md opacity-50 transition-all duration-300 group-hover:opacity-75"></div>
                         <div className="relative p-4 rounded-xl bg-background/70 ring-1 ring-border/20">{Icon && <Icon className="w-10 h-10 text-primary" />}</div>
