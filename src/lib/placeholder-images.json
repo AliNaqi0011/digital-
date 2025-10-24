@@ -54,25 +54,25 @@
   },
   "testimonials": [
     {
-      "name": "John Doe",
-      "role": "CEO, TechCorp",
-      "text": "Creative Experts Solution has transformed our IT landscape. Their expertise and dedication are simply unmatched. A true partner in every sense of the word.",
-      "src": "https://picsum.photos/seed/person1/100/100",
-      "hint": "person portrait"
+      "name": "Ahmed Hassan",
+      "role": "CEO, TechVision Solutions",
+      "text": "CreativeXperts delivered an exceptional e-commerce platform that increased our sales by 300%. Their AI-powered recommendation system is brilliant!",
+      "src": "https://picsum.photos/seed/ahmed-hassan/100/100",
+      "hint": "business executive portrait"
     },
     {
-      "name": "Jane Smith",
-      "role": "CTO, Innovate LLC",
-      "text": "The availability and security of their solutions have given us complete peace of mind. Their proactive support is second to none.",
-      "src": "https://picsum.photos/seed/person2/100/100",
-      "hint": "woman portrait"
+      "name": "Sarah Khan",
+      "role": "Founder, Digital Marketing Pro",
+      "text": "Their web development and SEO expertise helped us rank #1 on Google for our target keywords. Outstanding results and professional service!",
+      "src": "https://picsum.photos/seed/sarah-khan/100/100",
+      "hint": "professional woman portrait"
     },
     {
-      "name": "Samuel Green",
-      "role": "IT Manager, Solutions Inc.",
-      "text": "Working with them feels like an extension of our own team. Their technical skill and strategic insight are highly recommended!",
-      "src": "https://picsum.photos/seed/person3/100/100",
-      "hint": "man portrait"
+      "name": "Michael Rodriguez",
+      "role": "CTO, InnovateTech",
+      "text": "The mobile app they built for us has over 50K downloads and 4.8-star rating. Their technical expertise and attention to detail are exceptional!",
+      "src": "https://picsum.photos/seed/michael-rodriguez/100/100",
+      "hint": "tech professional portrait"
     }
   ]
 }
