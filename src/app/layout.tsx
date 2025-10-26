@@ -5,19 +5,19 @@ import { Toaster } from "@/components/ui/toaster"
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ErrorBoundary } from '@/components/error-boundary';
 
-const title = 'Creative Experts Solution - Premium IT Solutions & Software Development';
+const title = 'YOUR DIGITAL CHOICE - Premium IT Solutions & Software Development';
 const description = 'Transform your business with cutting-edge IT solutions. Expert software development, cloud services, cybersecurity, and managed IT support. 24/7 availability.';
 
 export const metadata: Metadata = {
   title: {
     default: title,
-    template: '%s | Creative Experts Solution'
+    template: '%s | YOUR DIGITAL CHOICE'
   },
   description: description,
   keywords: ['IT solutions', 'software development', 'cloud services', 'cybersecurity', 'managed IT', 'web development', 'mobile apps'],
-  authors: [{ name: 'Creative Experts Solution' }],
-  creator: 'Creative Experts Solution',
-  publisher: 'Creative Experts Solution',
+  authors: [{ name: 'YOUR DIGITAL CHOICE' }],
+  creator: 'YOUR DIGITAL CHOICE',
+  publisher: 'YOUR DIGITAL CHOICE',
   robots: {
     index: true,
     follow: true,
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     url: 'https://creativeexperts.dev',
     title: title,
     description: description,
-    siteName: 'Creative Experts Solution',
+    siteName: 'YOUR DIGITAL CHOICE',
     images: [
       {
         url: 'https://picsum.photos/seed/og-image/1200/630',
         width: 1200,
         height: 630,
-        alt: 'Creative Experts Solution - IT Services',
+        alt: 'YOUR DIGITAL CHOICE - IT Services',
       },
     ],
   },
@@ -78,7 +78,7 @@ export default function RootLayout({
           <FirebaseClientProvider>
             <ThemeProvider
                 attribute="class"
-                defaultTheme="light"
+                defaultTheme="dark"
                 disableTransitionOnChange
             >
                 {children}

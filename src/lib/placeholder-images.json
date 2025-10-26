@@ -17,39 +17,28 @@
     }
   },
   "techStack": {
-    "fullStack": [
+    "ecommerce": [
+      { "name": "Amazon", "src": "/images/react js.jpeg", "hint": "amazon logo" },
+      { "name": "eBay", "src": "/images/next js.jpeg", "hint": "ebay logo" },
+      { "name": "Walmart", "src": "/images/vue js.jpeg", "hint": "walmart logo" },
+      { "name": "Shopify", "src": "/images/node js.jpeg", "hint": "shopify logo" },
+      { "name": "WooCommerce", "src": "/images/django.jpeg", "hint": "woocommerce logo" },
+      { "name": "Alibaba", "src": "/images/flask.jpeg", "hint": "alibaba logo" }
+    ],
+    "marketing": [
+      { "name": "Facebook Ads", "src": "/images/facebook.jpeg", "hint": "facebook logo" },
+      { "name": "Instagram Ads", "src": "/images/tiktok.jpeg", "hint": "instagram logo" },
+      { "name": "Google Ads", "src": "/images/google.jpeg", "hint": "google logo" },
+      { "name": "SEO", "src": "/images/html.jpeg", "hint": "seo" },
+      { "name": "Email Marketing", "src": "/images/css.jpeg", "hint": "email marketing" }
+    ],
+    "development": [
       { "name": "React", "src": "/images/react js.jpeg", "hint": "react logo" },
       { "name": "Next.js", "src": "/images/next js.jpeg", "hint": "nextjs logo" },
-      { "name": "Vue.js", "src": "/images/vue js.jpeg", "hint": "vuejs logo" },
-      { "name": "Node.js", "src": "/images/node js.jpeg", "hint": "nodejs logo" },
-      { "name": "Django", "src": "/images/django.jpeg", "hint": "django logo" },
-      { "name": "Flask", "src": "/images/flask.jpeg", "hint": "flask logo" },
-      { "name": "Laravel", "src": "/images/laravel.jpeg", "hint": "laravel logo" },
-      { "name": "Express", "src": "/images/express.jpeg", "hint": "express logo" },
-      { "name": "JavaScript", "src": "/images/js.jpeg", "hint": "javascript logo" },
-      { "name": "HTML", "src": "/images/html.jpeg", "hint": "html logo" },
-      { "name": "CSS", "src": "/images/css.jpeg", "hint": "css logo" },
-      { "name": "Bootstrap", "src": "/images/bootstrap.jpeg", "hint": "bootstrap logo" },
-      { "name": "Tailwind CSS", "src": "/images/tailwind css.jpeg", "hint": "tailwind logo" },
-      { "name": "Docker", "src": "/images/docker.jpeg", "hint": "docker logo" },
-      { "name": "Python", "src": "/images/python.jpeg", "hint": "python logo" },
-      { "name": "PHP", "src": "/images/php.jpeg", "hint": "php logo" },
-      { "name": "TypeScript", "src": "/images/type script.jpeg", "hint": "typescript logo" }
-    ],
-    "socialMedia": [
-      { "name": "Facebook", "src": "/images/facebook.jpeg", "hint": "facebook logo" },
-      { "name": "TikTok", "src": "/images/tiktok.jpeg", "hint": "tiktok logo" }
-    ],
-    "artificialIntelligence": [
-      { "name": "Machine Learning", "src": "/images/machine learning.jpeg", "hint": "machine learning" },
-      { "name": "Deep Learning", "src": "/images/deep learning.jpeg", "hint": "deep learning" },
-      { "name": "AI Automation", "src": "/images/automation.jpeg", "hint": "ai automation" },
-      { "name": "Web Scraping", "src": "/images/web scrapng.jpeg", "hint": "web scraping" },
-      { "name": "Selenium Automation", "src": "/images/selenium.jpeg", "hint": "selenium automation" },
-      { "name": "ChatGPT Integration", "src": "/images/open ai.jpeg", "hint": "chatgpt integration" },
-      { "name": "OpenAI API", "src": "/images/open ai.jpeg", "hint": "openai api" },
-      { "name": "PyTorch", "src": "/images/putourch.jpeg", "hint": "pytorch" },
-      { "name": "Data Analysis & Prediction", "src": "/images/data analytics.jpeg", "hint": "data analysis" }
+      { "name": "WordPress", "src": "/images/php.jpeg", "hint": "wordpress logo" },
+      { "name": "AI Integration", "src": "/images/open ai.jpeg", "hint": "ai integration" },
+      { "name": "Mobile Apps", "src": "/images/automation.jpeg", "hint": "mobile apps" },
+      { "name": "Machine Learning", "src": "/images/machine learning.jpeg", "hint": "machine learning" }
     ]
   },
   "testimonials": [

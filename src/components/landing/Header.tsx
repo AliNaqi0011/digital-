@@ -126,19 +126,7 @@ export function Header({ companyName, navigation, contact, socials, quoteDialog 
 
   return (
     <>
-      <div className="text-secondary-foreground py-2 px-4 md:px-8 text-sm bg-gradient-to-r from-white via-sky-200 to-blue-500 dark:from-black dark:via-sky-900 dark:to-blue-800">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="flex gap-4 items-center">
-            <a href={`mailto:${contact.email}`} className="flex items-center gap-1.5 hover:text-primary transition-colors"><Mail className="w-4 h-4" /> {contact.email}</a>
-            <a href={`tel:${contact.phone}`} className="hidden md:flex items-center gap-1.5 hover:text-primary transition-colors"><Phone className="w-4 h-4" /> {contact.phone}</a>
-          </div>
-          <div className="flex gap-4 items-center">
-            <Link href={socials.twitter} className="hover:text-primary transition-colors" aria-label="Facebook"><Facebook className="w-4 h-4" /></Link>
-            <Link href={socials.linkedin} className="hover:text-primary transition-colors" aria-label="LinkedIn"><Linkedin className="w-4 h-4" /></Link>
-          </div>
-        </div>
-      </div>
-      <header className="sticky top-0 z-50 flex items-center justify-between h-20 px-4 md:px-8 bg-gradient-to-r from-white via-sky-200 to-blue-500 dark:from-black dark:via-sky-900 dark:to-blue-800 backdrop-blur-xl border-b border-border/50 shadow-2xl shadow-primary/10">
+      <header className="sticky top-0 z-50 flex items-center justify-between h-20 px-4 md:px-8 bg-gradient-to-r from-white via-orange-200 to-orange-500 dark:from-black dark:via-orange-900 dark:to-orange-800 backdrop-blur-xl border-b border-border/50 shadow-2xl shadow-primary/10">
         <Link href="/" className="flex items-center gap-3" prefetch={false}>
           <Image src="/images/logo.png" alt="Creative Experts Solution Logo" width={48} height={48} className="animate-pulse" />
           <h1 className="text-sm sm:text-lg font-bold tracking-wider">{companyName}</h1>
@@ -159,7 +147,7 @@ export function Header({ companyName, navigation, contact, socials, quoteDialog 
         <div className="flex items-center gap-2">
           <Dialog open={openQuoteDialog} onOpenChange={setOpenQuoteDialog}>
             <DialogTrigger asChild>
-              <Button variant="default" size="lg" className="hidden md:flex transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/50 hover:shadow-lg rounded-full">Get Started</Button>
+              <Button variant="default" size="lg" className="hidden md:flex transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/50 hover:shadow-lg rounded-full">Get in Touch</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-md bg-secondary border-primary/20">
               <DialogHeader>

@@ -1,4 +1,4 @@
-# Creative Experts Solution
+# YOUR DIGITAL CHOICE
 
 🚀 **Premium IT Solutions & Software Development Company**
 
@@ -116,4 +116,4 @@ NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 
 ---
 
-**Built with ❤️ by Creative Experts Solution**
+**Built with ❤️ by YOUR DIGITAL CHOICE**

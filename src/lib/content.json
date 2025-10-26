@@ -1,6 +1,5 @@
-
 {
-  "companyName": "CreativeXperts Technological Solutions",
+  "companyName": "YOUR DIGITAL CHOICE",
   "contact": {
     "email": "creativexperts10@gmail.com",
     "phone": "+92 311 4648875",
@@ -12,21 +11,35 @@
   },
   "navigation": [
     { "name": "Home", "href": "/" },
-    { "name": "Services", "href": "/#services" },
     { "name": "About", "href": "/about" },
-    { "name": "Process", "href": "/#process" },
-    { "name": "Contact", "href": "/#contact" }
+    { "name": "Services", "href": "/services" },
+    { "name": "Career", "href": "/career" },
+    { "name": "Contact Us", "href": "/contact" }
   ],
   "quoteDialog": {
-    "title": "Let's Build Something Amazing",
+    "title": "Get in Touch",
     "description": "Share your project idea, and our experts will be in touch."
   },
   "hero": {
     "title": "We Add Value To Your Business",
-    "subtitle": "We meet your brand’s IT infrastructure needs."
+    "subtitle": "We meet your brand's IT infrastructure needs.",
+    "buttons": [
+      { "text": "Explore Services", "href": "/services", "variant": "default" },
+      { "text": "Contact Us", "href": "/contact", "variant": "outline" }
+    ]
+  },
+  "statistics": {
+    "title": "Our Track Record",
+    "subtitle": "Numbers that speak for our excellence",
+    "stats": [
+      { "number": "500+", "label": "Projects Completed" },
+      { "number": "99%", "label": "Client Satisfaction" },
+      { "number": "24/7", "label": "Support Available" },
+      { "number": "5+", "label": "Years Experience" }
+    ]
   },
   "whyChooseUs": {
-    "title": "Why Partner With Creative Experts Solution?",
+    "title": "Why Partner With Us?",
     "subtitle": "We're not just a service provider; we're your dedicated technology partner.",
     "items": [
       {
@@ -54,21 +67,21 @@
   "aboutPage": {
     "title": "About Us",
     "description": "Driving innovation and excellence in the digital realm.",
-    "companyDetails": "Creative Experts Solution is a forward-thinking technology firm dedicated to crafting bespoke digital solutions that drive growth and efficiency. Our mission is to empower businesses by leveraging cutting-edge technology, deep industry expertise, and a passion for innovation. We believe in building long-term partnerships, turning complex challenges into powerful opportunities for our clients.",
+    "companyDetails": "YOUR DIGITAL CHOICE is a forward-thinking technology firm dedicated to crafting bespoke digital solutions that drive growth and efficiency. Our mission is to empower businesses by leveraging cutting-edge technology, deep industry expertise, and a passion for innovation. We believe in building long-term partnerships, turning complex challenges into powerful opportunities for our clients.",
     "offerings": {
       "title": "Our Core Competencies",
       "categories": [
         {
-          "title": "Development",
-          "items": ["Next.js", "React", "Vue.js", "Express", "Node.js", "Python", "Django", "Flask"]
+          "title": "E-Commerce Platforms",
+          "items": ["Amazon", "eBay", "Walmart", "Shopify", "WooCommerce", "Alibaba"]
         },
         {
-          "title": "Artificial Intelligence",
-          "items": ["Machine Learning", "Deep Learning", "Natural Language Processing", "AI-driven Automation"]
+          "title": "Digital Marketing",
+          "items": ["Facebook Ads", "Instagram Ads", "Google Ads", "SEO", "Email Marketing"]
         },
         {
-          "title": "Data Science",
-          "items": ["Power BI", "Pandas", "NumPy", "Matplotlib", "MATLAB", "Data Scraping"]
+          "title": "Development & AI",
+          "items": ["Website Development", "Mobile Apps", "AI Integration", "Automation"]
         }
       ]
     },
@@ -102,141 +115,263 @@
     }
   },
   "softwareEngineering": {
-    "title": "Software Engineering",
-    "subtitle": "Custom solutions to drive your business forward.",
+    "title": "E-Commerce Excellence",
+    "subtitle": "Complete A to Z solutions for your online business success.",
     "points": [
-      { "icon": "CheckCircle", "title": "Corporate Consulting", "description": "Tailored technology roadmaps and infrastructure design to align with your strategic goals." },
-      { "icon": "CheckCircle", "title": "IT Service System", "description": "Comprehensive support, maintenance, and system optimization for seamless operations." }
+      { "icon": "CheckCircle", "title": "Multi-Platform Management", "description": "Expert management across Amazon, eBay, Walmart, Shopify, and Alibaba platforms." },
+      { "icon": "CheckCircle", "title": "End-to-End Solutions", "description": "From product sourcing to customer support, we handle every aspect of your e-commerce business." }
     ]
   },
   "services": {
-    "title": "Our Services and Solutions",
-    "subtitle": "Your IT infrastructure is Enhanced to Us.",
+    "title": "Our A to Z Services",
+    "subtitle": "Complete solutions for your digital business needs.",
     "items": [
       {
-        "id": "web-application-development",
-        "icon": "Code",
-        "title": "Web Application Development",
-        "description": "Custom web solutions.",
-        "detailedDescription": "In today's data-driven world, a robust and scalable infrastructure is the bedrock of any successful enterprise. We specialize in designing and implementing bespoke server and storage solutions that are not just powerful, but also resilient and cost-effective. Whether you need on-premise physical servers for maximum control, a virtualized environment for flexibility, or a hybrid cloud model to get the best of both worlds, we architect systems that grow with you. \n\nOur methodology begins with a deep analysis of your current and future workloads, data flow patterns, and business continuity requirements. This allows us to architect a solution that is perfectly sized and optimized for your specific needs, avoiding over-provisioning while ensuring future scalability. We go beyond simple hardware provision; we build a foundation that your critical applications can rely on, day in and day out, ensuring high availability and minimizing latency.",
-        "features": [
-          "Custom Server Builds: Tailored server configurations (Blade, Rack, Tower) using enterprise-grade components for optimal performance and reliability.",
-          "Advanced Storage Solutions: High-performance SAN, NAS, and object storage architectures for rapid data access and scalability.",
-          "Data Protection: End-to-end data backup, replication, and disaster recovery strategies to ensure business continuity.",
-          "Infrastructure Automation: Implementation of Infrastructure as Code (IaC) for consistent, repeatable, and rapid deployments.",
-          "Performance Monitoring: 24/7 real-time system monitoring and predictive analysis to proactively address potential issues.",
-          "Lifecycle Management: Comprehensive hardware procurement, installation, configuration, and end-of-life management.",
-          "Security Hardening: Robust security configurations, firmware updates, and patch management to protect against threats."
-        ],
-        "image": {
-          "src": "https://picsum.photos/seed/server-room/1200/600",
-          "alt": "Modern server room with glowing lights",
-          "hint": "server room"
-        }
-      },
-      {
-        "id": "managed-it-support",
-        "icon": "Users",
-        "title": "Managed IT Support",
-        "description": "Reliable task support.",
-        "detailedDescription": "Focus on what you do best—running your business—while we handle the complexities of your IT environment. Our Managed IT Support services offer a predictable, all-inclusive solution for your technology needs, acting as your dedicated, outsourced IT department. Our approach is preventative and strategic; we aim to identify and resolve issues before they can impact your operations, ensuring maximum uptime and productivity.\n\nFrom managing software updates and hardware lifecycles to providing strategic technology guidance and vCIO services, we ensure your IT infrastructure is a powerful asset that drives efficiency and growth, rather than a source of distraction. We offer a partnership that aligns our success with yours, with a flat-rate monthly fee for simplified budgeting.",
-        "features": [
-          "24/7/365 Proactive Support: Round-the-clock helpdesk support via phone, email, and chat, with guaranteed response times.",
-          "Proactive Monitoring: Continuous system monitoring and preventative maintenance to resolve issues before they escalate.",
-          "Total Lifecycle Management: Full hardware and software lifecycle management, from procurement and deployment to retirement.",
-          "Strategic vCIO Consulting: Access to a virtual Chief Information Officer for technology roadmap planning and strategic guidance.",
-          "Vendor Management: We act as a single point of contact to manage and coordinate with all your technology vendors.",
-          "Automated Patch Management: Timely deployment of security patches for operating systems and third-party applications.",
-          "Detailed Reporting: Transparent, detailed performance reports and service level agreement (SLA) tracking."
-        ],
-        "image": {
-          "src": "https://picsum.photos/seed/it-support/1200/600",
-          "alt": "Friendly IT support staff assisting a customer",
-          "hint": "support team"
-        }
-      },
-      {
-        "id": "cloud-services",
-        "icon": "Cloud",
-        "title": "Cloud Services",
-        "description": "Cutting-edge cloud tech.",
-        "detailedDescription": "Harness the transformative power of the cloud to unlock unprecedented scalability, agility, and innovation. Our certified cloud experts guide you through every stage of your cloud journey, from initial strategy and readiness assessment to migration, modernization, and ongoing FinOps management. We are platform-agnostic and work with leading providers like AWS, Azure, and Google Cloud to architect a solution that perfectly aligns with your business objectives.\n\nWhether you're looking to migrate legacy applications, build new cloud-native services using serverless and containers, or create a powerful data analytics platform, we provide the deep expertise to make your cloud adoption a resounding success. We focus on security, cost-efficiency, and performance to ensure you realize the full, measurable potential of your cloud investment.",
-        "features": [
-          "Cloud Strategy & Migration: Comprehensive cloud readiness assessments and proven methodologies for seamless, risk-averse migrations.",
-          "Cloud-Native Development: Expertise in IaaS, PaaS, Serverless, and containerization (Docker, Kubernetes) to build scalable, modern applications.",
-          "FinOps & Cost Optimization: Continuous cloud cost management, anomaly detection, and optimization to maximize your ROI.",
-          "DevOps & CI/CD Automation: Implementing robust CI/CD pipelines and DevOps best practices for accelerated, reliable software delivery in the cloud.",
-          "Cloud Security & Compliance: Cloud security posture management (CSPM), identity and access management, and compliance automation.",
-          "Multi-Cloud & Hybrid Solutions: Architecting and managing complex hybrid and multi-cloud environments for ultimate flexibility.",
-          "Data & Analytics Platforms: Building scalable data lakes, data warehouses, and ML/AI platforms on the cloud."
-        ],
-        "image": {
-          "src": "https://picsum.photos/seed/cloud-tech/1200/600",
-          "alt": "Abstract representation of cloud computing",
-          "hint": "cloud technology"
-        }
-      },
-      {
-        "id": "wordpress-shopify-seo",
+        "id": "alibaba-services",
         "icon": "Globe",
-        "title": "WordPress, Shopify & SEO",
-        "description": "Complete digital presence.",
-        "detailedDescription": "Establish a powerful online presence with our comprehensive WordPress, Shopify, and SEO services. We create stunning, functional websites and e-commerce stores that not only look great but also rank high in search engines and convert visitors into customers.\n\nFrom custom WordPress themes and plugins to fully-featured Shopify stores, we handle every aspect of your digital presence. Our SEO experts ensure your website reaches the right audience through strategic optimization, content marketing, and technical SEO improvements that drive organic traffic and boost your online visibility.",
+        "title": "Alibaba Services (A to Z)",
+        "description": "Complete supplier research, sourcing, and logistics management.",
+        "detailedDescription": "Our comprehensive Alibaba services cover everything from supplier verification to shipment coordination. We help you navigate the complex world of international sourcing with confidence and efficiency.",
         "features": [
-          "WordPress Development: Custom themes, plugins, and full website development with responsive design and optimal performance.",
-          "Shopify E-commerce: Complete online store setup, custom themes, app integrations, and payment gateway configuration.",
-          "SEO Optimization: Technical SEO, on-page optimization, keyword research, and content strategy for higher search rankings.",
-          "Content Management: Easy-to-use CMS solutions that allow you to update and manage your website content effortlessly.",
-          "WooCommerce Solutions: Powerful e-commerce functionality for WordPress with inventory management and order processing.",
-          "Performance Optimization: Speed optimization, caching, CDN setup, and mobile optimization for better user experience.",
-          "Digital Marketing: Social media integration, email marketing setup, and analytics tracking for comprehensive online presence."
+          "Supplier Research & Verification: Thorough vetting of suppliers to ensure reliability and quality",
+          "Product Sourcing & Quotation: Finding the best products at competitive prices",
+          "Factory Audit & Quality Inspection: On-site inspections to ensure quality standards",
+          "Custom Branding & Private Label Setup: Complete branding solutions for your products",
+          "Shipment & Logistics Coordination: End-to-end shipping and logistics management",
+          "Trade Assurance & Payment Management: Secure payment processing and trade protection",
+          "Alibaba Store Setup & Optimization: Professional store setup and optimization",
+          "Custom Order Management System: Streamlined order processing and tracking"
         ],
         "image": {
-          "src": "https://picsum.photos/seed/wordpress-shopify/1200/600",
-          "alt": "WordPress and Shopify development workspace",
-          "hint": "wordpress shopify"
+          "src": "https://picsum.photos/seed/alibaba/1200/600",
+          "alt": "Alibaba sourcing and logistics",
+          "hint": "alibaba sourcing"
         }
       },
       {
-        "id": "ai-machine-learning",
-        "icon": "Brain",
-        "title": "AI & Machine Learning",
-        "description": "Intelligent automation solutions.",
-        "detailedDescription": "Harness the power of Artificial Intelligence and Machine Learning to transform your business operations and unlock new opportunities. We develop intelligent solutions that automate complex tasks, analyze data patterns, and provide predictive insights to drive informed decision-making.\n\nFrom chatbot integrations and natural language processing to computer vision and predictive analytics, we create AI-powered applications that enhance user experiences and streamline business processes. Our expertise spans across various AI frameworks including TensorFlow, PyTorch, and OpenAI APIs to deliver cutting-edge solutions tailored to your specific needs.",
+        "id": "amazon-services",
+        "icon": "ShoppingCart",
+        "title": "Amazon Services (A to Z)",
+        "description": "Complete Amazon FBA/FBM management and optimization.",
+        "detailedDescription": "From account setup to advanced PPC management, we provide comprehensive Amazon services to maximize your sales and profitability on the world's largest marketplace.",
         "features": [
-          "Machine Learning Models: Custom ML algorithms for data analysis, pattern recognition, and predictive analytics using TensorFlow and PyTorch.",
-          "Deep Learning Solutions: Advanced neural networks for image recognition, natural language processing, and complex data analysis.",
-          "AI Automation: Intelligent process automation using AI to streamline repetitive tasks and improve operational efficiency.",
-          "Web Scraping & Data Mining: Automated data extraction and analysis from websites and databases using Python and Selenium.",
-          "ChatGPT Integration: Custom chatbots and AI assistants powered by OpenAI API for enhanced customer service and support.",
-          "Computer Vision: Image and video analysis solutions for object detection, facial recognition, and quality control applications.",
-          "Data Analysis & Prediction: Advanced analytics and forecasting models to help businesses make data-driven decisions."
+          "Amazon Account Creation & Verification: Professional account setup and verification",
+          "Product Research & Selection: Data-driven product research and selection",
+          "Listing Creation & Optimization (SEO Based): SEO-optimized listings for maximum visibility",
+          "PPC Campaign Management: Advanced advertising campaign management",
+          "A+ Content Designing: Professional enhanced brand content creation",
+          "FBA/FBM Setup: Complete fulfillment setup and management",
+          "Review & Rating Management: Reputation management and review optimization",
+          "Account Health Monitoring: Continuous monitoring and issue resolution",
+          "Amazon Storefront Designing: Professional brand store design",
+          "Shipment Plan & Label Creation: Efficient inventory management",
+          "Reimbursement & Refund Handling: Recovery of lost or damaged inventory"
         ],
         "image": {
-          "src": "https://picsum.photos/seed/ai-machine-learning/1200/600",
-          "alt": "AI and machine learning visualization with neural networks",
-          "hint": "artificial intelligence"
+          "src": "https://picsum.photos/seed/amazon/1200/600",
+          "alt": "Amazon FBA management",
+          "hint": "amazon fba"
         }
       },
       {
-        "id": "mobile-app-development",
+        "id": "ebay-services",
+        "icon": "Tag",
+        "title": "eBay Services (A to Z)",
+        "description": "Complete eBay store management and optimization.",
+        "detailedDescription": "Our eBay services help you build a successful presence on one of the world's largest auction and marketplace platforms with professional management and optimization.",
+        "features": [
+          "eBay Account Setup & Optimization: Professional account creation and optimization",
+          "Product Listing & SEO Titles: SEO-optimized product listings",
+          "Product Photo Editing: Professional product photography and editing",
+          "Order Management & Fulfillment: Streamlined order processing",
+          "eBay Ads & Promotion Management: Advanced advertising and promotion strategies",
+          "Customer Support & Feedback Handling: Professional customer service",
+          "Payment Gateway Setup (Payoneer, Wise): Secure payment processing setup",
+          "eBay Store Design & Branding: Professional store design and branding"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/ebay/1200/600",
+          "alt": "eBay store management",
+          "hint": "ebay store"
+        }
+      },
+      {
+        "id": "walmart-services",
+        "icon": "Store",
+        "title": "Walmart Services (A to Z)",
+        "description": "Complete Walmart marketplace management.",
+        "detailedDescription": "Tap into Walmart's growing marketplace with our comprehensive management services designed to maximize your success on this rapidly expanding platform.",
+        "features": [
+          "Walmart Account Registration: Professional account setup and approval",
+          "Product Listing & Optimization: Optimized product listings for maximum visibility",
+          "Inventory Management System: Advanced inventory tracking and management",
+          "Walmart Ads & Campaign Management: Strategic advertising campaign management",
+          "Order Fulfillment & Shipment Tracking: Efficient order processing and tracking",
+          "Review Management: Professional reputation management",
+          "Sales Reporting & Analytics: Comprehensive performance analytics"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/walmart/1200/600",
+          "alt": "Walmart marketplace",
+          "hint": "walmart marketplace"
+        }
+      },
+      {
+        "id": "shopify-woocommerce",
+        "icon": "Code",
+        "title": "Shopify & WooCommerce Services (A to Z)",
+        "description": "Complete e-commerce store development and management.",
+        "detailedDescription": "Build and manage professional e-commerce stores with our comprehensive Shopify and WooCommerce services, from design to optimization.",
+        "features": [
+          "Store Design & Theme Customization: Custom store design and theme development",
+          "Product Upload & Optimization: Professional product catalog management",
+          "Payment Gateway Integration: Secure payment processing setup",
+          "Checkout & Cart Optimization: Conversion-optimized checkout process",
+          "SEO & Speed Optimization: Technical SEO and performance optimization",
+          "Email Marketing Integration: Automated email marketing setup",
+          "Multi-Currency & Multi-Language Setup: Global market expansion",
+          "Order Tracking & Reporting Dashboard: Comprehensive analytics and reporting"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/shopify/1200/600",
+          "alt": "Shopify store development",
+          "hint": "shopify development"
+        }
+      },
+      {
+        "id": "dropshipping-services",
+        "icon": "Truck",
+        "title": "Dropshipping Services (A to Z)",
+        "description": "Complete dropshipping business setup and management.",
+        "detailedDescription": "Launch and scale your dropshipping business with our comprehensive services covering product research, supplier management, and automated systems.",
+        "features": [
+          "Product Research (AliExpress, CJ Dropshipping, Alibaba): Data-driven product research",
+          "Supplier Communication & Contract: Professional supplier relationship management",
+          "Automated Order System Setup: Streamlined order processing automation",
+          "Store Management & Ads Handling: Complete store and advertising management",
+          "Facebook / Instagram / Google Ads Setup: Multi-platform advertising campaigns",
+          "Shipment Tracking Automation: Automated tracking and customer updates",
+          "Profit Margin & ROI Analysis: Comprehensive financial analysis and reporting"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/dropshipping/1200/600",
+          "alt": "Dropshipping business",
+          "hint": "dropshipping"
+        }
+      },
+      {
+        "id": "facebook-instagram-ads",
+        "icon": "Megaphone",
+        "title": "Facebook & Instagram Ads Management",
+        "description": "Professional social media advertising campaigns.",
+        "detailedDescription": "Maximize your social media ROI with our expert Facebook and Instagram advertising services, from strategy to execution and optimization.",
+        "features": [
+          "Page Setup & Optimization: Professional social media page setup",
+          "Ad Copywriting & Creative Design: Compelling ad copy and creative design",
+          "Target Audience Research: Advanced audience research and targeting",
+          "Campaign Setup & Management: Professional campaign management",
+          "Pixel Integration & Conversion Tracking: Advanced tracking and analytics",
+          "Sales Funnel Strategy: Conversion-optimized sales funnel development"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/social-ads/1200/600",
+          "alt": "Social media advertising",
+          "hint": "social media ads"
+        }
+      },
+      {
+        "id": "website-app-development",
         "icon": "Smartphone",
-        "title": "Mobile App Development",
-        "description": "Native & cross-platform apps.",
-        "detailedDescription": "Create powerful mobile applications that engage users and drive business growth. We develop native iOS and Android apps as well as cross-platform solutions using React Native and Flutter. Our mobile apps are designed for performance, security, and exceptional user experience across all devices.\n\nFrom concept to app store deployment, we handle the entire mobile development lifecycle. Our expertise includes native development with Swift and Kotlin, cross-platform frameworks, backend integration, and comprehensive testing to ensure your app performs flawlessly in the competitive mobile marketplace.",
+        "title": "Website & App Development",
+        "description": "Custom web and mobile application development.",
+        "detailedDescription": "Build powerful web and mobile applications with our comprehensive development services using modern technologies and best practices.",
         "features": [
-          "Native iOS Development: Swift-based applications optimized for iPhone and iPad with native performance and UI.",
-          "Native Android Development: Kotlin and Java applications following Material Design guidelines for optimal Android experience.",
-          "Cross-Platform Solutions: React Native and Flutter apps that work seamlessly across iOS and Android platforms.",
-          "UI/UX Design: Intuitive and engaging mobile interfaces designed for touch interactions and mobile-first experiences.",
-          "Backend Integration: Seamless API integration, real-time data synchronization, and cloud services connectivity.",
-          "App Store Optimization: Complete app store submission process, optimization, and ongoing maintenance support.",
-          "Performance Optimization: Memory management, battery efficiency, and smooth animations for superior user experience."
+          "Custom Website Design (HTML, CSS, JS, PHP): Modern responsive web design",
+          "WordPress & WooCommerce Development: Professional CMS development",
+          "iOS & Android App Development: Native and cross-platform mobile apps",
+          "API Integration: Seamless third-party service integration",
+          "Website Security Setup (SSL, Firewalls): Comprehensive security implementation",
+          "SEO Optimization & Analytics Setup: Technical SEO and analytics integration"
         ],
         "image": {
-          "src": "https://picsum.photos/seed/mobile-development/1200/600",
-          "alt": "Mobile app development workspace with smartphones and tablets",
-          "hint": "mobile development"
+          "src": "https://picsum.photos/seed/web-dev/1200/600",
+          "alt": "Web and app development",
+          "hint": "web development"
+        }
+      },
+      {
+        "id": "seo-marketing-automation",
+        "icon": "Search",
+        "title": "SEO & Marketing Automation",
+        "description": "Complete SEO and automated marketing solutions.",
+        "detailedDescription": "Boost your online visibility and automate your marketing processes with our comprehensive SEO and marketing automation services.",
+        "features": [
+          "On-Page & Off-Page SEO: Complete search engine optimization",
+          "Backlink Building: High-quality link building strategies",
+          "AI Based Content Optimization: AI-powered content creation and optimization",
+          "Google Analytics & Console Integration: Advanced analytics setup",
+          "Email, SMS & WhatsApp Automation: Multi-channel marketing automation"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/seo/1200/600",
+          "alt": "SEO and marketing automation",
+          "hint": "seo marketing"
+        }
+      },
+      {
+        "id": "branding-design",
+        "icon": "Palette",
+        "title": "Branding & Graphic Design",
+        "description": "Complete brand identity and design solutions.",
+        "detailedDescription": "Create a powerful brand identity with our comprehensive branding and graphic design services that make your business stand out.",
+        "features": [
+          "Logo & Packaging Design: Professional logo and packaging design",
+          "Social Media Kit: Complete social media branding package",
+          "Product Mockups: High-quality product visualization",
+          "Brand Guidelines Document: Comprehensive brand style guide",
+          "Video & Animation Creation: Engaging video and animation content"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/branding/1200/600",
+          "alt": "Branding and design",
+          "hint": "branding design"
+        }
+      },
+      {
+        "id": "finance-accounting",
+        "icon": "Calculator",
+        "title": "Finance & Accounting",
+        "description": "Complete financial management and accounting services.",
+        "detailedDescription": "Manage your business finances professionally with our comprehensive accounting and financial management services.",
+        "features": [
+          "Bookkeeping & Accounting: Professional financial record keeping",
+          "Tax Management & Filing: Complete tax preparation and filing",
+          "Payoneer, Wise, Stripe Setup: Payment gateway setup and management",
+          "Profit Analysis Reports: Detailed financial analysis and reporting",
+          "Financial Forecasting: Strategic financial planning and forecasting"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/finance/1200/600",
+          "alt": "Finance and accounting",
+          "hint": "finance accounting"
+        }
+      },
+      {
+        "id": "ai-integration",
+        "icon": "Brain",
+        "title": "Artificial Intelligence (AI) Integration",
+        "description": "Advanced AI solutions for business automation.",
+        "detailedDescription": "Transform your business with cutting-edge AI integration services that automate processes and enhance customer experiences.",
+        "features": [
+          "AI Chatbot Integration: Intelligent customer service automation",
+          "Auto-Reply & Order Automation: Automated response and order processing",
+          "AI Description Generator: AI-powered content generation",
+          "Machine Learning Ads Optimization: AI-driven advertising optimization"
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/ai-integration/1200/600",
+          "alt": "AI integration services",
+          "hint": "ai integration"
         }
       }
     ]
@@ -256,16 +391,16 @@
     "subtitle": "We use a modern, robust stack to build scalable and maintainable solutions.",
     "categories": [
       {
-        "id": "fullStack",
-        "title": "Full Stack Development"
+        "id": "ecommerce",
+        "title": "E-Commerce Platforms"
       },
       {
-        "id": "socialMedia",
-        "title": "Social Media Marketing"
+        "id": "marketing",
+        "title": "Digital Marketing"
       },
       {
-        "id": "artificialIntelligence",
-        "title": "Artificial Intelligence"
+        "id": "development",
+        "title": "Development & AI"
       }
     ]
   },
@@ -273,29 +408,53 @@
     "title": "Our Customers Who Make Us",
     "subtitle": "We work day and night to ensure our customers thrive."
   },
+  "career": {
+    "title": "Join Our Team",
+    "subtitle": "Build your career with us and shape the future of technology",
+    "jobs": [
+      {
+        "id": "ecommerce-specialist",
+        "title": "E-Commerce Specialist",
+        "department": "Operations",
+        "location": "Remote",
+        "type": "Full-time",
+        "description": "We're looking for an experienced E-Commerce Specialist to manage Amazon, eBay, and other marketplace operations.",
+        "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLScC43nvTUZAx9aHcjO6VgoRpn_aUesG-FAB6p-WNp_4-wuXmw/viewform?usp=dialog"
+      },
+      {
+        "id": "digital-marketing-manager",
+        "title": "Digital Marketing Manager",
+        "department": "Marketing",
+        "location": "Remote",
+        "type": "Full-time",
+        "description": "Join us as a Digital Marketing Manager to lead our social media advertising and SEO campaigns.",
+        "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLScC43nvTUZAx9aHcjO6VgoRpn_aUesG-FAB6p-WNp_4-wuXmw/viewform?usp=dialog"
+      }
+    ]
+  },
   "faqPage": {
     "title": "Frequently Asked Questions",
     "description": "Find answers to common questions about our services and process.",
     "questions": [
       {
-        "question": "What kind of industries do you specialize in?",
-        "answer": "We have experience across a wide range of industries, including tech, finance, healthcare, and e-commerce. Our solutions are tailored to the unique challenges and opportunities of your specific sector."
+        "question": "What e-commerce platforms do you specialize in?",
+        "answer": "We specialize in all major e-commerce platforms including Amazon, eBay, Walmart, Shopify, WooCommerce, and Alibaba. Our team has extensive experience managing stores and optimizing performance across these platforms."
       },
       {
-        "question": "What is your development process like?",
-        "answer": "We follow an agile development methodology, which includes discovery, design, development, testing, and deployment. We work in sprints, allowing for flexibility and regular feedback to ensure the final product meets your exact needs."
+        "question": "Do you provide end-to-end e-commerce solutions?",
+        "answer": "Yes, we provide complete A to Z solutions including product sourcing, store setup, inventory management, marketing, customer service, and analytics. We handle every aspect of your e-commerce business."
       },
       {
-        "question": "How do you ensure the security of my application?",
-        "answer": "Security is our top priority. We implement best practices at every stage of the development lifecycle, including code reviews, vulnerability scanning, and secure infrastructure design. We also adhere to industry standards like Zero Trust and conduct regular penetration testing."
+        "question": "How do you ensure the quality of suppliers on Alibaba?",
+        "answer": "We conduct thorough supplier verification including factory audits, quality inspections, and trade assurance verification. Our team has established relationships with verified suppliers to ensure quality and reliability."
       },
       {
-        "question": "What kind of post-launch support do you offer?",
-        "answer": "We offer a range of support and maintenance packages, from on-demand assistance to proactive 24/7 monitoring. Our goal is to ensure your application remains secure, performant, and up-to-date long after launch."
+        "question": "What kind of results can I expect from your advertising services?",
+        "answer": "Results vary based on industry and competition, but our clients typically see 20-40% improvement in ROAS within the first 3 months. We provide detailed analytics and regular performance reports."
       },
       {
-        "question": "How long does it take to build a custom software solution?",
-        "answer": "The timeline for a project varies greatly depending on its complexity and scope. After our initial discovery and strategy phase, we provide a detailed project roadmap with clear timelines and milestones."
+        "question": "Do you offer training and support?",
+        "answer": "Yes, we provide comprehensive training, SOP creation, and ongoing support. Our team training services help you understand the processes and manage operations effectively."
       }
     ]
   },
@@ -305,27 +464,27 @@
     "sections": [
       {
         "title": "1. Introduction",
-        "content": "Welcome to Creative Experts Solution. These Terms and Conditions govern your use of our website and services. By accessing or using our service, you agree to be bound by these terms. If you disagree with any part of the terms, then you do not have permission to access the service."
+        "content": "Welcome to YOUR DIGITAL CHOICE. These Terms and Conditions govern your use of our website and services. By accessing or using our service, you agree to be bound by these terms."
       },
       {
         "title": "2. Intellectual Property Rights",
-        "content": "Other than the content you own, under these Terms, Creative Experts Solution and/or its licensors own all the intellectual property rights and materials contained in this Website. You are granted a limited license only for purposes of viewing the material contained on this Website."
+        "content": "Other than the content you own, under these Terms, YOUR DIGITAL CHOICE and/or its licensors own all the intellectual property rights and materials contained in this Website."
       },
       {
         "title": "3. Restrictions",
-        "content": "You are specifically restricted from all of the following: publishing any Website material in any other media; selling, sublicensing and/or otherwise commercializing any Website material; publicly performing and/or showing any Website material; using this Website in any way that is or may be damaging to this Website; using this Website in any way that impacts user access to this Website."
+        "content": "You are specifically restricted from publishing any Website material in any other media; selling, sublicensing and/or otherwise commercializing any Website material without permission."
       },
       {
         "title": "4. Your Content",
-        "content": "In these Website Standard Terms and Conditions, “Your Content” shall mean any audio, video, text, images or other material you choose to display on this Website. By displaying Your Content, you grant Creative Experts Solution a non-exclusive, worldwide irrevocable, sub-licensable license to use, reproduce, adapt, publish, translate and distribute it in any and all media."
+        "content": "By displaying Your Content, you grant YOUR DIGITAL CHOICE a non-exclusive, worldwide license to use, reproduce, adapt, publish, translate and distribute it in any media."
       },
       {
         "title": "5. Limitation of Liability",
-        "content": "In no event shall Creative Experts Solution, nor any of its officers, directors and employees, be held liable for anything arising out of or in any way connected with your use of this Website whether such liability is under contract. Creative Experts Solution, including its officers, directors and employees shall not be held liable for any indirect, consequential or special liability arising out of or in any way related to your use of this Website."
+        "content": "In no event shall YOUR DIGITAL CHOICE be held liable for anything arising out of or in any way connected with your use of this Website."
       },
       {
         "title": "6. Governing Law & Jurisdiction",
-        "content": "These Terms will be governed by and interpreted in accordance with the laws of the State of California, and you submit to the non-exclusive jurisdiction of the state and federal courts located in California for the resolution of any disputes."
+        "content": "These Terms will be governed by and interpreted in accordance with applicable laws."
       }
     ]
   },
@@ -335,33 +494,33 @@
     "sections": [
       {
         "title": "1. Information We Collect",
-        "content": "We collect information that you provide directly to us when you request a quote, subscribe to our newsletter, or otherwise communicate with us. This information may include your name, email address, phone number, and any other details you provide about your project."
+        "content": "We collect information that you provide directly to us when you request a quote, subscribe to our newsletter, or otherwise communicate with us."
       },
       {
         "title": "2. How We Use Your Information",
-        "content": "We use the information we collect to provide, maintain, and improve our services, to respond to your comments and questions, to send you technical notices, updates, security alerts, and support messages, and to communicate with you about products, services, offers, and events offered by Creative Experts Solution."
+        "content": "We use the information we collect to provide, maintain, and improve our services, and to communicate with you about our offerings."
       },
       {
         "title": "3. Information Sharing",
-        "content": "We do not share your personal information with third parties except as described in this Privacy Policy. We may share personal information with vendors, consultants, and other service providers who need access to such information to carry out work on our behalf."
+        "content": "We do not share your personal information with third parties except as described in this Privacy Policy."
       },
       {
         "title": "4. Data Security",
-        "content": "We take reasonable measures to help protect information about you from loss, theft, misuse and unauthorized access, disclosure, alteration, and destruction. However, no internet or email transmission is ever fully secure or error-free."
+        "content": "We take reasonable measures to help protect information about you from loss, theft, misuse and unauthorized access."
       },
       {
         "title": "5. Your Choices",
-        "content": "You may opt out of receiving promotional emails from us by following the instructions in those emails. If you opt out, we may still send you non-promotional emails, such as those about your account or our ongoing business relations."
+        "content": "You may opt out of receiving promotional emails from us by following the instructions in those emails."
       },
       {
         "title": "6. Changes to This Policy",
-        "content": "We may change this Privacy Policy from time to time. If we make changes, we will notify you by revising the date at the top of the policy and, in some cases, we may provide you with additional notice (such as adding a statement to our homepage or sending you a notification)."
+        "content": "We may change this Privacy Policy from time to time. If we make changes, we will notify you by revising the date at the top of the policy."
       }
     ]
   },
   "footer": {
     "description": "Engineering the future of your business with value-driven IT solutions.",
-    "copyright": "© 2024 Creative Experts Solution. All rights reserved. Built with passion and code.",
+    "copyright": "© 2024 YOUR DIGITAL CHOICE. All rights reserved. Built with passion and code.",
     "companyLinks": [
         { "name": "About Us", "href": "/about" },
         { "name": "FAQ", "href": "/faq" },

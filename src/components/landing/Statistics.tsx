@@ -2,48 +2,88 @@
 
 import { useEffect, useState } from 'react';
 
-const stats = [
-  { number: 500, label: 'Projects Completed', suffix: '+' },
-  { number: 99, label: 'Client Satisfaction', suffix: '%' },
-  { number: 24, label: 'Support Available', suffix: '/7' },
-  { number: 5, label: 'Years Experience', suffix: '+' }
-];
-
-function Counter({ end, suffix }: { end: number; suffix: string }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCount(prev => {
-        if (prev < end) {
-          return prev + Math.ceil(end / 50);
-        }
-        return end;
-      });
-    }, 50);
-
-    return () => clearInterval(timer);
-  }, [end]);
-
-  return <span>{count}{suffix}</span>;
+interface StatisticsProps {
+  statistics: {
+    title: string;
+    subtitle: string;
+    stats: { number: string; label: string }[];
+  };
 }
 
-export function Statistics() {
+function AnimatedNumber({ target, duration = 2000 }: { target: string; duration?: number }) {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const numericTarget = parseInt(target.replace(/[^0-9]/g, '')) || 0;
+  const suffix = target.replace(/[0-9]/g, '');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const element = document.getElementById(`stat-${target}`);
+    if (element) observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [target]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let startTime: number;
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      setCount(Math.floor(progress * numericTarget));
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [isVisible, numericTarget, duration]);
+
   return (
-    <section className="py-16 bg-primary/5 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
-      <div className="container px-4 md:px-6 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center tilt-3d group">
-              <div className="relative">
-                <div className="absolute inset-0 bg-primary/10 rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-                <div className="relative bg-background/50 backdrop-blur-sm rounded-2xl p-6 border border-border/20 hover:border-primary/30 transition-all duration-300">
-                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                    <Counter end={stat.number} suffix={stat.suffix} />
-                  </div>
-                  <p className="text-sm md:text-base text-muted-foreground">{stat.label}</p>
+    <span id={`stat-${target}`}>
+      {count}{suffix}
+    </span>
+  );
+}
+
+export function Statistics({ statistics }: StatisticsProps) {
+  return (
+    <section className="py-24 md:py-32 bg-gradient-to-br from-black via-gray-900/50 to-black relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-16">
+        <div className="text-center mb-20 relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">{statistics.title}</h2>
+          <p className="text-muted-foreground text-xl max-w-3xl mx-auto leading-relaxed">{statistics.subtitle}</p>
+        </div>
+        
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-primary/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto relative z-10">
+          {statistics.stats.map((stat, index) => (
+            <div 
+              key={index} 
+              className="text-center group"
+            >
+              <div className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-3">
+                  <AnimatedNumber target={stat.number} />
                 </div>
+                <p className="text-muted-foreground font-semibold text-sm uppercase tracking-wider">{stat.label}</p>
               </div>
             </div>
           ))}

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 const iconMap: { [key: string]: React.ElementType } = {
-  Server, Network, Users, Cloud, GitCommit, Briefcase, Code, Globe, Brain, Smartphone
+  Globe, ShoppingCart: () => <div className="w-10 h-10 bg-primary rounded"></div>, Tag: () => <div className="w-10 h-10 bg-primary rounded"></div>, Store: () => <div className="w-10 h-10 bg-primary rounded"></div>, Code, Truck: () => <div className="w-10 h-10 bg-primary rounded"></div>, Megaphone: () => <div className="w-10 h-10 bg-primary rounded"></div>, Smartphone, Search: () => <div className="w-10 h-10 bg-primary rounded"></div>, Palette: () => <div className="w-10 h-10 bg-primary rounded"></div>, Calculator: () => <div className="w-10 h-10 bg-primary rounded"></div>, Brain
 };
 
 interface ServicesProps {
@@ -25,26 +25,39 @@ export function Services({ servicesContent }: ServicesProps) {
           <h2 className="text-4xl font-bold tracking-tight">{servicesContent.title}</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg">{servicesContent.subtitle}</p>
         </div>
-        <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {servicesContent.items.map((service, index) => {
             const Icon = iconMap[service.icon];
             return (
-              <Card key={index} className="group flex flex-col card-3d tilt-3d transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-primary/20 border-border/50 hover:border-primary/50 bg-background overflow-hidden rounded-2xl animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
-                <CardHeader className="items-center text-center p-6">
-                  <div className="p-4 rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground mb-4">{Icon && <Icon className="w-10 h-10" />}</div>
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
+              <Card key={index} className="group flex flex-col transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 border hover:border-primary/30 bg-card/50 backdrop-blur-sm rounded-xl overflow-hidden hover:-translate-y-2">
+                <CardHeader className="p-6">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4 group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300">
+                    {Icon && <Icon className="w-8 h-8 text-primary" />}
+                  </div>
+                  <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-1 p-6 pt-0 text-center">
-                  <CardDescription className="text-base">{service.description}</CardDescription>
+                <CardContent className="flex-1 p-6 pt-0">
+                  <CardDescription className="text-muted-foreground leading-relaxed">{service.description}</CardDescription>
                 </CardContent>
-                <CardFooter className="p-6 pt-0 mt-auto flex justify-center">
-                  <Button variant="ghost" asChild className="group/link btn-3d text-primary text-base px-6 py-2 min-w-[120px]">
-                    <Link href={`/services/${service.id}`}>Learn More <ArrowRight className="ml-2 transition-transform group-hover/link:translate-x-1" /></Link>
+                <CardFooter className="p-6 pt-0">
+                  <Button variant="ghost" asChild className="group/link text-primary hover:text-primary/80 p-0 h-auto font-medium">
+                    <Link href={`/services/${service.id}`} className="flex items-center">
+                      Learn More <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover/link:translate-x-1" />
+                    </Link>
                   </Button>
                 </CardFooter>
               </Card>
             )
           })}
+        </div>
+        
+        <div className="text-center mt-16">
+          <Button asChild size="lg" className="rounded-full">
+            <Link href="/services">
+              Explore More Services
+              <ArrowRight className="ml-2" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
