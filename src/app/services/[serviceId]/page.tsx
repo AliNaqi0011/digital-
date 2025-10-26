@@ -10,13 +10,14 @@ import { Footer } from '@/components/landing/Footer';
 import content from '@/lib/content.json';
 
 interface ServicePageProps {
-  params: {
+  params: Promise<{
     serviceId: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
-  const service = content.services.items.find(s => s.id === params.serviceId);
+  const { serviceId } = await params;
+  const service = content.services.items.find(s => s.id === serviceId);
   
   if (!service) {
     return {
@@ -36,8 +37,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ServicePage({ params }: ServicePageProps) {
-  const service = content.services.items.find(s => s.id === params.serviceId);
+export default async function ServicePage({ params }: ServicePageProps) {
+  const { serviceId } = await params;
+  const service = content.services.items.find(s => s.id === serviceId);
 
   if (!service) {
     notFound();
