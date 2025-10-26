@@ -40,8 +40,9 @@ export default function TermsPage() {
       </main>
       <Footer 
         companyName={content.companyName}
-        footerContent={content.footer}
-        services={content.services.items}
+        description={content.footer.description}
+        copyright={content.footer.copyright}
+        companyLinks={content.footer.companyLinks}
         contact={content.contact}
         socials={content.socials}
       />
